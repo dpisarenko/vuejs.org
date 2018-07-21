@@ -223,27 +223,27 @@ type: api
   - `{Object} [context]`
 
 - **Verwendung:**
-
-  Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update.
+  
+  Bewirkt, dass das Callback nach dem nächsten DOM-Updatezyklus ausgeführt wird. verwenden Sie es unmittelbar nachdem Sie Daten verändert haben, um auf den nächsten DOM-Update zu warten. 
 
   ``` js
-  // modify data
+  // Daten verändern
   vm.msg = 'Hello'
-  // DOM not updated yet
+  // DOM ist noch nicht aktualisiert
   Vue.nextTick(function () {
-    // DOM updated
+    // Jetzt ist das DOM aktualisiert
   })
 
-  // usage as a promise (2.1.0+, see note below)
+  // Verwendung als Promise (ab 2.1.0, siehe Anmerkung unten)
   Vue.nextTick()
     .then(function () {
-      // DOM updated
+      // DOM aktualisiert 
     })
   ```
+  
+  > Neu in 2.1.0+: Gibt einen Promise zurück, wenn kein Callback übergeben wurde und Promise in der Ausführungsumgebung unterstützt wird. Bitte beachten Sie, dass Promise polyfill nicht mit Vue mitgeliefert wird, daher werden Sie ein polyfill selber zur Verfügung stellen müssen, wenn Sie Browser ansprechen, die keine native Unterstützung für Promises haben (IE, ich sehe Dir in die Augen).
 
-  > New in 2.1.0+: returns a Promise if no callback is provided and Promise is supported in the execution environment. Please note that Vue does not come with a Promise polyfill, so if you target browsers that don't support Promises natively (looking at you, IE), you will have to provide a polyfill yourself.
-
-- **Siehe auch:** [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
+- **Siehe auch:** [Asychrone Aktualisierungswarteschlange](../guide/reactivity.html#Async-Update-Queue)
 
 ### Vue.set( target, key, value )
 
