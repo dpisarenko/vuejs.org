@@ -89,21 +89,21 @@ type: api
 
 ### warnHandler
 
-> New in 2.4.0+
+> Neu in 2.4.0+
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
-- **Default:** `undefined`
+- **Default-Wert:** `undefined`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.warnHandler = function (msg, vm, trace) {
-    // `trace` is the component hierarchy trace
+    // `trace` is das Trace der Komponentenhierarchie
   }
   ```
-
-  Assign a custom handler for runtime Vue warnings. Note this only works during development and is ignored in production.
+  
+  Weist eine benutzerdefinierte Routine für Runtime-Vue-Warnungen zu. Beachten Sie, dass dies nur in der Entwicklungsumgebung funktioniert und die Einstellung in Produktion ignoriert wird.
 
 ### ignoredElements
 
