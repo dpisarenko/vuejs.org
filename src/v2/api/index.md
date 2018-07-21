@@ -773,7 +773,7 @@ type: api
   
   Wird aufgerufen, just before das Montieren beginnt: Die `render`-Funktion wird da zum ersten Mal auferufen werden.
   
-  **Dieses Hook wird bei serverseitigen Rendering nicht aufgerufen.**
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
 - **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
@@ -805,12 +805,12 @@ type: api
 - **Datentyp:** `Function`
 
 - **Details:**
+  
+  Wird aufgerufen, wenn sich die Daten ändern, bevor DOM gepatched wird. Dies ist ein guter Ort, um auf das existierende DOM vor dem Update zuzugreifen, z. B. um die manuell hinzugefügte Event-Listener zu entfernen.
+  
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen, weil nur der erste Render-Durchgang am Server stattfindet.**
 
-  Called when data changes, before the DOM is patched. This is a good place to access the existing DOM before an update, e.g. to remove manually added event listeners.
-
-  **This hook is not called during server-side rendering, because only the initial render is performed server-side.**
-
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### updated
 
@@ -818,24 +818,25 @@ type: api
 
 - **Details:**
 
-  Called after a data change causes the virtual DOM to be re-rendered and patched.
+  Wird aufgerufen, nachdem eine Datenveränderung dazuführt, dass das virtuelle DOM neugerendert und gepatched wird.
 
-  The component's DOM will have been updated when this hook is called, so you can perform DOM-dependent operations here. However, in most cases you should avoid changing state inside the hook. To react to state changes, it's usually better to use a [computed property](#computed) or [watcher](#watch) instead.
-
-  Note that `updated` does **not** guarantee that all child components have also been re-rendered. If you want to wait until the entire view has been re-rendered, you can use [vm.$nextTick](#vm-nextTick) inside of `updated`:
+  Zu diesem Zeitpunkt wird das DOM der Komponente aktualisiert sein, sodass Sie DOM-abhängige Operationen hier ausführen können. In den meisten Fällen sollten Sie jedoch keine Zustandsveränderungen in diesem Hook machen. Üblicherweise is eine [berechnete Eigenschaft](#computed) oder [watch](#watch) besser dafür geeignet, um auf Zustandsänderungen zu reagieren.
+ 
+  Beachten Sie, dass `updated` **nicht** garantiert, dass alle Kindkomponenten auch neugerendert wurden. Wenn Sie darauf warten wollen, dass die gesamte Ansicht neugerendert wurde, können Sie [vm.$nextTick](#vm-nextTick) in `updated` verwenden: 
 
   ``` js
   updated: function () {
     this.$nextTick(function () {
-      // Code that will run only after the
-      // entire view has been re-rendered
+      // Dieser Code wird ausgeführt, wenn
+      // die gesamte Ansicht neugerendert 
+      // wurde
     })
   }
   ```
+  
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
-  **This hook is not called during server-side rendering.**
-
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### activated
 
