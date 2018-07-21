@@ -425,17 +425,17 @@ type: api
 
 - **Datentyp:** `Object | Function`
 
-- **Einschränkung:** Only accepts `Function` when used in a component definition.
+- **Einschränkung:** `Function`s werden nur in Komponentendefinitionen unterstützt.
 
 - **Details:**
 
-  The data object for the Vue instance. Vue will recursively convert its properties into getter/setters to make it "reactive". **The object must be plain**: native objects such as browser API objects and prototype properties are ignored. A rule of thumb is that data should just be data - it is not recommended to observe objects with their own stateful behavior.
+  Das Daten-Objekt für die Vue-Instanz. Vue wird dessen Eigenschaften rekursiv in getter/setter-Paare umwandeln, um es "reaktiv" zu machen ("beobachten"). **Das Objekt muss einfach sein**: native Objekte wie Browser-API-Objekte und Prototyp-Eigenschaften werden ignoriert. Die Faustregel lautet: Daten sollen nur Daten sein. Daher wird es nicht empfohlen, Objekte mit ihrem eigenen, zustandsabhängigen Verhalten, zu beobachten.
+  
+  Sobald die Eigenschaften beobachtet wurde, ist es nicht mehr möglich, reaktive Eigenschaften zum Wurzeldatenobjekt hinzuzufügen. Daher wird empfohlen, alle reaktiven Eigenschaften auf Wurzelebene im Voraus, vor der Erstellung der Instanz, zu deklarieren.
 
-  Once observed, you can no longer add reactive properties to the root data object. It is therefore recommended to declare all root-level reactive properties upfront, before creating the instance.
+  Nachdem die Instanz erstellt wurde, kann man auf das usprüngliche Datenobjekt mit `vm.$data` zugreifen. Die Vue-Instanz hat Stellvertreter für alle Eigenschaften, die im Daten-Objekt gefunden werden, sodass `vm.a` gleichbedeutend mit `vm.$data.a` ist. 
 
-  After the instance is created, the original data object can be accessed as `vm.$data`. The Vue instance also proxies all the properties found on the data object, so `vm.a` will be equivalent to `vm.$data.a`.
-
-  Properties that start with `_` or `$` will **not** be proxied on the Vue instance because they may conflict with Vue's internal properties and API methods. You will have to access them as `vm.$data._property`.
+  Es werden **keine** Stellvertreter für Eigenschaften, deren Namen mit `_` oder `$` beginnen, erstellt, weil sie mit den internen Eigenschaften und API-Methoden von Vue kollidieren können. Sie werden auf sie über `vm.$data._property` zugreifen müssen.
 
   When defining a **component**, `data` must be declared as a function that returns the initial data object, because there will be many instances created using the same definition. If we use a plain object for `data`, that same object will be **shared by reference** across all instances created! By providing a `data` function, every time a new instance is created we can call it to return a fresh copy of the initial data.
 
