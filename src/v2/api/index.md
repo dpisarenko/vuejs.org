@@ -584,9 +584,9 @@ type: api
 
 - **Details:**
 
-  Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their `this` context automatically bound to the Vue instance.
+  Methoden, die in die Vue-Instanz hineingemixt (mixed in) werden sollen. Sie können auf diese Methoden direkt über die VM-Instanz zugreifen, oder sie in Direktiv-Ausdrücken verwenden. Bei allen Methoden wird der `this`-Kontext automatisch an die Vue-Instanz gebunden sein.
 
-  <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.</p>
+  <p class="tip">Beachten Sie, dass Sie __keine Pfeilnotation verwenden sollen, um eine Methode zu definieren__ (z. B. `plus: () => this.a++`). Der Grund besteht darin, dass Pfeilfunktionen sich an den Eltern-Kontext binden. Daher wird `this` wider Erwarten nicht die Vue-Instanz und `this.a` wird undefiniert sein.</p>
 
 - **Beispiel:**
 
@@ -603,7 +603,7 @@ type: api
   vm.a // 2
   ```
 
-- **Siehe auch:** [Event Handling](../guide/events.html)
+- **Siehe auch:** [Ereignisbehandlung](../guide/events.html)
 
 ### watch
 
