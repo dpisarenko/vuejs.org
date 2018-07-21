@@ -962,9 +962,9 @@ type: api
 
 - **Details:**
 
-  The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options like normal instance objects, and they will be merged against the eventual options using the same option merging logic in `Vue.extend()`. e.g. If your mixin contains a created hook and the component itself also has one, both functions will be called.
+  Die `mixins`-Option akzeptiert ein Array von Mixin-Objekten. Diese Mixin-Objekte können Instanzenoptionen wir normale Objektistanzen beinhalten. Sie werden mit den endgültigen Optionen nach gleicher Logik wie bei `Vue.extend()` zusammengeführt. Z. B. wenn Ihr Mixin ein erstelltes Hook enthält und die Komponente ebenfalls ein solches Hook hat, werden beide Hooks aufgerufen.
 
-  Mixin hooks are called in the order they are provided, and called before the component's own hooks.
+  Mixin-Hooks werden in jener Reihenfolge ausgeführt, in der sie zur Verfügung gestellt werden. Sie werden vor Hooks der Komponente aufgerufen.
 
 - **Beispiel:**
 
