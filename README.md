@@ -1,13 +1,24 @@
-# vuejs.org
+# de.vuejs.org
 
-This site is built with [hexo](http://hexo.io/). Site content is written in Markdown format located in `src`. Pull requests welcome!
+Dies ist die deutsche Übersetzung der Dokumentation von [vue.js](https://github.com/vuejs/vuejs.org). 
 
-## Developing
+## Entwicklung 
+
+Sie können die Webseite betrachten, indem Sie die Befehle
 
 ``` bash
 $ npm install
 $ npm start # dev server at http://localhost:4000
 ```
+
+ausführen und danach [http://localhost:4000](http://localhost:4000) im Browser öffnen.   
+
+## Kontakt
+
+Wenn Sie Fehler in der Übersetzung entdecken bzw. letztere auf den neuesten Stand bringen können, können Sie
+
+* mich, Dmitri Pisarenko, unter [altruix@pm.me](mailto:altruix@pm.me) oder
+* das [Übersetzungsteam](https://github.com/vuejs/vuejs.org#on-translations) kontaktieren. 
 
 ## Deploying
 
