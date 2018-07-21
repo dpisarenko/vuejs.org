@@ -183,17 +183,17 @@ type: api
   - `{Object} options`
 
 - **Verwendung:**
-
-  Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
-
-  The special case to note here is the `data` option - it must be a function when used with `Vue.extend()`.
+  
+  Erstellt eine "Unterklasse" des Vue-Basiskontruktors. Das Argument sollte ein Objekt sein, das die Komponenten-Optionen enthält.
+  
+  Es gibt einen Sonderfall mit der `data`-Option - es muß eine Funktion sein, wenn es mit `Vue.extend()` verwendet wird.
 
   ``` html
   <div id="mount-point"></div>
   ```
 
   ``` js
-  // create constructor
+  // Erstelle einen Konstruktor
   var Profile = Vue.extend({
     template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
     data: function () {
@@ -204,17 +204,17 @@ type: api
       }
     }
   })
-  // create an instance of Profile and mount it on an element
+  // Erstelle eine Instanz der Klasse Profile und montiere sie auf ein Element.
   new Profile().$mount('#mount-point')
   ```
-
-  Will result in:
+  
+  wird Folgendes bewirken:
 
   ``` html
   <p>Walter White aka Heisenberg</p>
   ```
 
-- **Siehe auch:** [Components](../guide/components.html)
+- **Siehe auch:** [Komponenten](../guide/components.html)
 
 ### Vue.nextTick( [callback, context] )
 
