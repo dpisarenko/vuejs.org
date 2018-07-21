@@ -437,7 +437,7 @@ type: api
 
   Es werden **keine** Stellvertreter für Eigenschaften, deren Namen mit `_` oder `$` beginnen, erstellt, weil sie mit den internen Eigenschaften und API-Methoden von Vue kollidieren können. Sie werden auf sie über `vm.$data._property` zugreifen müssen.
 
-  When defining a **component**, `data` must be declared as a function that returns the initial data object, because there will be many instances created using the same definition. If we use a plain object for `data`, that same object will be **shared by reference** across all instances created! By providing a `data` function, every time a new instance is created we can call it to return a fresh copy of the initial data.
+  Wenn Sie eine **Komponente** definieren, muss `data` als eine Funktion deklariert werden, welche das ursprüngliche Datenobjekt zurückgibt, da es mehrere Instanzen geben wird, die mit der gleichen Definition erstellt wurden. Wenn wir ein einfaches Objekt für `data` verwenden, wird dieses Objekt **über Referenz** von allen erstellten Instanzen **geteilt** werden! Indem wir eine `data`-Funktion zur Verfügung stellen, können wir sie verwenden, um eine Kopie der ursprünglichen Daten für jede Instanz der Komponenten zu bekommen.
 
   If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
 
