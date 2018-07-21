@@ -258,7 +258,7 @@ type: api
 
   Fügt eine Eigenschaft zu einem reaktiven Objekt hinzu und stellt sicher, dass die Eigenschaft auch reaktiv ist, und daher View-Updates auslöst. Man muß diese Methode verwenden, um neue Eigenschaften zu reaktiven Objekten hinzuzufügen, da Vue das Hinzufügen von normalen Eigenschaften nicht erkennt (e.g. `this.myObject.newProperty = 'hi'`).
 
-  <p class="tip">Das Zielobjekt (`target`) darf weder eine Vue-Instanz, noch das Wurzeldatenobjekt eine Vue-Instanz sein.</p>
+  <p class="tip">Das Zielobjekt (`target`) darf weder eine Vue-Instanz, noch das Wurzeldatenobjekt einer Vue-Instanz sein.</p>
 
 - **Siehe auch:** [Detaillierte Beschreibung der Reaktivität](../guide/reactivity.html)
 
@@ -268,15 +268,15 @@ type: api
   - `{Object | Array} target`
   - `{string | number} key/index`
 
-  > Only in 2.2.0+: Also works with Array + index.
+  > Nur in 2.2.0+: Funktioniert auch mit Array + index.
 
 - **Verwendung:**
+  
+  Löscht eine Eigenschaft eines Objekts. Wenn das Objekt reaktiv ist, stellt sicher, dass die Löschung View-Updates auslöst. Vue kann keine Löschungen der Eigenschaften erkennen und diese Methode erlaubt es, diese Einschränkung zu umgehen. Allerdings werden Sie diese Methode selten brauchen. 
 
-  Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it.
+  <p class="tip">Das Zielobjekt (`target`) darf weder eine Vue-Instanz, noch das Wurzeldatenobjekt einer Vue-Instanz sein.</p>
 
-  <p class="tip">The target object cannot be a Vue instance, or the root data object of a Vue instance.</p>
-
-- **Siehe auch:** [Reactivity in Depth](../guide/reactivity.html)
+- **Siehe auch:** [Detaillierte Beschreibung der Reaktivität](../guide/reactivity.html)
 
 ### Vue.directive( id, [definition] )
 
@@ -285,11 +285,11 @@ type: api
   - `{Function | Object} [definition]`
 
 - **Verwendung:**
-
-  Register or retrieve a global directive.
+  
+  Registriert eine globale Direktive, oder ruft sie ab.
 
   ``` js
-  // register
+  // Registrieren
   Vue.directive('my-directive', {
     bind: function () {},
     inserted: function () {},
@@ -298,16 +298,16 @@ type: api
     unbind: function () {}
   })
 
-  // register (function directive)
+  // Registrieren (Funktionsdirektive)
   Vue.directive('my-directive', function () {
-    // this will be called as `bind` and `update`
+    // Dieser Teil wird als `bind` und `update` aufgerufen
   })
 
-  // getter, return the directive definition if registered
+  // Getter, gebe die Direktive zurück, falls diese registriert ist
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **Siehe auch:** [Custom Directives](../guide/custom-directive.html)
+- **Siehe auch:** [Benutzerdefinierte Direktiven](../guide/custom-directive.html)
 
 ### Vue.filter( id, [definition] )
 
@@ -317,7 +317,7 @@ type: api
 
 - **Verwendung:**
 
-  Register or retrieve a global filter.
+  Registriert einen globalen Filter, oder ruft diesen ab.
 
   ``` js
   // register
