@@ -107,23 +107,23 @@ type: api
 
 ### ignoredElements
 
-- **Type:** `Array<string | RegExp>`
+- **Datentyp:** `Array<string | RegExp>`
 
-- **Default:** `[]`
+- **Default-Wert:** `[]`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.ignoredElements = [
     'my-custom-web-component',
     'another-web-component',
-    // Use a `RegExp` to ignore all elements that start with "ion-"
-    // 2.5+ only
+    // Verwenden Sie `RegExp`, um alle Elemente zu ignorieren, die mit "ion-" beginnen
+    // Nur ab 2.5
     /^ion-/
   ]
   ```
-
-  Make Vue ignore custom elements defined outside of Vue (e.g., using the Web Components APIs). Otherwise, it will throw a warning about an `Unknown custom element`, assuming that you forgot to register a global component or misspelled a component name.
+  
+  Bewirkt, dass Vue benutzerdefinierte Element, die außerhalb von Vue definiert waren (z. B. unter Verwendung der APIs von Web Components), ignoriert. Andernfalls wird es eine Warnung bezüglich eines `Unbekannten benutzerdefinierten Elements` (`Unknown custom element`) werfen und davon ausgehen, dass Sie vergessen haben, eine globale Komponente zu registrieren oder einen Tippfehler im Namen der Komponente gemacht haben.
 
 ### keyCodes
 
