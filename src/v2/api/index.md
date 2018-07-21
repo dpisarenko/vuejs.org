@@ -165,9 +165,9 @@ type: api
 
 ### productionTip
 
-> New in 2.2.0+
+> Neu in 2.2.0+
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
 - **Default:** `true`
 
@@ -423,7 +423,7 @@ type: api
 
 ### data
 
-- **Type:** `Object | Function`
+- **Datentyp:** `Object | Function`
 
 - **Restriction:** Only accepts `Function` when used in a component definition.
 
@@ -471,7 +471,7 @@ type: api
 
 ### props
 
-- **Type:** `Array<string> | Object`
+- **Datentyp:** `Array<string> | Object`
 
 - **Details:**
 
@@ -507,7 +507,7 @@ type: api
 
 ### propsData
 
-- **Type:** `{ [key: string]: any }`
+- **Datentyp:** `{ [key: string]: any }`
 
 - **Restriction:** only respected in instance creation via `new`.
 
@@ -532,7 +532,7 @@ type: api
 
 ### computed
 
-- **Type:** `{ [key: string]: Function | { get: Function, set: Function } }`
+- **Datentyp:** `{ [key: string]: Function | { get: Function, set: Function } }`
 
 - **Details:**
 
@@ -579,7 +579,7 @@ type: api
 
 ### methods
 
-- **Type:** `{ [key: string]: Function }`
+- **Datentyp:** `{ [key: string]: Function }`
 
 - **Details:**
 
@@ -606,7 +606,7 @@ type: api
 
 ### watch
 
-- **Type:** `{ [key: string]: string | Function | Object | Array}`
+- **Datentyp:** `{ [key: string]: string | Function | Object | Array}`
 
 - **Details:**
 
@@ -662,7 +662,7 @@ type: api
 
 ### el
 
-- **Type:** `string | HTMLElement`
+- **Datentyp:** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
 
@@ -684,7 +684,7 @@ type: api
 
 ### template
 
-- **Type:** `string`
+- **Datentyp:** `string`
 
 - **Details:**
 
@@ -702,7 +702,7 @@ type: api
 
 ### render
 
-  - **Type:** `(createElement: () => VNode) => VNode`
+  - **Datentyp:** `(createElement: () => VNode) => VNode`
 
   - **Details:**
 
@@ -718,7 +718,7 @@ type: api
 
 > New in 2.2.0+
 
-  - **Type:** `(createElement: () => VNode, error: Error) => VNode`
+  - **Datentyp:** `(createElement: () => VNode, error: Error) => VNode`
 
   - **Details:**
 
@@ -747,7 +747,7 @@ type: api
 
 ### beforeCreate
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -757,7 +757,7 @@ type: api
 
 ### created
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -767,7 +767,7 @@ type: api
 
 ### beforeMount
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -779,7 +779,7 @@ type: api
 
 ### mounted
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -802,7 +802,7 @@ type: api
 
 ### beforeUpdate
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -814,7 +814,7 @@ type: api
 
 ### updated
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -839,7 +839,7 @@ type: api
 
 ### activated
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -853,7 +853,7 @@ type: api
 
 ### deactivated
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -867,7 +867,7 @@ type: api
 
 ### beforeDestroy
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -879,7 +879,7 @@ type: api
 
 ### destroyed
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
 - **Details:**
 
@@ -893,7 +893,7 @@ type: api
 
 > New in 2.5.0+
 
-- **Type:** `(err: Error, vm: Component, info: string) => ?boolean`
+- **Datentyp:** `(err: Error, vm: Component, info: string) => ?boolean`
 
 - **Details:**
 
@@ -915,7 +915,7 @@ type: api
 
 ### directives
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Details:**
 
@@ -925,7 +925,7 @@ type: api
 
 ### filters
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Details:**
 
@@ -935,7 +935,7 @@ type: api
 
 ### components
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Details:**
 
@@ -947,7 +947,7 @@ type: api
 
 ### parent
 
-- **Type:** `Vue instance`
+- **Datentyp:** `Vue instance`
 
 - **Details:**
 
@@ -957,7 +957,7 @@ type: api
 
 ### mixins
 
-- **Type:** `Array<Object>`
+- **Datentyp:** `Array<Object>`
 
 - **Details:**
 
@@ -983,7 +983,7 @@ type: api
 
 ### extends
 
-- **Type:** `Object | Function`
+- **Datentyp:** `Object | Function`
 
 - **Details:**
 
@@ -1007,7 +1007,7 @@ type: api
 
 > New in 2.2.0+
 
-- **Type:**
+- **Datentyp:**
   - **provide:** `Object | () => Object`
   - **inject:** `Array<string> | { [key: string]: string | Symbol | Object }`
 
@@ -1136,7 +1136,7 @@ type: api
 
 ### name
 
-- **Type:** `string`
+- **Datentyp:** `string`
 
 - **Restriction:** only respected when used as a component option.
 
@@ -1148,7 +1148,7 @@ type: api
 
 ### delimiters
 
-- **Type:** `Array<string>`
+- **Datentyp:** `Array<string>`
 
 - **Default:** `{% raw %}["{{", "}}"]{% endraw %}`
 
@@ -1170,7 +1170,7 @@ type: api
 
 ### functional
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
 - **Details:**
 
@@ -1182,7 +1182,7 @@ type: api
 
 > New in 2.2.0
 
-- **Type:** `{ prop?: string, event?: string }`
+- **Datentyp:** `{ prop?: string, event?: string }`
 
 - **Details:**
 
@@ -1227,7 +1227,7 @@ type: api
 
 > New in 2.4.0+
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
 - **Default:** `true`
 
@@ -1241,7 +1241,7 @@ type: api
 
 > New in 2.4.0+
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
 - **Default:** `false`
 
@@ -1255,7 +1255,7 @@ type: api
 
 ### vm.$data
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Details:**
 
@@ -1267,7 +1267,7 @@ type: api
 
 > New in 2.2.0+
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Details:**
 
@@ -1275,7 +1275,7 @@ type: api
 
 ### vm.$el
 
-- **Type:** `HTMLElement`
+- **Datentyp:** `HTMLElement`
 
 - **Read only**
 
@@ -1285,7 +1285,7 @@ type: api
 
 ### vm.$options
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Read only**
 
@@ -1304,7 +1304,7 @@ type: api
 
 ### vm.$parent
 
-- **Type:** `Vue instance`
+- **Datentyp:** `Vue instance`
 
 - **Read only**
 
@@ -1314,7 +1314,7 @@ type: api
 
 ### vm.$root
 
-- **Type:** `Vue instance`
+- **Datentyp:** `Vue instance`
 
 - **Read only**
 
@@ -1324,7 +1324,7 @@ type: api
 
 ### vm.$children
 
-- **Type:** `Array<Vue instance>`
+- **Datentyp:** `Array<Vue instance>`
 
 - **Read only**
 
@@ -1334,7 +1334,7 @@ type: api
 
 ### vm.$slots
 
-- **Type:** `{ [name: string]: ?Array<VNode> }`
+- **Datentyp:** `{ [name: string]: ?Array<VNode> }`
 
 - **Read only**
 
@@ -1386,7 +1386,7 @@ type: api
 
 > New in 2.1.0+
 
-- **Type:** `{ [name: string]: props => VNode | Array<VNode> }`
+- **Datentyp:** `{ [name: string]: props => VNode | Array<VNode> }`
 
 - **Read only**
 
@@ -1403,7 +1403,7 @@ type: api
 
 ### vm.$refs
 
-- **Type:** `Object`
+- **Datentyp:** `Object`
 
 - **Read only**
 
@@ -1417,7 +1417,7 @@ type: api
 
 ### vm.$isServer
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
 - **Read only**
 
@@ -1429,7 +1429,7 @@ type: api
 
 ### vm.$attrs
 
-- **Type:** `{ [key: string]: string }`
+- **Datentyp:** `{ [key: string]: string }`
 
 - **Read only**
 
@@ -1439,7 +1439,7 @@ type: api
 
 ### vm.$listeners
 
-- **Type:** `{ [key: string]: Function | Array<Function> }`
+- **Datentyp:** `{ [key: string]: Function | Array<Function> }`
 
 - **Read only**
 
