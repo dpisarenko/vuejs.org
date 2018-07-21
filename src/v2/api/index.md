@@ -611,7 +611,7 @@ type: api
 
 - **Details:**
 
-  An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call `$watch()` for each entry in the object at instantiation.
+  Eine Schlüssel-Wert-Abbildung, bei der die Schlüssel die zu beobachtenden Ausdrücke, und die werte die zugehörigen Callbacks sind. Der Wert kann auch ein String eines Methodennamen sein, oder ein Object, welches zusätzliche Optionen enthält. Die Vue-Instanz wird `$watch()` für jeden Eintrag in der Abbildung während der Instanziierung aufrufen.
 
 - **Beispiel:**
 
@@ -632,14 +632,14 @@ type: api
       a: function (val, oldVal) {
         console.log('new: %s, old: %s', val, oldVal)
       },
-      // string method name
+      // String mit dem Namen der Methode
       b: 'someMethod',
-      // deep watcher
+      // Tiefer Beobachter
       c: {
         handler: function (val, oldVal) { /* ... */ },
         deep: true
       },
-      // the callback will be called immediately after the start of the observation
+      // Das Callback wird unmittelbar nach dem Start des Beobachtens aufgerufen
       d: {
         handler: function (val, oldVal) { /* ... */ },
         immediate: true
@@ -648,7 +648,7 @@ type: api
         function handle1 (val, oldVal) { /* ... */ },
         function handle2 (val, oldVal) { /* ... */ }
       ],
-      // watch vm.e.f's value: {g: 5}
+      // Beobachte den Wert von vm.e.f: {g: 5}
       'e.f': function (val, oldVal) { /* ... */ }
     }
   })
