@@ -439,7 +439,7 @@ type: api
 
   Wenn Sie eine **Komponente** definieren, muss `data` als eine Funktion deklariert werden, welche das ursprüngliche Datenobjekt zurückgibt, da es mehrere Instanzen geben wird, die mit der gleichen Definition erstellt wurden. Wenn wir ein einfaches Objekt für `data` verwenden, wird dieses Objekt **über Referenz** von allen erstellten Instanzen **geteilt** werden! Indem wir eine `data`-Funktion zur Verfügung stellen, können wir sie verwenden, um eine Kopie der ursprünglichen Daten für jede Instanz der Komponenten zu bekommen.
 
-  If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
+  Wenn nötig, kann man einen "tiefen Klon" (deep clone) des ursprünglichen Objekts erhalten, indem man `vm.$data` an `JSON.parse(JSON.stringify(...))` übergibt.
 
 - **Example:**
 
