@@ -654,10 +654,9 @@ type: api
   })
   vm.a = 2 // => new: 2, old: 1
   ```
+  <p class="tip>">Beachten Sie, dass Sie __keine Pfeilfunktion verwenden dürfen, wenn Sie einen watcher definieren__ (z. B. `searchQuery: newValue => this.updateAutocomplete(newValue)`). Der Grund besteht darin, dass Pfeilfunktionen sich an an den Elternkontext anbinden, sodass `this` wider Erwarten nicht die Vue-Instanz und `this.updateAutocomplete` undefiniert sein wird.</p>
 
-  <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.</p>
-
-- **Siehe auch:** [Instance Methods / Data - vm.$watch](#vm-watch)
+- **Siehe auch:** [Instanzenmethoden / Daten - vm.$watch](#vm-watch)
 
 ## Options / DOM
 
