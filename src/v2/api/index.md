@@ -403,7 +403,7 @@ type: api
 
 ### Vue.version
 
-- **Details**: Provides the installed version of Vue as a string. This is especially useful for community plugins and components, where you might use different strategies for different versions.
+- **Details**: Gibt die installierte Version von Vue als String zurück. Dies ist besonders hilfreich für Community-Plugins und -Komponenten, bei denen je nach Vue-Version unterschiedliche Strategien verwendet werden können.
 
 - **Verwendung**:
 
@@ -415,11 +415,11 @@ type: api
   } else if (version === 1) {
     // Vue v1.x.x
   } else {
-    // Unsupported versions of Vue
+    // Nicht unterstützte Version von Vue
   }
   ```
 
-## Options / Data
+## Optionen / Daten
 
 ### data
 
