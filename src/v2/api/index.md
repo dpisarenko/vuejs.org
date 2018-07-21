@@ -179,7 +179,7 @@ type: api
 
 ### Vue.extend( options )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object} options`
 
 - **Verwendung:**
@@ -218,7 +218,7 @@ type: api
 
 ### Vue.nextTick( [callback, context] )
 
-- **Arguments:**
+- **Argumente:**
   - `{Function} [callback]`
   - `{Object} [context]`
 
@@ -247,7 +247,7 @@ type: api
 
 ### Vue.set( target, key, value )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object | Array} target`
   - `{string | number} key`
   - `{any} value`
@@ -264,7 +264,7 @@ type: api
 
 ### Vue.delete( target, key )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object | Array} target`
   - `{string | number} key/index`
 
@@ -280,7 +280,7 @@ type: api
 
 ### Vue.directive( id, [definition] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} id`
   - `{Function | Object} [definition]`
 
@@ -311,7 +311,7 @@ type: api
 
 ### Vue.filter( id, [definition] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} id`
   - `{Function} [definition]`
 
@@ -333,7 +333,7 @@ type: api
 
 ### Vue.component( id, [definition] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} id`
   - `{Function | Object} [definition]`
 
@@ -356,7 +356,7 @@ type: api
 
 ### Vue.use( plugin )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object | Function} plugin`
 
 - **Verwendung:**
@@ -369,7 +369,7 @@ type: api
 
 ### Vue.mixin( mixin )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object} mixin`
 
 - **Verwendung:**
@@ -380,7 +380,7 @@ type: api
 
 ### Vue.compile( template )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} template`
 
 - **Verwendung:**
@@ -1451,7 +1451,7 @@ type: api
 
 ### vm.$watch( expOrFn, callback, [options] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string | Function} expOrFn`
   - `{Function | Object} callback`
   - `{Object} [options]`
@@ -1518,7 +1518,7 @@ type: api
 
 ### vm.$set( target, key, value )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object | Array} target`
   - `{string | number} key`
   - `{any} value`
@@ -1533,7 +1533,7 @@ type: api
 
 ### vm.$delete( target, key )
 
-- **Arguments:**
+- **Argumente:**
   - `{Object | Array} target`
   - `{string | number} key`
 
@@ -1547,7 +1547,7 @@ type: api
 
 ### vm.$on( event, callback )
 
-- **Arguments:**
+- **Argumente:**
   - `{string | Array<string>} event` (array only supported in 2.2.0+)
   - `{Function} callback`
 
@@ -1567,7 +1567,7 @@ type: api
 
 ### vm.$once( event, callback )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} event`
   - `{Function} callback`
 
@@ -1577,7 +1577,7 @@ type: api
 
 ### vm.$off( [event, callback] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string | Array<string>} event` (array only supported in 2.2.2+)
   - `{Function} [callback]`
 
@@ -1593,7 +1593,7 @@ type: api
 
 ### vm.$emit( eventName, [...args] )
 
-- **Arguments:**
+- **Argumente:**
   - `{string} eventName`
   - `[...args]`
 
@@ -1728,7 +1728,7 @@ type: api
 
 ### vm.$mount( [elementOrSelector] )
 
-- **Arguments:**
+- **Argumente:**
   - `{Element | string} [elementOrSelector]`
   - `{boolean} [hydrating]`
 
@@ -1772,7 +1772,7 @@ type: api
 
 ### vm.$nextTick( [callback] )
 
-- **Arguments:**
+- **Argumente:**
   - `{Function} [callback]`
 
 - **Verwendung:**
