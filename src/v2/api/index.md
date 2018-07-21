@@ -844,13 +844,13 @@ type: api
 
 - **Details:**
 
-  Called when a kept-alive component is activated.
+  Wird aufgerufen, wenn ein keep-alive-Komponente aktiviert wird.
 
-  **This hook is not called during server-side rendering.**
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
 - **Siehe auch:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
+  - [Eingebaute Komponenten - keep-alive](#keep-alive)
+  - [Dynamische Komponenten - keep-alive](../guide/components.html#keep-alive)
 
 ### deactivated
 
@@ -858,13 +858,13 @@ type: api
 
 - **Details:**
 
-  Called when a kept-alive component is deactivated.
+  Wird aufgerufen, wenn eine keep-alive-Komponente deaktiviert wird.
 
-  **This hook is not called during server-side rendering.**
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
 - **Siehe auch:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
+  - [Eingebaute Komponenten - keep-alive](#keep-alive)
+  - [Dynamische Komponenten - keep-alive](../guide/components.html#keep-alive)
 
 ### beforeDestroy
 
