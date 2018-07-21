@@ -872,11 +872,11 @@ type: api
 
 - **Details:**
 
-  Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.
+  Wird aufgerufen just before die Vue-Instanz zerstört wird. Zu diesem Zeitpunkt ist die Instanz voll funktional.
 
-  **This hook is not called during server-side rendering.**
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### destroyed
 
@@ -884,33 +884,33 @@ type: api
 
 - **Details:**
 
-  Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.
+  Wird aufgerufen, nachdem eine Vue-Instanz zerstört wurde. Wenn dieser Hook aufgerufen wird, sind alle Direktiven dieser Vue-Instanz losgebunden, alle Event-Listener entfernt, und alle Kinder der Vue-Instanz zerstört.
 
-  **This hook is not called during server-side rendering.**
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### errorCaptured
 
-> New in 2.5.0+
+> Neu in 2.5.0+
 
 - **Datentyp:** `(err: Error, vm: Component, info: string) => ?boolean`
 
 - **Details:**
+  
+  Wird aufgerufen, wenn ein Fehler in einer der Kindkomponenten auftritt. Dieser Hook bekommt drei Argumente: den Fehler, die Instanz der Komponente, die den Fehler ausgelöst hat, und einen String mit Information, wo der Fehler aufgetreten ist. Der Hook kann `false` zurückgeben, damit der Fehler nicht weitergeleitet wird.
 
-  Called when an error from any descendent component is captured. The hook receives three arguments: the error, the component instance that triggered the error, and a string containing information on where the error was captured. The hook can return `false` to stop the error from propagating further.
+  <p class="tip">Sie können den Zustand der Komponente in diesem Hook verändern. Jedoch ist es wichtig, bedingte Elemente (conditionals) in Ihrer Vorlage bzw. eine render-Funktion, die die übrigen Inhalte im Falle eines Fehlers "kurzschließt", zu haben. Widrigenfalls wird die Komponenten in eine Endlos-Renderschleife geworfen.</p>
 
-  <p class="tip">You can modify component state in this hook. However, it is important to have conditionals in your template or render function that short circuits other content when an error has been captured; otherwise the component will be thrown into an infinite render loop.</p>
+  **Regeln für die Weiterleitung der Fehler**
 
-  **Error Propagation Rules**
+  - Per Voreinstellung werden alle Fehler immer noch an den globalen `config.errorHandler` geschickt, wenn dieser definiert ist. So können diese Fehler an analytische Dienste an einem Platz übermittelt werden.
 
-  - By default, all errors are still sent to the global `config.errorHandler` if it is defined, so that these errors can still be reported to an analytics service in a single place.
+  - Wenn es mehrere `errorCaptured` hooks in der Vererbungs- oder Elternkette einer Komponente gibt, werden sie alle mit dem selben Fehler aufgerufen.
 
-  - If multiple `errorCaptured` hooks exist on a component's inheritance chain or parent chain, all of them will be invoked on the same error.
+  - Wenn `errorCaptured`-Hook selber einen Fehler wirft, werden sowohl dieser, als auch der ursprüngliche Fehler zum globalen `config.errorHandler` geschickt.
 
-  - If the `errorCaptured` hook itself throws an error, both this error and the original captured error are sent to the global `config.errorHandler`.
-
-  - An `errorCaptured` hook can return `false` to prevent the error from propagating further. This is essentially saying "this error has been handled and should be ignored." It will prevent any additional `errorCaptured` hooks or the global `config.errorHandler` from being invoked for this error.
+  - Ein `errorCaptured` hook kann `false` zurückgeben, um zu verhindern, dass der Fehler weitergeleitet wird. Im Grunde genommen bedeutet dies "dieser Fehler wurde bereits behandelt und sollte ignoriert werden." Dies wird verhindern, dass weitere `errorCaptured`-Hooks oder der globale `config.errorHandler` den Fehler bearbeiten.
 
 ## Options / Assets
 
