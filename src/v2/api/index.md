@@ -320,16 +320,16 @@ type: api
   Registriert einen globalen Filter, oder ruft diesen ab.
 
   ``` js
-  // register
+  // Registrieren
   Vue.filter('my-filter', function (value) {
-    // return processed value
+    // Bearbeiteten Wert zurückgeben
   })
-
-  // getter, return the filter if registered
+  
+  // Getter, gebe den Filter zurück, falls dieser registriert ist.
   var myFilter = Vue.filter('my-filter')
   ```
 
-- **Siehe auch:** [Filters](../guide/filters.html)
+- **Siehe auch:** [Filter](../guide/filters.html)
 
 ### Vue.component( id, [definition] )
 
