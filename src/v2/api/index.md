@@ -537,17 +537,17 @@ type: api
 
 - **Details:**
 
-  Computed properties to be mixed into the Vue instance. All getters and setters have their `this` context automatically bound to the Vue instance.
+  Berechnet Eigengschaften, welche in die Vue-Instanz "gemixt" (mixed into) werden. Bei allen Gettern und Settern wird der `this`-Kontext automatisch an die Vue-Instanz gebunden. 
 
-  Note that if you use an arrow function with a computed property, `this` won't be the component's instance, but you can still access the instance as the function's first argument:
+  Beachten Sie, dass wenn Sie die Pfeilnotation mit einer berechneten Eigenschaft verwenden, `this` nicht die Komponenteninstanz sein wird. Jedoch können Sie auf die letztere als das erste Argument der Funktion zugreifen:
 
   ```js
   computed: {
     aDouble: vm => vm.a * 2
   }
   ```
-
-  Computed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance's scope (i.e. not reactive), the computed property will __not__ be updated.
+  
+  Berechnete Eigenschaften werden gecached, und nur dann neu berechnet, wenn sich die reaktive Abhängigkeit ändert. Beachten Sie bitte, dass eine berechnete Eigenschaft __nicht__ aktualisiert werden wird, wenn sich eine bestimmte Abhängigkeit außerhalb des Scope der Instanz befindet (d. h. nicht reaktiv ist).  
 
 - **Beispiel:**
 
@@ -555,11 +555,11 @@ type: api
   var vm = new Vue({
     data: { a: 1 },
     computed: {
-      // get only
+      // Nur get
       aDouble: function () {
         return this.a * 2
       },
-      // both get and set
+      // Sowohl get, als auch set
       aPlus: {
         get: function () {
           return this.a + 1
@@ -576,7 +576,7 @@ type: api
   vm.aDouble // => 4
   ```
 
-- **Siehe auch:** [Computed Properties](../guide/computed.html)
+- **Siehe auch:** [Berechnete Eigenschaften](../guide/computed.html)
 
 ### methods
 
