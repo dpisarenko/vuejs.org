@@ -64,27 +64,28 @@ type: api
 
 ### errorHandler
 
-- **Type:** `Function`
+- **Datentyp:** `Function`
 
-- **Default:** `undefined`
+- **Default-Wert:** `undefined`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.errorHandler = function (err, vm, info) {
-    // handle error
-    // `info` is a Vue-specific error info, e.g. which lifecycle hook
-    // the error was found in. Only available in 2.2.0+
+    // Fehlerbehandlung
+    // `info` ist eine Vue-spezifische Fehlerinformation, z. B. in
+    // welcher Lebenszyklus-Phase der Fehler gefunden wurde.
+    // Verfügbar ab Version 2.2.0. 
   }
   ```
+  
+  Weise eine Fehlerbehandlungsroutine für nicht abgefangene Fehler, die während der Ausführung der render-Funktion der Komponenten sowie in watchern auftreten. Die Fehlerbehandlungsroutine wird mit dem Fehler und der jeweiligen Vue-Instanz aufgerufen.
 
-  Assign a handler for uncaught errors during component render function and watchers. The handler gets called with the error and the Vue instance.
+  > In 2.2.0+ fängt diese Routine aucu Fehler in den Lebenzyklus-Phasen der Komponenten ab. Außerdem: Wenn dieser Hook gleich `undefined` ist, werden die abgefangenen Fehler mit `console.error` geloggt, anstatt die Anwendung abstürzen zu lassen.
 
-  > In 2.2.0+, this hook also captures errors in component lifecycle hooks. Also, when this hook is `undefined`, captured errors will be logged with `console.error` instead of crashing the app.
-
-  > In 2.4.0+ this hook also captures errors thrown inside Vue custom event handlers.
-
-  > Error tracking services [Sentry](https://sentry.io/for/vue/) and [Bugsnag](https://docs.bugsnag.com/platforms/browsers/vue/) provide official integrations using this option.
+  > In 2.4.0+ fängt dieser Hook auch jene Fehler ab, die in benutzerdefinierten Ereignishandlern von Vue geworfen wurden.
+ 
+  > Services zur Fehlerverfolgung wie [Sentry](https://sentry.io/for/vue/) und [Bugsnag](https://docs.bugsnag.com/platforms/browsers/vue/) stellen offizielle Integrationen mittels dieser Option zur Verfügung.
 
 ### warnHandler
 
