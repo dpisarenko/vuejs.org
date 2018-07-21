@@ -127,19 +127,19 @@ type: api
 
 ### keyCodes
 
-- **Type:** `{ [key: string]: number | Array<number> }`
+- **Datentyp:** `{ [key: string]: number | Array<number> }`
 
-- **Default:** `{}`
+- **Default-Wert:** `{}`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.keyCodes = {
     v: 86,
     f1: 112,
-    // camelCase won`t work
+    // camelCase wird hier nicht funktionieren
     mediaPlayPause: 179,
-    // instead you can use kebab-case with double quotation marks
+    // Stattdessen können Sie kebab-case mit doppelten Hochkommas verwenden
     "media-play-pause": 179,
     up: [38, 87]
   }
@@ -149,7 +149,7 @@ type: api
   <input type="text" @keyup.media-play-pause="method">
   ```
 
-  Define custom key alias(es) for `v-on`.
+  Definiert einen Benutzerdefinierten Alias für `v-on`.
 
 ### performance
 
