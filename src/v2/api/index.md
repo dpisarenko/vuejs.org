@@ -912,7 +912,7 @@ type: api
 
   - Ein `errorCaptured` hook kann `false` zurückgeben, um zu verhindern, dass der Fehler weitergeleitet wird. Im Grunde genommen bedeutet dies "dieser Fehler wurde bereits behandelt und sollte ignoriert werden." Dies wird verhindern, dass weitere `errorCaptured`-Hooks oder der globale `config.errorHandler` den Fehler bearbeiten.
 
-## Options / Assets
+## Optionen / Assets
 
 ### directives
 
@@ -920,9 +920,9 @@ type: api
 
 - **Details:**
 
-  A hash of directives to be made available to the Vue instance.
+  Eine Abbildung von Direktiven, die der Vue-Instanz zur Verfügung stehen sollen.
 
-- **Siehe auch:** [Custom Directives](../guide/custom-directive.html)
+- **Siehe auch:** [Benutzerdefinierte Direktiven](../guide/custom-directive.html)
 
 ### filters
 
@@ -930,7 +930,7 @@ type: api
 
 - **Details:**
 
-  A hash of filters to be made available to the Vue instance.
+  Eine Abbildung von Filtern, die der Vue-Instanz zur Verfügung stehen sollen.
 
 - **Siehe auch:** [`Vue.filter`](#Vue-filter)
 
@@ -940,9 +940,9 @@ type: api
 
 - **Details:**
 
-  A hash of components to be made available to the Vue instance.
+  Eine Abbildung von Komponenten, die der Vue-Instanz zur Verfügung stehen sollen.
 
-- **Siehe auch:** [Components](../guide/components.html)
+- **Siehe auch:** [Komponenten](../guide/components.html)
 
 ## Options / Composition
 
@@ -952,9 +952,9 @@ type: api
 
 - **Details:**
 
-  Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent's `$children` array.
+  Spezifiziert die Eltern-Instanz für die Instanz, die erstellt werden soll. Kreiert eine ElternKind-Beziehung zwischen den zweien. Das Kind kann auf das Eltern-Objekt kann über `this.$parent` zugreifen. Das Kind-Objekt wird an das Ende des `$children`-Arrays des Eltern-Objekts angehängt. 
 
-  <p class="tip">Use `$parent` and `$children` sparingly - they mostly serve as an escape-hatch. Prefer using props and events for parent-child communication.</p>
+  <p class="tip">Seien Sie sparsam bei der Verwendung von `$parent` und `$children` - sie dienen als Notausstieg. Sie sollten den Eigenschaften und Eregnissen bei der Eltern-Kind-Kommunikation Vorzug geben.</p>
 
 ### mixins
 
