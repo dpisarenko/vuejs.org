@@ -182,7 +182,7 @@ type: api
 - **Arguments:**
   - `{Object} options`
 
-- **Usage:**
+- **Verwendung:**
 
   Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
 
@@ -222,7 +222,7 @@ type: api
   - `{Function} [callback]`
   - `{Object} [context]`
 
-- **Usage:**
+- **Verwendung:**
 
   Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update.
 
@@ -254,7 +254,7 @@ type: api
 
 - **Returns:** the set value.
 
-- **Usage:**
+- **Verwendung:**
 
   Adds a property to a reactive object, ensuring the new property is also reactive, so triggers view updates. This must be used to add new properties to reactive objects, as Vue cannot detect normal property additions (e.g. `this.myObject.newProperty = 'hi'`).
 
@@ -270,7 +270,7 @@ type: api
 
   > Only in 2.2.0+: Also works with Array + index.
 
-- **Usage:**
+- **Verwendung:**
 
   Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it.
 
@@ -284,7 +284,7 @@ type: api
   - `{string} id`
   - `{Function | Object} [definition]`
 
-- **Usage:**
+- **Verwendung:**
 
   Register or retrieve a global directive.
 
@@ -315,7 +315,7 @@ type: api
   - `{string} id`
   - `{Function} [definition]`
 
-- **Usage:**
+- **Verwendung:**
 
   Register or retrieve a global filter.
 
@@ -337,7 +337,7 @@ type: api
   - `{string} id`
   - `{Function | Object} [definition]`
 
-- **Usage:**
+- **Verwendung:**
 
   Register or retrieve a global component. Registration also automatically sets the component's `name` with the given `id`.
 
@@ -359,7 +359,7 @@ type: api
 - **Arguments:**
   - `{Object | Function} plugin`
 
-- **Usage:**
+- **Verwendung:**
 
   Install a Vue.js plugin. If the plugin is an Object, it must expose an `install` method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument.
 
@@ -372,7 +372,7 @@ type: api
 - **Arguments:**
   - `{Object} mixin`
 
-- **Usage:**
+- **Verwendung:**
 
   Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
 
@@ -383,7 +383,7 @@ type: api
 - **Arguments:**
   - `{string} template`
 
-- **Usage:**
+- **Verwendung:**
 
   Compiles a template string into a render function. **Only available in the full build.**
 
@@ -1460,7 +1460,7 @@ type: api
 
 - **Returns:** `{Function} unwatch`
 
-- **Usage:**
+- **Verwendung:**
 
   Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression only accepts dot-delimited paths. For more complex expressions, use a function instead.
 
@@ -1525,7 +1525,7 @@ type: api
 
 - **Returns:** the set value.
 
-- **Usage:**
+- **Verwendung:**
 
   This is the **alias** of the global `Vue.set`.
 
@@ -1537,7 +1537,7 @@ type: api
   - `{Object | Array} target`
   - `{string | number} key`
 
-- **Usage:**
+- **Verwendung:**
 
   This is the **alias** of the global `Vue.delete`.
 
@@ -1551,7 +1551,7 @@ type: api
   - `{string | Array<string>} event` (array only supported in 2.2.0+)
   - `{Function} callback`
 
-- **Usage:**
+- **Verwendung:**
 
   Listen for a custom event on the current vm. Events can be triggered by `vm.$emit`. The callback will receive all the additional arguments passed into these event-triggering methods.
 
@@ -1571,7 +1571,7 @@ type: api
   - `{string} event`
   - `{Function} callback`
 
-- **Usage:**
+- **Verwendung:**
 
   Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.
 
@@ -1581,7 +1581,7 @@ type: api
   - `{string | Array<string>} event` (array only supported in 2.2.2+)
   - `{Function} [callback]`
 
-- **Usage:**
+- **Verwendung:**
 
   Remove custom event listener(s).
 
@@ -1734,7 +1734,7 @@ type: api
 
 - **Returns:** `vm` - the instance itself
 
-- **Usage:**
+- **Verwendung:**
 
   If a Vue instance didn't receive the `el` option at instantiation, it will be in "unmounted" state, without an associated DOM element. `vm.$mount()` can be used to manually start the mounting of an unmounted Vue instance.
 
@@ -1766,7 +1766,7 @@ type: api
 
 ### vm.$forceUpdate()
 
-- **Usage:**
+- **Verwendung:**
 
   Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.
 
@@ -1775,7 +1775,7 @@ type: api
 - **Arguments:**
   - `{Function} [callback]`
 
-- **Usage:**
+- **Verwendung:**
 
   Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update. This is the same as the global `Vue.nextTick`, except that the callback's `this` context is automatically bound to the instance calling this method.
 
@@ -1808,7 +1808,7 @@ type: api
 
 ### vm.$destroy()
 
-- **Usage:**
+- **Verwendung:**
 
   Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.
 
@@ -1862,7 +1862,7 @@ type: api
 
 - **Expects:** `any`
 
-- **Usage:**
+- **Verwendung:**
 
   Toggles the element's `display` CSS property based on the truthy-ness of the expression value.
 
@@ -1874,7 +1874,7 @@ type: api
 
 - **Expects:** `any`
 
-- **Usage:**
+- **Verwendung:**
 
   Conditionally render the element based on the truthy-ness of the expression value. The element and its contained directives / components are destroyed and re-constructed during toggles. If the element is a `<template>` element, its content will be extracted as the conditional block.
 
@@ -1890,7 +1890,7 @@ type: api
 
 - **Restriction:** previous sibling element must have `v-if` or `v-else-if`.
 
-- **Usage:**
+- **Verwendung:**
 
   Denote the "else block" for `v-if` or a `v-if`/`v-else-if` chain.
 
@@ -1913,7 +1913,7 @@ type: api
 
 - **Restriction:** previous sibling element must have `v-if` or `v-else-if`.
 
-- **Usage:**
+- **Verwendung:**
 
   Denote the "else if block" for `v-if`. Can be chained.
 
@@ -1938,7 +1938,7 @@ type: api
 
 - **Expects:** `Array | Object | number | string`
 
-- **Usage:**
+- **Verwendung:**
 
   Render the element or template block multiple times based on the source data. The directive's value must use the special syntax `alias in expression` to provide an alias for the current element being iterated on:
 
@@ -1993,7 +1993,7 @@ type: api
   - `.middle` - (2.2.0+) only trigger handler for middle button mouse events.
   - `.passive` - (2.3.0+) attaches a DOM event with `{ passive: true }`.
 
-- **Usage:**
+- **Verwendung:**
 
   Attaches an event listener to the element. The event type is denoted by the argument. The expression can be a method name, an inline statement, or omitted if there are modifiers present.
 
@@ -2069,7 +2069,7 @@ type: api
   - `.camel` - (2.1.0+) transform the kebab-case attribute name into camelCase.
   - `.sync` - (2.3.0+) a syntax sugar that expands into a `v-on` handler for updating the bound value.
 
-- **Usage:**
+- **Verwendung:**
 
   Dynamically bind one or more attributes, or a component prop to an expression.
 
@@ -2144,7 +2144,7 @@ type: api
   - [`.number`](../guide/forms.html#number) - cast input string to numbers
   - [`.trim`](../guide/forms.html#trim) - trim input
 
-- **Usage:**
+- **Verwendung:**
 
   Create a two-way binding on a form input element or a component. For detailed usage and other notes, see the Guide section linked below.
 
@@ -2156,7 +2156,7 @@ type: api
 
 - **Does not expect expression**
 
-- **Usage:**
+- **Verwendung:**
 
   Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.
 
@@ -2170,7 +2170,7 @@ type: api
 
 - **Does not expect expression**
 
-- **Usage:**
+- **Verwendung:**
 
   This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as `[v-cloak] { display: none }`, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.
 
@@ -2287,7 +2287,7 @@ type: api
 
 - **Expects:** `function argument expression`
 
-- **Usage:**
+- **Verwendung:**
 
   Used to denote an element or component as a scoped slot. The attribute's value should be a valid JavaScript expression that can appear in the argument position of a function signature. This means in supported environments you can also use ES2015 destructuring in the expression. Serves as a replacement for [`scope`](#scope-replaced) in 2.5.0+.
 
@@ -2299,7 +2299,7 @@ type: api
 
 Used to denote a `<template>` element as a scoped slot, which is replaced by [`slot-scope`](#slot-scope) in 2.5.0+.
 
-- **Usage:**
+- **Verwendung:**
 
   Same as [`slot-scope`](#slot-scope) except that `scope` can only be used on `<template>` elements.
 
@@ -2336,7 +2336,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   - `is` - string | ComponentDefinition | ComponentConstructor
   - `inline-template` - boolean
 
-- **Usage:**
+- **Verwendung:**
 
   A "meta component" for rendering dynamic components. The actual component to render is determined by the `is` prop:
 
@@ -2383,7 +2383,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   - `leave-cancelled` (`v-show` only)
   - `appear-cancelled`
 
-- **Usage:**
+- **Verwendung:**
 
   `<transition>` serve as transition effects for **single** element/component. The `<transition>` only applies the transition behavior to the wrapped content inside; it doesn't render an extra DOM element, or show up in the inspected component hierarchy.
 
@@ -2430,7 +2430,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
 - **Events:**
   - exposes the same events as `<transition>`.
 
-- **Usage:**
+- **Verwendung:**
 
   `<transition-group>` serve as transition effects for **multiple** elements/components. The `<transition-group>` renders a real DOM element. By default it renders a `<span>`, and you can configure what element is should render via the `tag` attribute.
 
@@ -2454,7 +2454,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   - `include` - string or RegExp or Array. Only components matched by this will be cached.
   - `exclude` - string or RegExp or Array. Any component matched by this will not be cached.
 
-- **Usage:**
+- **Verwendung:**
 
   When wrapped around a dynamic component, `<keep-alive>` caches the inactive component instances without destroying them. Similar to `<transition>`, `<keep-alive>` is an abstract component: it doesn't render a DOM element itself, and doesn't show up in the component parent chain.
 
@@ -2520,7 +2520,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
 - **Props:**
   - `name` - string, Used for named slot.
 
-- **Usage:**
+- **Verwendung:**
 
   `<slot>` serve as content distribution outlets in component templates. `<slot>` itself will be replaced.
 
