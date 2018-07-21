@@ -988,16 +988,16 @@ type: api
 
 - **Details:**
 
-  Allows declaratively extending another component (could be either a plain options object or a constructor) without having to use `Vue.extend`. This is primarily intended to make it easier to extend between single file components.
+  Erlaubt es, eine Komponente von einer anderen (diese könnte entweder ein einfaches Objekt oder ein Konstruktor sein) deklarativ abzuleiten, ohne `Vue.extend` zu verwenden. Dies dient primär dazu, um das Erweitern von Komponenten, die in einer Datei definiert sind, zu vereinfachen.
 
-  This is similar to `mixins`.
+  Dies ist ähnlich zu `mixins`.
 
 - **Beispiel:**
 
   ``` js
   var CompA = { ... }
 
-  // extend CompA without having to call `Vue.extend` on either
+  // Erweitere CompA, ohne `Vue.extend` aufrufen zu müssen
   var CompB = {
     extends: CompA,
     ...
@@ -1006,7 +1006,7 @@ type: api
 
 ### provide / inject
 
-> New in 2.2.0+
+> Neu in 2.2.0+
 
 - **Datentyp:**
   - **provide:** `Object | () => Object`
