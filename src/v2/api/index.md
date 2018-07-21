@@ -252,15 +252,15 @@ type: api
   - `{string | number} key`
   - `{any} value`
 
-- **Returns:** the set value.
+- **Rückgabewert:** Der Wert, auf den die Eigenschaft gesetzt wurde.
 
 - **Verwendung:**
 
-  Adds a property to a reactive object, ensuring the new property is also reactive, so triggers view updates. This must be used to add new properties to reactive objects, as Vue cannot detect normal property additions (e.g. `this.myObject.newProperty = 'hi'`).
+  Fügt eine Eigenschaft zu einem reaktiven Objekt hinzu und stellt sicher, dass die Eigenschaft auch reaktiv ist, und daher View-Updates auslöst. Man muß diese Methode verwenden, um neue Eigenschaften zu reaktiven Objekten hinzuzufügen, da Vue das Hinzufügen von normalen Eigenschaften nicht erkennt (e.g. `this.myObject.newProperty = 'hi'`).
 
-  <p class="tip">The target object cannot be a Vue instance, or the root data object of a Vue instance.</p>
+  <p class="tip">Das Zielobjekt (`target`) darf weder eine Vue-Instanz, noch das Wurzeldatenobjekt eine Vue-Instanz sein.</p>
 
-- **Siehe auch:** [Reactivity in Depth](../guide/reactivity.html)
+- **Siehe auch:** [Detaillierte Beschreibung der Reaktivität](../guide/reactivity.html)
 
 ### Vue.delete( target, key )
 
@@ -1458,7 +1458,7 @@ type: api
     - `{boolean} deep`
     - `{boolean} immediate`
 
-- **Returns:** `{Function} unwatch`
+- **Rückgabewert:** `{Function} unwatch`
 
 - **Verwendung:**
 
@@ -1523,7 +1523,7 @@ type: api
   - `{string | number} key`
   - `{any} value`
 
-- **Returns:** the set value.
+- **Rückgabewert:** the set value.
 
 - **Verwendung:**
 
@@ -1732,7 +1732,7 @@ type: api
   - `{Element | string} [elementOrSelector]`
   - `{boolean} [hydrating]`
 
-- **Returns:** `vm` - the instance itself
+- **Rückgabewert:** `vm` - the instance itself
 
 - **Verwendung:**
 
