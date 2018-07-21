@@ -425,7 +425,7 @@ type: api
 
 - **Datentyp:** `Object | Function`
 
-- **Restriction:** Only accepts `Function` when used in a component definition.
+- **Einschränkung:** Only accepts `Function` when used in a component definition.
 
 - **Details:**
 
@@ -509,7 +509,7 @@ type: api
 
 - **Datentyp:** `{ [key: string]: any }`
 
-- **Restriction:** only respected in instance creation via `new`.
+- **Einschränkung:** only respected in instance creation via `new`.
 
 - **Details:**
 
@@ -664,7 +664,7 @@ type: api
 
 - **Datentyp:** `string | HTMLElement`
 
-- **Restriction:** only respected in instance creation via `new`.
+- **Einschränkung:** only respected in instance creation via `new`.
 
 - **Details:**
 
@@ -1138,7 +1138,7 @@ type: api
 
 - **Datentyp:** `string`
 
-- **Restriction:** only respected when used as a component option.
+- **Einschränkung:** only respected when used as a component option.
 
 - **Details:**
 
@@ -1888,7 +1888,7 @@ type: api
 
 - **Does not expect expression**
 
-- **Restriction:** previous sibling element must have `v-if` or `v-else-if`.
+- **Einschränkung:** previous sibling element must have `v-if` or `v-else-if`.
 
 - **Verwendung:**
 
@@ -1911,7 +1911,7 @@ type: api
 
 - **Expects:** `any`
 
-- **Restriction:** previous sibling element must have `v-if` or `v-else-if`.
+- **Einschränkung:** previous sibling element must have `v-if` or `v-else-if`.
 
 - **Verwendung:**
 
