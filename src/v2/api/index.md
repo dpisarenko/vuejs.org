@@ -3,31 +3,31 @@ title: API
 type: api
 ---
 
-## Global Config
+## Globale Konfiguration
 
-`Vue.config` is an object containing Vue's global configurations. You can modify its properties listed below before bootstrapping your application:
+`Vue.config` ist ein Objekt, welches die globake Konfiguration von Vue enthält. Sie können die untenstehenden Eigenschaften dieses Objekts verändern, before Sie Ihre Anwendung zum Start vorbereiten (bootstrappen):
 
 ### silent
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
-- **Default:** `false`
+- **Default-Wert:** `false`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.silent = true
   ```
 
-  Suppress all Vue logs and warnings.
+  Unterdrücke alle Log- und Warnmeldungen von Vue.
 
 ### optionMergeStrategies
 
-- **Type:** `{ [key: string]: Function }`
+- **Datentyp:** `{ [key: string]: Function }`
 
-- **Default:** `{}`
+- **Default-Wert:** `{}`
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
   Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
@@ -41,11 +41,11 @@ type: api
   // Profile.options._my_option = 2
   ```
 
-  Define custom merging strategies for options.
+  Erstelle benutzerdefinierte Strategien für das Zusammenführen der Optionen.
+  
+  Die Zusammenführungsstrategie bekommt zwei Werte als Parameter. Der erste Parameter (`parent`) ist die Option, die auf der Instanz der höheren Ebene (Elterninstanz) definiert ist. Der zweite (`child`) -- jene Option, die auf der Kindinstanz definiert ist. Die Vue-Instanz mit dem Kontext (`vm`) wird als der dritte Parameter übergeben. 
 
-  The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.
-
-- **See also:** [Custom Option Merging Strategies](../guide/mixins.html#Custom-Option-Merge-Strategies)
+- **Siehe auch:** [Benutzerdefinierte Zusammenführungsstrategien](../guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
 
