@@ -339,20 +339,20 @@ type: api
 
 - **Verwendung:**
 
-  Register or retrieve a global component. Registration also automatically sets the component's `name` with the given `id`.
+  Registriert eine globale Komponente, oder ruft eine solche ab. Bei der Registrierung wird der `name` der Komponente automatisch auf die übergeben `id` gesetzt.
 
   ``` js
-  // register an extended constructor
+  // Registriert einen erweiterten Konstruktor
   Vue.component('my-component', Vue.extend({ /* ... */ }))
-
-  // register an options object (automatically call Vue.extend)
+  
+  // Registriert einen Optionsobjekt (Vue.extend wird automatisch aufgerufen)
   Vue.component('my-component', { /* ... */ })
-
-  // retrieve a registered component (always return constructor)
+  
+  // Rufe eine registrierte Komponente ab (es wird immer der Konstruktor zurückgegeben)
   var MyComponent = Vue.component('my-component')
   ```
 
-- **Siehe auch:** [Components](../guide/components.html)
+- **Siehe auch:** [Komponenten](../guide/components.html)
 
 ### Vue.use( plugin )
 
@@ -361,9 +361,9 @@ type: api
 
 - **Verwendung:**
 
-  Install a Vue.js plugin. If the plugin is an Object, it must expose an `install` method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument.
-
-  When this method is called on the same plugin multiple times, the plugin will be installed only once.
+  Installiert ein Vue.js-Plugin. Wenn das Plugin ein Object ist, muss es eine öffentliche `install`-Methode haben. Wenn es eine Funktion ist, wird sie als die Installationsmethode behandelt. Wenn die Installationsmethode aufgerufen wird, wird ihr Vue als Argument übergeben.
+  
+  Wird diese Methode mehrmals mit dem gleichen Plugin aufgerufen, dann wird das Plugin nur ein Mal installiert.
 
 - **Siehe auch:** [Plugins](../guide/plugins.html)
 
