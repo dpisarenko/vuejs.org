@@ -664,23 +664,23 @@ type: api
 
 - **Datentyp:** `string | HTMLElement`
 
-- **Einschränkung:** only respected in instance creation via `new`.
+- **Einschränkung:** Wird nur bei Erstellung einer Instanz mit `new` berücksichtigt.
 
 - **Details:**
 
-  Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
+  Übergibt der Vue-Instanz ein existierendes DOM-Element, wo sie montiert werden soll. Es kann ein CSS-Selektorstring oder ein richties HTMLElement sein.
 
-  After the instance is mounted, the resolved element will be accessible as `vm.$el`.
+  Nachdem die Instanz montiert ist, wird das aufgelöste Element über `vm.$el` zugänglich sein.
 
-  If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call `vm.$mount()` to manually start the compilation.
+  Falls diese Option während der Instanziierung verfügbar ist, wird die Instanz unmittelbar danach die Kompilerung beginnen. Andernfalls muss der Benutzer explizit `vm.$mount()` aufrufen, um die Kompilierung manuell zu starten.
 
-  <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
+  <p class="tip">Das übergebene Element dient lediglich als ein Montierungspunkt. Im Gegensatz zu Vue 1.x wird das montierte Element mit dem Vue-generierten DOM immer ersetzt werden. Es wird deswegen nicht empfohlen, die Wurzelinstanz von Vue auf `<html>` oder `<body>` zu montieren.</p> 
 
-  <p class="tip">If neither `render` function nor `template` option is present, the in-DOM HTML of the mounting DOM element will be extracted as the template. In this case, Runtime + Compiler build of Vue should be used.</p>
+  <p class="tip>">Wenn weder die `render`-Funktion, noch die `template`-Option vorhanden ist, wird der in-DOM-HTML-Code des zu montierenden Elements als die Vorlage extrahiert. In diesem Fall sollten Runtime + Compiler build von Vue eingesetzt werden.</p>
 
 - **Siehe auch:**
-  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
-  - [Runtime + Compiler vs. Runtime-only](../guide/installation.html#Runtime-Compiler-vs-Runtime-only)
+  - [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
+  - [Runtime und Compiler vs. Nur Runtime](../guide/installation.html#Runtime-Compiler-vs-Runtime-only)
 
 ### template
 
