@@ -153,15 +153,15 @@ type: api
 
 ### performance
 
-> New in 2.2.0+
+> Neu in 2.2.0+
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
-- **Default:** `false (from 2.2.3+)`
+- **Default-Wert:** `false (from 2.2.3+)`
 
-- **Usage**:
+- **Verwendung**:
 
-  Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
+  Setzen Sie diese Einstellung auf `true`, damit Sie die Performance der Komponenteninitialisierung, -kompilierung, -rendering, sowie -patches in devtools im Browser (im Abschnitt "Performance/Timeline") verfolgen können.  Funktioniert nur im Entwicklermodus und nur in Browsern, die [performance.mode](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API unterstützen. 
 
 ### productionTip
 
