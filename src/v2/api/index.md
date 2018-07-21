@@ -688,17 +688,17 @@ type: api
 
 - **Details:**
 
-  A string template to be used as the markup for the Vue instance. The template will **replace** the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template.
+  Eine String-Vorlage, die als Markup für die Vue-Instanz verwendet werden soll. Die Vorlage wird das Element, auf das montiert wird, **ersetzen**. Jegliches existierende Markup innerhalb dieses Elements wird ignoriert werden, es sei denn es gibt Content-Verteilungsslots in der Vorlage.
 
-  If the string starts with `#` it will be used as a querySelector and use the selected element's innerHTML as the template string. This allows the use of the common `<script type="x-template">` trick to include templates.
+  Wenn der Text mit `#` beginnt, wird es als querySelector verwendet und innerHTML des angewählten Elements als den Vorlagestring verwenden. Damit kann man den Trick mit `<script type="x-template">` verwenden, um Vorlagen zu inkludieren.
 
-  <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
-
-  <p class="tip">If render function is present in the Vue option, the template will be ignored.</p>
+  <p class="tip">Sicherheitstechnisch sollten Sie nur jene Vue-Vorlagen verwenden, denen Sie vertrauen können. Verwenden Sie niemals benutzergenerierte Inhalte (UGC) als Ihre Vorlage.</p>
+  
+  <p class="tip">Wenn die render-Funktion in der Vue-Option vorhanden ist, wird die Vorlage ignoriert.</p>
 
 - **Siehe auch:**
-  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
-  - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
+  - [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
+  - [Content-Verteilung mit Slots](../guide/components.html#Content-Distribution-with-Slots)
 
 ### render
 
