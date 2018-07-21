@@ -763,19 +763,19 @@ type: api
 
   Wird synchron aufgerufen, nachdem die Instanz erstellt ist. Zu diesem Zeitpunkt hat die Instanz die Bearbeitung der Optionen abgeschlossen und das bedeutet, dass Folgendes eingerichtet wurde: Datenbeobachtung, berechnete Eigenschaften, Methoden, Watch/Event-Callbacks. Jedoch had das Montieren noch nicht begonnen und die Eigenschaft `$el` ist noch nicht verfügbar. 
 
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeMount
 
 - **Datentyp:** `Function`
 
 - **Details:**
+  
+  Wird aufgerufen, just before das Montieren beginnt: Die `render`-Funktion wird da zum ersten Mal auferufen werden.
+  
+  **Dieses Hook wird bei serverseitigen Rendering nicht aufgerufen.**
 
-  Called right before the mounting begins: the `render` function is about to be called for the first time.
-
-  **This hook is not called during server-side rendering.**
-
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### mounted
 
@@ -783,22 +783,22 @@ type: api
 
 - **Details:**
 
-  Called after the instance has been mounted, where `el` is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
+  Wird aufgerufen, nachdem die Instanz montiert wurde, wobei `el` durch das neu erstellte `vm.$el` ersetzt wird. Wenn die Wurzelinstanz an einem Element innerhalb eines Dokuments montiert wird, dann wird `vm.$el` ebenfalls innerhalb eines Dokuments liegen, wenn `mounted` aufgerufen wird.
 
-  Note that `mounted` does **not** guarantee that all child components have also been mounted. If you want to wait until the entire view has been rendered, you can use [vm.$nextTick](#vm-nextTick) inside of `mounted`:
-
+  Beachten Sie, dass `mounted` **nicht** garantiert, dass alle Kind-Komponenten auch montiert wurden. Wenn Sie warten wollen, bis die gesamte Ansicht gerendert wurde, können Sie [vm.$nextTick](#vm-nextTick) in `mounted` verwenden:
+  
   ``` js
   mounted: function () {
     this.$nextTick(function () {
-      // Code that will run only after the
-      // entire view has been rendered
+      // Dieser Code wird ausgeführt, nachdem
+      // die gesamte Ansicht gerendert wurde
     })
   }
   ```
+  
+  **Dieses Hook wird beim serverseitigen Rendering nicht aufgerufen.**
 
-  **This hook is not called during server-side rendering.**
-
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeUpdate
 
