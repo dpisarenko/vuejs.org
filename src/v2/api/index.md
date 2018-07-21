@@ -722,9 +722,9 @@ type: api
 
   - **Details:**
 
-    **Only works in development mode.**
+    **Funktioniert nur im Entwicklungsmodus.**
 
-    Provide an alternative render output when the default `render` function encounters an error. The error will be passed to `renderError` as the second argument. This is particularly useful when used together with hot-reload.
+    Erlaubt es, eine alternative Render-Ausgabe zu machen, falls die Default-Funktion `render` fehlschlägt. Der Fehler wird an `renderError` als zweites Argument übergeben. Dies ist in Verbindung mit hot-reload besonders nützlich. 
 
   - **Beispiel:**
 
@@ -739,11 +739,11 @@ type: api
     }).$mount('#app')
     ```
 
-  - **Siehe auch:** [Render Functions](../guide/render-function.html)
+  - **Siehe auch:** [Render-Funktionen](../guide/render-function.html)
 
-## Options / Lifecycle Hooks
+## Optionen / Lebenszyklushooks
 
-<p class="tip">All lifecycle hooks automatically have their `this` context bound to the instance, so that you can access data, computed properties, and methods. This means __you should not use an arrow function to define a lifecycle method__ (e.g. `created: () => this.fetchTodos()`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.fetchTodos` will be undefined.</p>
+<p class="tip">Bei allen Lebenszyklushooks wird der `this`-Kontext automatisch an die Instanz gebunden, sodass Sie auf Daten, berechnete Eigenschaften, und Methoden zugreifen können. Das bedeutet, dass Sie __die Pfeilfunktionen nicht verwenden dürfen, um eine Lebenszyklusmethode zu definieren__ (z. B. `created: () => this.fetchTools()`). Der Grund ist, dass Pfeilfunktionen sich an den Elternkontext binden, daher wird `this` wider Erwarten nicht die Vue-Instanz und `this.fetchTodos` wird undefiniert sein.</p>
 
 ### beforeCreate
 
@@ -751,9 +751,9 @@ type: api
 
 - **Details:**
 
-  Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup.
+  Wird asynchron aufgerufen, unmittelbar nachdem die Instanz initialisiert wurde und before das Einrichten der Beobachtung von Daten, Watch-Event-Callbacks beginnt. 
 
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
 ### created
 
@@ -761,7 +761,7 @@ type: api
 
 - **Details:**
 
-  Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
+  Wird synchron aufgerufen, nachdem die Instanz erstellt ist. Zu diesem Zeitpunkt hat die Instanz die Bearbeitung der Optionen abgeschlossen und das bedeutet, dass Folgendes eingerichtet wurde: Datenbeobachtung, berechnete Eigenschaften, Methoden, Watch/Event-Callbacks. Jedoch had das Montieren noch nicht begonnen und die Eigenschaft `$el` ist noch nicht verfügbar. 
 
 - **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
