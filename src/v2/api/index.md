@@ -446,13 +446,14 @@ type: api
   ``` js
   var data = { a: 1 }
 
-  // direct instance creation
+  // Direkte Erstellung einer Instanz
   var vm = new Vue({
     data: data
   })
   vm.a // => 1
   vm.$data === data // => true
 
+  // Eine Funktion muss verwendet werden, wenn wir Vue.extend(...) einsetzen.
   // must use function when in Vue.extend()
   var Component = Vue.extend({
     data: function () {
@@ -460,14 +461,14 @@ type: api
     }
   })
   ```
-
-  Note that if you use an arrow function with the `data` property, `this` won't be the component's instance, but you can still access the instance as the function's first argument:
+  
+  Beachten Sie, dass Sie wenn Sie die Pfeilnotation mit der `data`-Eigenschaft verwenden, `this` nicht die Instanz der Komponente sein wird. Jedoch können Sie immer noch auf die Instanz als das erste Argument der Funktion zugreifen:
 
   ```js
   data: vm => ({ a: vm.myProp })
   ```
 
-- **Siehe auch:** [Reactivity in Depth](../guide/reactivity.html)
+- **Siehe auch:** [Detaillierte Beschreibung der Reaktivität](../guide/reactivity.html)
 
 ### props
 
@@ -475,22 +476,22 @@ type: api
 
 - **Details:**
 
-  A list/hash of attributes that are exposed to accept data from the parent component. It has an Array-based simple syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values.
+  Eine Liste/Hash der Attribute, die öffentlich sind, um Daten von der Elternkomponente zu empfangen. Die Eigenschaft hat eine einfache, Array-basierte Syntax, sowie eine alternative, Objekt-basierte Syntax, welche fortgeschrittene Einstellungen wie Typenüberprüfung, benutzerdefinierte Validation, und Default-Werte, erlaubt.
 
 - **Beispiel:**
 
   ``` js
-  // simple syntax
+  // Einfache Syntax
   Vue.component('props-demo-simple', {
     props: ['size', 'myMessage']
   })
-
-  // object syntax with validation
+  
+  // Objekt-Syntax mit Validierung
   Vue.component('props-demo-advanced', {
     props: {
-      // type check
+      // Typenüberprüfung
       height: Number,
-      // type check plus other validations
+      // Überprüfung des Typs plus andere Validierungen
       age: {
         type: Number,
         default: 0,
@@ -503,7 +504,7 @@ type: api
   })
   ```
 
-- **Siehe auch:** [Props](../guide/components.html#Props)
+- **Siehe auch:** [Eigenschaften](../guide/components.html#Props)
 
 ### propsData
 
