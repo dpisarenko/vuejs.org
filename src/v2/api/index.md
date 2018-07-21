@@ -49,18 +49,18 @@ type: api
 
 ### devtools
 
-- **Type:** `boolean`
+- **Datentyp:** `boolean`
 
-- **Default:** `true` (`false` in production builds)
+- **Default-Wert:** `true` (`false` in Builds für die Produktionsumgebung)
 
-- **Usage:**
+- **Verwendung:**
 
   ``` js
-  // make sure to set this synchronously immediately after loading Vue
+  // Stellen Sie sicher, dass diese Einstellung synchron, unmittelbar nach dem Laden von Vue vorgenommen wird
   Vue.config.devtools = true
   ```
-
-  Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection. This option's default value is `true` in development builds and `false` in production builds. You can set it to `true` to enable inspection for production builds.
+  
+  Konfiguriert, ob die Untersuchung mit [vue-devtools](https://github.com/vuejs/vue-devtools) erlaubt ist. Der Default-Wert dieser Einstellung ist `true` in Builds für die Entwicklungsumgebung und `false` für die Produktionsumgebung. Sie können sie auf `true` setzen, um die Untersuchung in Produktions-Builds zu erlauben. 
 
 ### errorHandler
 
