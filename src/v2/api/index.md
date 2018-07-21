@@ -169,13 +169,13 @@ type: api
 
 - **Datentyp:** `boolean`
 
-- **Default:** `true`
+- **Default-Wert:** `true`
 
-- **Usage**:
+- **Verwendung**:
+  
+  Setzen Sie diesen Wert auf `false`, um zu verhindern, dass beim Start eine Warnmeldung über die Arbeit im Entwicklungsmodus erscheint.
 
-  Set this to `false` to prevent the production tip on Vue startup.
-
-## Global API
+## Globale API
 
 ### Vue.extend( options )
 
@@ -405,7 +405,7 @@ type: api
 
 - **Details**: Provides the installed version of Vue as a string. This is especially useful for community plugins and components, where you might use different strategies for different versions.
 
-- **Usage**:
+- **Verwendung**:
 
   ```js
   var version = Number(Vue.version.split('.')[0])
@@ -1150,7 +1150,7 @@ type: api
 
 - **Datentyp:** `Array<string>`
 
-- **Default:** `{% raw %}["{{", "}}"]{% endraw %}`
+- **Default-Wert:** `{% raw %}["{{", "}}"]{% endraw %}`
 
 - **Restrictions:** This option is only available in the full build, with in-browser compilation.
 
@@ -1229,7 +1229,7 @@ type: api
 
 - **Datentyp:** `boolean`
 
-- **Default:** `true`
+- **Default-Wert:** `true`
 
 - **Details:**
 
@@ -1243,7 +1243,7 @@ type: api
 
 - **Datentyp:** `boolean`
 
-- **Default:** `false`
+- **Default-Wert:** `false`
 
 - **Restrictions:** This option is only available in the full build, with in-browser compilation.
 
