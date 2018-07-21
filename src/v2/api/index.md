@@ -441,7 +441,7 @@ type: api
 
   Wenn nötig, kann man einen "tiefen Klon" (deep clone) des ursprünglichen Objekts erhalten, indem man `vm.$data` an `JSON.parse(JSON.stringify(...))` übergibt.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var data = { a: 1 }
@@ -477,7 +477,7 @@ type: api
 
   A list/hash of attributes that are exposed to accept data from the parent component. It has an Array-based simple syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   // simple syntax
@@ -515,7 +515,7 @@ type: api
 
   Pass props to an instance during its creation. This is primarily intended to make unit testing easier.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var Comp = Vue.extend({
@@ -548,7 +548,7 @@ type: api
 
   Computed properties are cached, and only re-computed on reactive dependency changes. Note that if a certain dependency is out of the instance's scope (i.e. not reactive), the computed property will __not__ be updated.
 
-- **Example:**
+- **Beispiel:**
 
   ```js
   var vm = new Vue({
@@ -587,7 +587,7 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.</p>
 
-- **Example:**
+- **Beispiel:**
 
   ```js
   var vm = new Vue({
@@ -612,7 +612,7 @@ type: api
 
   An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call `$watch()` for each entry in the object at instantiation.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var vm = new Vue({
@@ -726,7 +726,7 @@ type: api
 
     Provide an alternative render output when the default `render` function encounters an error. The error will be passed to `renderError` as the second argument. This is particularly useful when used together with hot-reload.
 
-  - **Example:**
+  - **Beispiel:**
 
     ``` js
     new Vue({
@@ -965,7 +965,7 @@ type: api
 
   Mixin hooks are called in the order they are provided, and called before the component's own hooks.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var mixin = {
@@ -991,7 +991,7 @@ type: api
 
   This is similar to `mixins`.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var CompA = { ... }
@@ -1029,7 +1029,7 @@ type: api
 
   > Note: the `provide` and `inject` bindings are NOT reactive. This is intentional. However, if you pass down an observed object, properties on that object do remain reactive.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   // parent component providing 'foo'
@@ -1158,7 +1158,7 @@ type: api
 
   Change the plain text interpolation delimiters.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   new Vue({
@@ -1188,7 +1188,7 @@ type: api
 
   Allows a custom component to customize the prop and event used when it's used with `v-model`. By default, `v-model` on a component uses `value` as the prop and `input` as the event, but some input types such as checkboxes and radio buttons may want to use the `value` prop for a different purpose. Using the `model` option can avoid the conflict in such cases.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   Vue.component('my-checkbox', {
@@ -1344,7 +1344,7 @@ type: api
 
   Accessing `vm.$slots` is most useful when writing a component with a [render function](../guide/render-function.html).
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <blog-post>
@@ -1466,7 +1466,7 @@ type: api
 
 <p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   // keypath
@@ -1555,7 +1555,7 @@ type: api
 
   Listen for a custom event on the current vm. Events can be triggered by `vm.$emit`. The callback will receive all the additional arguments passed into these event-triggering methods.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   vm.$on('test', function (msg) {
@@ -1742,7 +1742,7 @@ type: api
 
   The method returns the instance itself so you can chain other instance methods after it.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   var MyComponent = Vue.extend({
@@ -1781,7 +1781,7 @@ type: api
 
   > New in 2.1.0+: returns a Promise if no callback is provided and Promise is supported in the execution environment. Please note that Vue does not come with a Promise polyfill, so if you target browsers that don't support Promises natively (looking at you, IE), you will have to provide a polyfill yourself.
 
-- **Example:**
+- **Beispiel:**
 
   ``` js
   new Vue({
@@ -1828,7 +1828,7 @@ type: api
 
   Updates the element's `textContent`. If you need to update the part of `textContent`, you should use `{% raw %}{{ Mustache }}{% endraw %}` interpolations.
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <span v-text="msg"></span>
@@ -1850,7 +1850,7 @@ type: api
 
   <p class="tip">In [single-file components](../guide/single-file-components.html), `scoped` styles will not apply to content inside `v-html`, because that HTML is not processed by Vue's template compiler. If you want to target `v-html` content with scoped CSS, you can instead use [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html) or an additional, global `<style>` element with a manual scoping strategy such as BEM.</p>
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <div v-html="html"></div>
@@ -2003,7 +2003,7 @@ type: api
 
   Starting in 2.4.0+, `v-on` also supports binding to an object of event/listener pairs without an argument. Note when using the object syntax, it does not support any modifiers.
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <!-- method handler -->
@@ -2079,7 +2079,7 @@ type: api
 
   When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode `class` and `style` does not support Array or Objects.
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <!-- bind an attribute -->
@@ -2160,7 +2160,7 @@ type: api
 
   Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.
 
-- **Example:**
+- **Beispiel:**
 
   ```html
   <span v-pre>{{ this will not be compiled }}</span>
@@ -2174,7 +2174,7 @@ type: api
 
   This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as `[v-cloak] { display: none }`, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.
 
-- **Example:**
+- **Beispiel:**
 
   ```css
   [v-cloak] {
