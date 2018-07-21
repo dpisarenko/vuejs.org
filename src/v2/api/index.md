@@ -510,11 +510,11 @@ type: api
 
 - **Datentyp:** `{ [key: string]: any }`
 
-- **Einschränkung:** only respected in instance creation via `new`.
+- **Einschränkung:** Wird nur bei der Erstellung einer Instanz mit `new` berücksichtigt.
 
 - **Details:**
 
-  Pass props to an instance during its creation. This is primarily intended to make unit testing easier.
+  Übergebt Eigenschaften an eine Instanz während deren Erstellung. Dies ist vor allem nützlich, um das Unit-Testing einfacher zu machen.
 
 - **Beispiel:**
 
