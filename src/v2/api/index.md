@@ -1263,7 +1263,7 @@ type: api
 
 - **Details:**
 
-  Das Datenobjekt, das die Vue-Instanz beobachtet. Die Vue-Instanz hat Stellvertreter-Eigenschaten für die Eigenschaften ihres Datenobjekts.
+  Das Datenobjekt, das die Vue-Instanz beobachtet. Die Vue-Instanz gewährt Zugriff auf die Eigenschaften ihres Datenobjekts über Stellvertreter-Eigenschaten.
 
 - **Siehe auch:** [Optionen / Daten - data](#data)
 
@@ -1275,27 +1275,27 @@ type: api
 
 - **Details:**
 
-  An object representing the current props a component has received. The Vue instance proxies access to the properties on its props object.
+  Ein Objekt, das die aktuellen Eigenschaften repräsentiert, die die Komponente erhalten hat. Die Vue-Instanz gewährt Zugriff auf die Eigenschaften ihres Datenobjekts über Stellvertreter-Eigenschaten. 
 
 ### vm.$el
 
 - **Datentyp:** `HTMLElement`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  The root DOM element that the Vue instance is managing.
+  Das DOM-Wurzelelement, welches von der Vue-Instanz verwaltet wird.
 
 ### vm.$options
 
 - **Datentyp:** `Object`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  The instantiation options used for the current Vue instance. This is useful when you want to include custom properties in the options:
+  Optionen, die bei der Instanziierung der aktuellen Vue-Instanz verwendet wurden. Dies ist nützlich, wenn Sie benutzerdefinierte Eigenschaften in den Optionen verwenden wollen:
 
   ``` js
   new Vue({
@@ -1310,43 +1310,43 @@ type: api
 
 - **Datentyp:** `Vue instance`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  The parent instance, if the current instance has one.
+  Eltern-Instanz (falls vorhanden).
 
 ### vm.$root
 
 - **Datentyp:** `Vue instance`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  The root Vue instance of the current component tree. If the current instance has no parents this value will be itself.
+  Die Wurzel-Vue-Instanz des aktuellen Komponentenbaums. Wenn die aktuelle Instanz keine Eltern hat, wird dieser Wert die Instanz selber sein.
 
 ### vm.$children
 
 - **Datentyp:** `Array<Vue instance>`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  The direct child components of the current instance. **Note there's no order guarantee for `$children`, and it is not reactive.** If you find yourself trying to use `$children` for data binding, consider using an Array and `v-for` to generate child components, and use the Array as the source of truth.
+  Die direkten Kinder der aktuellen Instanz. Beachten Sie, dass **es keine Garantien bezüglich der Reihenfolge für `$children` gibt und dass die Eigenschaft nicht reaktiv ist.** Wenn Sie versuchen, `$children` für Datenbindung zu verwenden, erwägen Sie lieber den Einsatz eines Arrays und `v-for`, um Kindkomponenten zu generieren. Dann können sie das Array als die Quelle der Wahrheit verwenden.
 
 ### vm.$slots
 
 - **Datentyp:** `{ [name: string]: ?Array<VNode> }`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  Used to programmatically access content [distributed by slots](../guide/components.html#Content-Distribution-with-Slots). Each [named slot](../guide/components.html#Named-Slots) has its own corresponding property (e.g. the contents of `slot="foo"` will be found at `vm.$slots.foo`). The `default` property contains any nodes not included in a named slot.
+  Wird verwendet, um programmatisch auf Inhalte, die über [Slots](../guide/components.html#Content-Distribution-with-Slots) verteilt werden, zuzugreifen. Jedes [benannte Slot](../guide/components.html#Content-Distribution-with-Slots) hat seine eigene zugehörige Eigenschaft (z. B. wird der Inhalt von `slot="foo"` unter `vm.$slots.foo` zu finden sein). Die Eigenschaft `default` enthält all jene Knoten, die in einem der benannten Slots nicht inkludiert sind.
 
-  Accessing `vm.$slots` is most useful when writing a component with a [render function](../guide/render-function.html).
+  Am nützlichsten ist der Zugriff über `vm.$slots`, wenn Sie eine Komponente mit einer [Render-Funktion](../guide/render-function.html) schreiben. 
 
 - **Beispiel:**
 
@@ -1356,13 +1356,13 @@ type: api
       About Me
     </h1>
 
-    <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
+    <p>Hier gibt es einen Inhalt, welcher in vm.$slots.default inkludiert wird, weil er sich nicht innerhalb eines benannten Slots befindet.</p>
 
     <p slot="footer">
       Copyright 2016 Evan You
     </p>
 
-    <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+    <p>Wenn ich hier unten irgendeinen Inhalt habe, wird er ebenfalls in vm.$slots.default inkludiert werden.</p>.
   </blog-post>
   ```
 
@@ -1382,34 +1382,34 @@ type: api
   ```
 
 - **Siehe auch:**
-  - [`<slot>` Component](#slot-1)
-  - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
-  - [Render Functions - Slots](../guide/render-function.html#Slots)
+  - [`<slot>`-Komponente](#slot-1)
+  - [Verteilung von Inhalten mit Slots](../guide/components.html#Content-Distribution-with-Slots)
+  - [Render-Funktionen - Slots](../guide/render-function.html#Slots)
 
 ### vm.$scopedSlots
 
-> New in 2.1.0+
+> Neu in 2.1.0+
 
 - **Datentyp:** `{ [name: string]: props => VNode | Array<VNode> }`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
+  
+  Wird verwendet, um programmatisch auf [Scopes mit Gültigkeitsbeschränkung](../guide/components.html#Scoped-Slots) zuzugreifen. Für jedes Slot, inkl. dem `default`-Slot, enthält das Objekt eine entsprechende Funktion, die VNodes zurückgibt.
 
-  Used to programmatically access [scoped slots](../guide/components.html#Scoped-Slots). For each slot, including the `default` one, the object contains a corresponding function that returns VNodes.
-
-  Accessing `vm.$scopedSlots` is most useful when writing a component with a [render function](../guide/render-function.html).
+  Am nützlichsten ist der Zugriff über `vm.$scopedSlots`, wenn Sie eine Komponente mit einer [Render-Funktion](../guide/render-function.html) schreiben. 
 
 - **Siehe auch:**
-  - [`<slot>` Component](#slot-1)
-  - [Scoped Slots](../guide/components.html#Scoped-Slots)
-  - [Render Functions - Slots](../guide/render-function.html#Slots)
+  - [`<slot>`-Komponente](#slot-1)
+  - [Scopes mit Gültigkeitsbeschränkung](../guide/components.html#Scoped-Slots)
+  - [Render-Funktionen - Slots](../guide/render-function.html#Slots)
 
 ### vm.$refs
 
 - **Datentyp:** `Object`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
