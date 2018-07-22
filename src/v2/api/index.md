@@ -1069,10 +1069,11 @@ type: api
     // ...
   }
   ```
+  
+  > Die folgenden 2 Beispiele funktionieren mit Vue 2.2.1+. Vor dieser Version wurden die injizierten Werte nach Initialisierung von `props` und `data` aufgelöst.
 
-  > The next 2 examples work with Vue 2.2.1+. Below that version, injected values were resolved after the `props` and the `data` initialization.
+  Verwendung eines injizierten Werts als Default-Wert für eine Eigenschaft:
 
-  Using an injected value as the default for a prop:
   ```js
   const Child = {
     inject: ['foo'],
@@ -1086,7 +1087,8 @@ type: api
   }
   ```
 
-  Using an injected value as data entry:
+  Verwendung eines injizierten Werts als Dateneintrag:
+
   ```js
   const Child = {
     inject: ['foo'],
@@ -1098,7 +1100,7 @@ type: api
   }
   ```
 
-  > In 2.5.0+ injections can be optional with default value:
+  > In 2.5.0+ können Injektional optional sein und Default-Werte haben:
 
   ``` js
   const Child = {
@@ -1108,7 +1110,7 @@ type: api
   }
   ```
 
-  If it needs to be injected from a property with a different name, use `from` to denote the source property:
+  Wenn den Wert einer anderen Eigenschaft mit einem anderen Namen injizieren wollen, verwenden Sie `from`, um die Quell-Eigenschaft anzugeben:
 
   ``` js
   const Child = {
@@ -1121,7 +1123,7 @@ type: api
   }
   ```
 
-  Similar to prop defaults, you need to use a factory function for non primitive values:
+  Ähnlich zu Default-Werten von Eigenschaften, werden Sie für nicht-primitive Werte eine Factory-Funktion brauchen.
 
   ``` js
   const Child = {
@@ -1134,19 +1136,19 @@ type: api
   }
   ```
 
-## Options / Misc
+## Optionen / Sonstiges 
 
 ### name
 
 - **Datentyp:** `string`
 
-- **Einschränkung:** only respected when used as a component option.
+- **Einschränkung:** Wird nur als Komponentenoption berücksichtigt.
 
 - **Details:**
 
-  Allow the component to recursively invoke itself in its template. Note that when a component is registered globally with `Vue.component()`, the global ID is automatically set as its name.
+  Erlaubt der Komponente, sich selbst in ihrer Vorlage rekursiv aufzurufen. Beachten Sie, dass wenn eine Komponente global mit `Vue.component()` registriert ist, die globale ID automatisch als ihr Name verwendet wird.
 
-  Another benefit of specifying a `name` option is debugging. Named components result in more helpful warning messages. Also, when inspecting an app in the [vue-devtools](https://github.com/vuejs/vue-devtools), unnamed components will show up as `<AnonymousComponent>`, which isn't very informative. By providing the `name` option, you will get a much more informative component tree.
+  Ein anderer Vorteil der Angabe einer `name`-Option ist das Debuggen. Benannte Komponenten führen zu aussagekräftigeren Warnmeldungen. Außerdem, wenn Sie eine Anwendung in [vue-devtools](https://github.com/vuejs/vue-devtools) untersuchen, werden unbenannte Komponenten als `<AnonymousComponent>` aufscheinen, was nicht besonders informativ ist. Indem Sie die `name`-Option angeben, bekommen Sie einen viel informativeren Komponentenbaum. 
 
 ### delimiters
 
@@ -1154,11 +1156,11 @@ type: api
 
 - **Default-Wert:** `{% raw %}["{{", "}}"]{% endraw %}`
 
-- **Restrictions:** This option is only available in the full build, with in-browser compilation.
+- **Einschränkungen:** Diese Option ist nur im vollständigen Build, mit in-Browser-Kompilierung verfügbar.
 
 - **Details:**
 
-  Change the plain text interpolation delimiters.
+  Verändert die Trennzeichen bei der Interpolation des einfachen Textes.
 
 - **Beispiel:**
 
@@ -1167,7 +1169,7 @@ type: api
     delimiters: ['${', '}']
   })
 
-  // Delimiters changed to ES6 template string style
+  // Trennzeichen wurden zum ES6-Stringvorlatenstil geändert
   ```
 
 ### functional
@@ -1176,19 +1178,19 @@ type: api
 
 - **Details:**
 
-  Causes a component to be stateless (no `data`) and instanceless (no `this` context). They are only a `render` function that returns virtual nodes making them much cheaper to render.
+  Bewirkt, dass eine Komponente zustands- (kein `data`) und instanzenlos (kein `this`-Kontext) wird. Es gibt nur eine `render`-Funktion, die virtuele Knoten zurückgibt und dadurch das Rendering wesentlich billiger macht.
 
-- **Siehe auch:** [Functional Components](../guide/render-function.html#Functional-Components)
+- **Siehe auch:** [Funktionale Komponenten](../guide/render-function.html#Functional-Components)
 
 ### model
 
-> New in 2.2.0
+> Neu in 2.2.0
 
 - **Datentyp:** `{ prop?: string, event?: string }`
 
 - **Details:**
 
-  Allows a custom component to customize the prop and event used when it's used with `v-model`. By default, `v-model` on a component uses `value` as the prop and `input` as the event, but some input types such as checkboxes and radio buttons may want to use the `value` prop for a different purpose. Using the `model` option can avoid the conflict in such cases.
+  Erlaubt einer benutzerdefinierten Komponente, jene Eigenschaften und Ereignisse anzupassen, die, die verwendet werden, wenn die Komponente mit `v-model` verwendet wird. Per Voreinstellung, verwendet `v-model` einer Komponente `value` als die Eigenschaft und `input` als das Ereignis. Jedoch kann es vorkommen, dass bestimmte Steuerelemente (z. B. eine Checkboxes und Radiobuttons) die `value`-Eigenschaft für andere Zwecke verwenden wollen. Der Einsatz der `model`-Option in diesem Fall kann einen Konflikt vermeiden.
 
 - **Beispiel:**
 
@@ -1199,9 +1201,9 @@ type: api
       event: 'change'
     },
     props: {
-      // this allows using the `value` prop for a different purpose
+      // Dies erlabut es, die `value`-Eigenschaft für einen anderen Zweck zu verwenden.
       value: String,
-      // use `checked` as the prop which take the place of `value`
+      // Verwende `checked` als die Eigenschaft statt `value`
       checked: {
         type: Number,
         default: 0
@@ -1215,7 +1217,7 @@ type: api
   <my-checkbox v-model="foo" value="some value"></my-checkbox>
   ```
 
-  The above will be equivalent to:
+  Der obige Code ist äquivalent zu:
 
   ``` html
   <my-checkbox
@@ -1227,7 +1229,7 @@ type: api
 
 ### inheritAttrs
 
-> New in 2.4.0+
+> Neu in 2.4.0+
 
 - **Datentyp:** `boolean`
 
@@ -1235,25 +1237,25 @@ type: api
 
 - **Details:**
 
-  By default, parent scope attribute bindings that are not recognized as props will "fallthrough" and be applied to the root element of the child component as normal HTML attributes. When authoring a component that wraps a target element or another component, this may not always be the desired behavior. By setting `inheritAttrs` to `false`, this default behavior can be disabled. The attributes are available via the `$attrs` instance property (also new in 2.4) and can be explicitly bound to a non-root element using `v-bind`.
+  Per Voreinstellung werden Attribut-Bindungen aus dem Eltern-Scope, die als Eigenschaften nicht erkannt wurden, "durchfallen" und auf das Wurzelelement der Kind-Komponente als normale HTML-Attribute angewandt. Wenn Sie eine Komponente entwickeln, die das Zielelement oder eine andere Komponente umhüllt, wird dieses Verhalten nicht immer erwünscht sein. Sie können das Verhalten ausschalten, indem Sie `inheritAttrs` auf `false` setzen. Die Attribute sind über die Instanzeneigeschaft `$attr` verfügbar (auch neu in 2.4) und können mit `v-bind` explizit an ein nicht-Wurzelelement gebunden werden. 
 
-  Note: this option does **not** affect `class` and `style` bindings.
+  Anmerkung: Diese Option betrifft nicht die `class`- und `style`-Bindungen.
 
 ### comments
 
-> New in 2.4.0+
+> Neu in 2.4.0+
 
 - **Datentyp:** `boolean`
 
 - **Default-Wert:** `false`
 
-- **Restrictions:** This option is only available in the full build, with in-browser compilation.
+- **Einschränkungen:** Diese Option ist nur im vollständigen Build, mit in-Browser-Kompilierung verfügbar.
 
 - **Details:**
 
-  When set to `true`, will preserve and render HTML comments found in templates. The default behavior is discarding them.
+  Wenn der Wert `true` ist, werden HTML-Kommentare, die in Vorlagen gefunden werden, beibehalten und gerendert. Per Voreinstellung werden sie verworfen.
 
-## Instance Properties
+## Eigenschaften der Instanzen
 
 ### vm.$data
 
@@ -1261,13 +1263,13 @@ type: api
 
 - **Details:**
 
-  The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.
+  Das Datenobjekt, das die Vue-Instanz beobachtet. Die Vue-Instanz hat Stellvertreter-Eigenschaten für die Eigenschaften ihres Datenobjekts.
 
-- **Siehe auch:** [Options / Data - data](#data)
+- **Siehe auch:** [Optionen / Daten - data](#data)
 
 ### vm.$props
 
-> New in 2.2.0+
+> Neu in 2.2.0+
 
 - **Datentyp:** `Object`
 
