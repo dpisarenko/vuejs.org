@@ -1780,10 +1780,10 @@ type: api
   - `{Function} [callback]`
 
 - **Verwendung:**
+  
+  Verschiebe die Ausführung des Callbacks auf die Zeit nach dem nächsten DOM-Update-Zyklus. Verwenden Sie es unmittelbar nachdem Sie Daten verändert haben, um auf den DOM-Update zu warten. Dies hat die gleiche Bedeutung wie die globale `Vue.nextTick`-Methode, ausgenommen, dass der `this`-Kontext des Callbacks automatisch an jene Instanz gebunden wird, die diese Methode aufruft.
 
-  Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update. This is the same as the global `Vue.nextTick`, except that the callback's `this` context is automatically bound to the instance calling this method.
-
-  > New in 2.1.0+: returns a Promise if no callback is provided and Promise is supported in the execution environment. Please note that Vue does not come with a Promise polyfill, so if you target browsers that don't support Promises natively (looking at you, IE), you will have to provide a polyfill yourself.
+  > Neu in 2.1.0+: Gibt ein Promise zurück, wenn kein Callback übergeben wurde und Promise in der Ausführungsumgebung unterstützt wird. Beachten Sie, dass Promise polyfill nicht mit Promise mitgeliefert wird. Wenn Sie Browser ansprechen, die Promises nicht nativ unterstützen (IE), werden sie selber ein polyfill zur Verfügung stellen müssen.
 
 - **Beispiel:**
 
@@ -1793,12 +1793,12 @@ type: api
     methods: {
       // ...
       example: function () {
-        // modify data
+        // Verändere Daten
         this.message = 'changed'
-        // DOM is not updated yet
+        // DOM wurde noch nicht aktualisiert
         this.$nextTick(function () {
-          // DOM is now updated
-          // `this` is bound to the current instance
+          // Jetzt ist DOM aktualisiert
+          // `this` wurde an die aktuelle Instanz gebunden
           this.doSomethingElse()
         })
       }
@@ -1808,29 +1808,29 @@ type: api
 
 - **Siehe auch:**
   - [Vue.nextTick](#Vue-nextTick)
-  - [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
+  - [Asychrone Aktualisierungswarteschlange](../guide/reactivity.html#Async-Update-Queue)
 
 ### vm.$destroy()
 
 - **Verwendung:**
 
-  Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.
+  Zerstört eine vm komplett. Bereinigt deren Verbindungen zu anderen existierenden vms, löst Bindungen all ihrer Direktiven los, schaltet alle Event-Listener aus.
 
-  Triggers the `beforeDestroy` and `destroyed` hooks.
+  Löst `beforeDestroy`- und `destroyed`-Hooks aus.
 
-  <p class="tip">In normal use cases you shouldn't have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using `v-if` and `v-for`.</p>
+  <p class="tip">Im Normalfall sollten Sie diese Methode nicht aufrufen. Eine bessere Alternative ist es, den Lebenszyklus der Kindkomponenten auf eine datengetriebene Art und Weise mittels `vif` und `v-for` zu kontrollieren.</p>
 
-- **Siehe auch:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Siehe auch:** [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
 
-## Directives
+## Direktiven
 
 ### v-text
 
-- **Expects:** `string`
+- **Erwartet:** `string`
 
 - **Details:**
 
-  Updates the element's `textContent`. If you need to update the part of `textContent`, you should use `{% raw %}{{ Mustache }}{% endraw %}` interpolations.
+  Aktualisiert den `textContent` eines Elements. Wenn Sie nur einen Teil des `textContent` verändern wollen, sollten Sie Interpolationen `{% raw %}{{ Mustache }}{% endraw %}` verwenden. 
 
 - **Beispiel:**
 
@@ -1840,19 +1840,19 @@ type: api
   <span>{{msg}}</span>
   ```
 
-- **Siehe auch:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Text)
+- **Siehe auch:** [Syntax für die Datenbindung - Interpolationen](../guide/syntax.html#Text)
 
 ### v-html
 
-- **Expects:** `string`
+- **Erwartet:** `string`
 
 - **Details:**
 
-  Updates the element's `innerHTML`. **Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates**. If you find yourself trying to compose templates using `v-html`, try to rethink the solution by using components instead.
+  Verändert `innerHTML` eines Elements. **Beachten Sie, dass die Inhalte als einfaches HTML eingefügt werden -- sie werden nicht als Vue-Vorlagen kompiliert werden**. Wenn Sie versuchen, Vorlagen mittels `v-html` zusammenzusetzen, versuchen Sie, den Ansatz zu überdenken und stattdessen Komponenten zu verwenden.
 
-  <p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.</p>
+  <p class="tip">Es ist sehr gefährlich, dynamisch beliebiges HTML-Code auf ihrer Webseite zu rendern, da dies leicht zu [XSS-Attacken](https://de.wikipedia.org/wiki/Cross-Site-Scripting) führen kann. Wenden Sie `v-html` nur auf vertrauenswürdige Inhalt und **niemals** auf benutzergenerierte Inhalte an.</p>
 
-  <p class="tip">In [single-file components](../guide/single-file-components.html), `scoped` styles will not apply to content inside `v-html`, because that HTML is not processed by Vue's template compiler. If you want to target `v-html` content with scoped CSS, you can instead use [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html) or an additional, global `<style>` element with a manual scoping strategy such as BEM.</p>
+  <p class="tip">In [Ein-Dateien-Komponenten](../guide/single-file-components.html) werden `scoped`-Stile innerhalb von `v-html` nicht angewandt, weil dieses HTML nicht durch den Compiler von Vue verarbeitet wird. Wenn Sie `v-html`-Inhalte mit scoped CSS ansprechen wollen, können Sie stattdessen [CSS-Module](https://vue-loader.vuejs.org/en/features/css-modules.html) oder ein zusätzliches, globales `<style>`-Element mit einer manuellen Strategie der Gültigkeitsbegrenzung wie BEM verwenden. </p>
 
 - **Beispiel:**
 
@@ -1860,19 +1860,19 @@ type: api
   <div v-html="html"></div>
   ```
 
-- **Siehe auch:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Raw-HTML)
+- **Siehe auch:** [Syntax für die Datenbindung - Interpolationen](../guide/syntax.html#Raw-HTML)
 
 ### v-show
 
-- **Expects:** `any`
+- **Erwartet:** `any`
 
 - **Verwendung:**
 
-  Toggles the element's `display` CSS property based on the truthy-ness of the expression value.
+  Schaltet die `display`-CSS-Eigenschaft eines Elements je nach dem, ob der Ausdruck wahr oder falsch ergibt, um.
 
-  This directive triggers transitions when its condition changes.
+  Diese Direktive löst Übergänge aus, wenn sich die Bedingung ändert.
 
-- **Siehe auch:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
+- **Siehe auch:** [Bedingtes Rendering - v-show](../guide/conditional.html#v-show)
 
 ### v-if
 
