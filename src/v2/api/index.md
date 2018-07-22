@@ -1413,45 +1413,45 @@ type: api
 
 - **Details:**
 
-  An object of DOM elements and component instances, registered with [`ref` attributes](#ref).
+  Ein Objekt, das DOM-Elemente und Instanzen von Komponenten enthält, die mit [`ref`-Attributen](#ref) registriert wurden.
 
 - **Siehe auch:**
-  - [Child Component Refs](../guide/components.html#Child-Component-Refs)
-  - [Special Attributes - ref](#ref)
+  - [Refs der Kindkomponenten](../guide/components.html#Child-Component-Refs)
+  - [Besondere Attribute - ref](#ref)
 
 ### vm.$isServer
 
 - **Datentyp:** `boolean`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  Whether the current Vue instance is running on the server.
+  Gibt bekannt, ob die aktuelle Vue-Instanz am Server läuft.
 
-- **Siehe auch:** [Server-Side Rendering](../guide/ssr.html)
+- **Siehe auch:** [Serverseitiges Rendering](../guide/ssr.html)
 
 ### vm.$attrs
 
 - **Datentyp:** `{ [key: string]: string }`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  Contains parent-scope attribute bindings (except for `class` and `style`) that are not recognized (and extracted) as props. When a component doesn't have any declared props, this essentially contains all parent-scope bindings (except for `class` and `style`), and can be passed down to an inner component via `v-bind="$attrs"` - useful when creating higher-order components.
+  Enthält Bindunden aus dem Elternscope (mit Ausnahme von `class` und `style`), die als eigenschaften nicht erkannt (daher auch nicht extrahiert) wurden. Wenn eine Komponente keine deklarierten Eigenschaften hat, enthält `vm.$attrs` alle Bindungen aus dem Eltern-Scope (ausgenommen `class` und `style`) und kann an innere Komponenten via `v-bind="$attrs"` übergeben werden. Dies ist nützlich bei der Entwicklung von Komponenten höherer Ordnung.
 
 ### vm.$listeners
 
 - **Datentyp:** `{ [key: string]: Function | Array<Function> }`
 
-- **Read only**
+- **Schreibgeschützt**
 
 - **Details:**
 
-  Contains parent-scope `v-on` event listeners (without `.native` modifiers). This can be passed down to an inner component via `v-on="$listeners"` - useful when creating transparent wrapper components.
+  Enthält `v-on`-Ereignisbehandlngsroutinen aus dem Eltern-Scope (ohne `.native`-Modifikator). Diese können via `v-on="$listeners"` and eine innere Komponente übergeben werden - nützlich beim Erstellen transparenter Wrapper-Komponenten. 
 
-## Instance Methods / Data
+## Instanzen-Methoden / Daten
 
 ### vm.$watch( expOrFn, callback, [options] )
 
@@ -1466,58 +1466,58 @@ type: api
 
 - **Verwendung:**
 
-  Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression only accepts dot-delimited paths. For more complex expressions, use a function instead.
+  Beobachtet einen Ausdruck oder eine berechnete Funktion auf der Vue-Instanz, um Veränderungen festzustellen. Das Callback wird mit dem neuen und dem alten Wert aufgerufen. Im Ausdruck sind nur durch einen Punkt getrennte Pfade erlaubt. Für komplexere Ausdrücke können Sie eine Funktion verwenden.
 
-<p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
+<p class="tip">Anmerkung: Wenn ein Object oder ein Array verändert (nicht ersetzt) wird, ist der alte Wert gleich dem neuen, weil sie auf dasselbe Object/Array verweisen. Vue hat kein Exemplar des Objekts vor der Veränderung.</p>
 
 - **Beispiel:**
 
   ``` js
-  // keypath
+  // Schlüsselpfad
   vm.$watch('a.b.c', function (newVal, oldVal) {
-    // do something
+    // Hier tun wir etwas 
   })
 
-  // function
+  // Funktion
   vm.$watch(
     function () {
       return this.a + this.b
     },
     function (newVal, oldVal) {
-      // do something
+      // Hier tun wir etwas 
     }
   )
   ```
 
-  `vm.$watch` returns an unwatch function that stops firing the callback:
+  `vm.$watch` gibt eine "unwatch"-Funktion zurück, die das Feuern des Callbacks beendet: 
 
   ``` js
   var unwatch = vm.$watch('a', cb)
-  // later, teardown the watcher
+  // Später, beende die Arbeit des Watchers
   unwatch()
   ```
 
 - **Option: deep**
 
-  To also detect nested value changes inside Objects, you need to pass in `deep: true` in the options argument. Note that you don't need to do so to listen for Array mutations.
+  Um auch Veränderung der verschachtelten Werte innerhalb von Objects feststellen zu können, müssen Sie `deep: true` in das Optionen-Argument übergeben. Beachten Sie, dass dies nicht notwendig ist, wenn Sie über Array-Veränderungen benachrichtigt werden wollen.
 
   ``` js
   vm.$watch('someObject', callback, {
     deep: true
   })
   vm.someObject.nestedValue = 123
-  // callback is fired
+  // Callback wird gefeuert
   ```
 
 - **Option: immediate**
 
-  Passing in `immediate: true` in the option will trigger the callback immediately with the current value of the expression:
+  Wenn Sie `immediate: true` an die Option übergeben, wird der Callback unmittelbar danach mit dem aktuellen Wert des Ausdrucks ausgelöst.
 
   ``` js
   vm.$watch('a', callback, {
     immediate: true
   })
-  // `callback` is fired immediately with current value of `a`
+  // `callback` wird sofort mit dem aktuellen Wert von `a` gefeuert
   ```
 
 ### vm.$set( target, key, value )
@@ -1527,11 +1527,11 @@ type: api
   - `{string | number} key`
   - `{any} value`
 
-- **Rückgabewert:** the set value.
+- **Rückgabewert:** Der neue Wert (auf den gesetzt wurde).
 
 - **Verwendung:**
 
-  This is the **alias** of the global `Vue.set`.
+  Dies ist ein **Alias** des globalen `Vue.set`.
 
 - **Siehe auch:** [Vue.set](#Vue-set)
 
@@ -1543,11 +1543,11 @@ type: api
 
 - **Verwendung:**
 
-  This is the **alias** of the global `Vue.delete`.
+  Dies ist ein **Alias** des globalen `Vue.delete`.
 
 - **Siehe auch:** [Vue.delete](#Vue-delete)
 
-## Instance Methods / Events
+## Instanzenmethoden / Ereignisse
 
 ### vm.$on( event, callback )
 
