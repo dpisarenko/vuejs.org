@@ -1017,23 +1017,23 @@ type: api
   <p class="tip">`provide` und `inject` werden primär für die Entwicklung von Plugins und Komponentenbibliotheken verwendet. Es wird NICHT empfohlen, sie im normalen Anwendungscode zu verwenden.</p>
   
   Dieses Optionen-Parr wird gemeinsam verwendet, damit eine Vorfahren-Komponente als Dependency Injector für alle ihre Kinder verwendet werden kann, unabhängig davon, wie tief die Hiearchie ist (solange sie sich in der selben Elternkette befinden). Wenn Sie mit React vertraut sind, ist dies sehr ähnlich zur Kontext-Funktionalität in React.
+  
+  Die `provide`-Option sollte ein Objekt oder eine Funktion sein, die ein Objekt zurückgibt. Dieses Objekt enthält Eigenschaften, die in die Nachfahren injiziert werden können. Sie können ES2015-Symbole as Schlüssel in diesem Objekt verwenden, aber nur in Umgebungen, die nativ `Symbol` und `Reflect.ownKeys` unterstützten.
 
-  The `provide` option should be an object or a function that returns an object. This object contains the properties that are available for injection into its descendants. You can use ES2015 Symbols as keys in this object, but only in environments that natively support `Symbol` and `Reflect.ownKeys`.
+  Die `inject`-Option sollte eines von zwei Dingen sein: 
+  - Ein String-Array
+  - Ein Objekt, bei dem die Schlüssel der lokale Bindungsname ist und der Wert
+    - entweder Schlüssel (string oder Symbol), über den in verfügbaren Injizierungen gesucht werden kann, oder
+    - ein Objekt, bei dem
+      - die `from`-Eigenschaft der Schlüssel (string oder Symbol) über den in verfügbaren Injizierungen gesucht werden kann, und
+      - die `default`-Eigenschaft für den Fall, dass die Suche fehlschlägt. 
 
-  The `inject` option should be either:
-  - an array of strings, or
-  - an object where the keys are the local binding name and the value is either:
-    - the key (string or Symbol) to search for in available injections, or
-    - an object where:
-      - the `from` property is the key (string or Symbol) to search for in available injections, and
-      - the `default` property is used as fallback value
-
-  > Note: the `provide` and `inject` bindings are NOT reactive. This is intentional. However, if you pass down an observed object, properties on that object do remain reactive.
+  > Beachten Sie: Die `provide`- und `inject`-Bindungen sind NICHT reaktiv. Das ist Absicht. Wenn sie aber ein beobachtetes Objekt übergeben, bleiben die Eigenschaften dieses Objekts reaktiv.
 
 - **Beispiel:**
 
   ``` js
-  // parent component providing 'foo'
+  // Die Eltern-Komponente stellt 'foo' zur Verfügung.
   var Provider = {
     provide: {
       foo: 'bar'
@@ -1041,7 +1041,7 @@ type: api
     // ...
   }
 
-  // child component injecting 'foo'
+  // Kindkomponente, in die 'foo' injiziert wird.
   var Child = {
     inject: ['foo'],
     created () {
@@ -1050,8 +1050,9 @@ type: api
     // ...
   }
   ```
+  
+  Das Gleiche mit ES2015-Symbolen, einer `provide`-Funktion und einem `inject`-Objekt: 
 
-  With ES2015 Symbols, function `provide` and object `inject`:
   ``` js
   const s = Symbol()
 
