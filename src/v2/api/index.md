@@ -1014,9 +1014,9 @@ type: api
 
 - **Details:**
 
-  <p class="tip">`provide` and `inject` are primarily provided for advanced plugin / component library use cases. It is NOT recommended to use them in generic application code.</p>
-
-  This pair of options are used together to allow an ancestor component to serve as a dependency injector for all its descendants, regardless of how deep the component hierarchy is, as long as they are in the same parent chain. If you are familiar with React, this is very similar to React's context feature.
+  <p class="tip">`provide` und `inject` werden primär für die Entwicklung von Plugins und Komponentenbibliotheken verwendet. Es wird NICHT empfohlen, sie im normalen Anwendungscode zu verwenden.</p>
+  
+  Dieses Optionen-Parr wird gemeinsam verwendet, damit eine Vorfahren-Komponente als Dependency Injector für alle ihre Kinder verwendet werden kann, unabhängig davon, wie tief die Hiearchie ist (solange sie sich in der selben Elternkette befinden). Wenn Sie mit React vertraut sind, ist dies sehr ähnlich zur Kontext-Funktionalität in React.
 
   The `provide` option should be an object or a function that returns an object. This object contains the properties that are available for injection into its descendants. You can use ES2015 Symbols as keys in this object, but only in environments that natively support `Symbol` and `Reflect.ownKeys`.
 
