@@ -1557,7 +1557,7 @@ type: api
 
 - **Verwendung:**
 
-  Listen for a custom event on the current vm. Events can be triggered by `vm.$emit`. The callback will receive all the additional arguments passed into these event-triggering methods.
+  Hört einem benutzerdefinierten Ereignis auf dem aktuellen vm zu. Ereignisse können mit `vm.$emit` ausgelöst werden. Das Callback wird alle zusätzlichen Argumente erhalten, die an diese ereignisauslösende Methoden übergeben wurden.
 
 - **Beispiel:**
 
@@ -1577,7 +1577,7 @@ type: api
 
 - **Verwendung:**
 
-  Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.
+  Höre einem benutzerdefinierten Ereignis zu, aber nur ein Mal. Der Listener wird entfernt, nachdem er zum ersten Mal ausgelöst wurde.
 
 ### vm.$off( [event, callback] )
 
@@ -1587,13 +1587,13 @@ type: api
 
 - **Verwendung:**
 
-  Remove custom event listener(s).
+  Entfernt benutzerdefinierte Event-Listener.
 
-  - If no arguments are provided, remove all event listeners;
+  - Wenn keine Argumente angegeben sind, werden alle Listener entfernt;
 
-  - If only the event is provided, remove all listeners for that event;
+  - Wenn nur das Ereignis übergeben wird, werden alle Listener des jeweiligen Ereignisses entfernt;
 
-  - If both event and callback are given, remove the listener for that specific callback only.
+  - Wenn sowohl das Ereignis, als auch das Callback übergeben werden, wird nur der Listener für das jeweilige Callback entfernt.
 
 ### vm.$emit( eventName, [...args] )
 
@@ -1601,11 +1601,11 @@ type: api
   - `{string} eventName`
   - `[...args]`
 
-  Trigger an event on the current instance. Any additional arguments will be passed into the listener's callback function.
+  Löst ein Ereignis auf der aktuellen Instanz aus. Jegliche zusätzliche Argumente werden an die Callback-Funktion des Listeners übergeben.
 
-- **Examples:**
+- **Beispiele:**
 
-  Using `$emit` with only an event name:
+  Verwendung von `$emit` nur mit dem Namen des Ereignisses:
 
   ```js
   Vue.component('welcome-button', {
@@ -1654,7 +1654,7 @@ type: api
   </script>
   {% endraw %}
 
-  Using `$emit` with additional arguments:
+  Verwendung von `$emit` mit zusätzlichen Argumenten:
 
   ```js
   Vue.component('magic-eight-ball', {
@@ -1728,7 +1728,7 @@ type: api
   </script>
   {% endraw %}
 
-## Instance Methods / Lifecycle
+## Instanzenmethoden / Lebenszyklus
 
 ### vm.$mount( [elementOrSelector] )
 
@@ -1736,15 +1736,15 @@ type: api
   - `{Element | string} [elementOrSelector]`
   - `{boolean} [hydrating]`
 
-- **Rückgabewert:** `vm` - the instance itself
+- **Rückgabewert:** `vm` - die Instanz selber
 
 - **Verwendung:**
 
-  If a Vue instance didn't receive the `el` option at instantiation, it will be in "unmounted" state, without an associated DOM element. `vm.$mount()` can be used to manually start the mounting of an unmounted Vue instance.
+  Hat die Vue-Instanz bei der Instanziierung keine `el`-Option erhalten, bleibt sie im "unmontierten" Zustand, ohne ein zugehöriges DOM-Element. `vm.$mount()` kann verwendet werden, um manuell das Montieren einer unmontierten Vue-Instanz einzuleiten. 
 
-  If `elementOrSelector` argument is not provided, the template will be rendered as an off-document element, and you will have to use native DOM API to insert it into the document yourself.
+  Wenn das `elementOrSelector`-Argument nicht übergeben wird, wird die Vorlage als off-document-Element gerendert. Diesfalls werden Sie die native DOM API verwenden müssen, um es selbst in das Dokument einzufügen. 
 
-  The method returns the instance itself so you can chain other instance methods after it.
+  Die Methode gibt die Instanz selber zurück, sodass Sie mehrere Methoden verkettet aufrufen können.
 
 - **Beispiel:**
 
@@ -1753,26 +1753,26 @@ type: api
     template: '<div>Hello!</div>'
   })
 
-  // create and mount to #app (will replace #app)
+  // Erstelle und montiere auf #app (wird #app ersetzen)
   new MyComponent().$mount('#app')
 
-  // the above is the same as:
+  // Der Code oben kann auch geschrieben werden als:
   new MyComponent({ el: '#app' })
 
-  // or, render off-document and append afterwards:
+  // oder, rendere off-document und füge später hinzu
   var component = new MyComponent().$mount()
   document.getElementById('app').appendChild(component.$el)
   ```
 
 - **Siehe auch:**
-  - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
-  - [Server-Side Rendering](../guide/ssr.html)
+  - [Lebenszyklusdiagramm](../guide/instance.html#Lifecycle-Diagram)
+  - [Serverseitiges Rendering](../guide/ssr.html)
 
 ### vm.$forceUpdate()
 
 - **Verwendung:**
 
-  Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.
+  Zwingt die Vue-Instanz dazu, sich neuzurendern. Das betrifft nicht alle Kindkomponenten, nur die Instanz selber und Kindkomponenten mit eingefügtem Slot-Inhalt.
 
 ### vm.$nextTick( [callback] )
 
