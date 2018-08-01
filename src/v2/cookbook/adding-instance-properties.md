@@ -1,18 +1,18 @@
 ---
-title: Adding Instance Properties
+title: Eigenschaften zu Instanzen hinzufügen
 type: cookbook
 order: 2
 ---
 
-## Base Example
+## Einfaches Beispiel
 
-There may be data/utilities you'd like to use in many components, but you don't want to [pollute the global scope](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md). In these cases, you can make them available to each Vue instance by defining them on the prototype:
+Es kann vorkommen, dass es Daten oder Routinen gibt, die Sie in mehreren Komponenten verwenden wollen, ohne den [global Scope zu verschmutzen](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch3.md). In diesen Fällen können sie sie jeder Vue-Instanz zur Verfügung stellen, indem Sie sie auf dem Prototyp definieren:
 
 ```js
 Vue.prototype.$appName = 'My App'
 ```
 
-Now `$appName` is available on all Vue instances, even before creation. If we run:
+Jetzt ist `$appName` auf allen Vue-Instanzen verfügbar, sogar vor ihrer Erstellung. Wenn wir 
 
 ```js
 new Vue({
@@ -22,31 +22,31 @@ new Vue({
 })
 ```
 
-Then `"My App"` will be logged to the console!
+ausführen, wird `"My App"` in die Konsole ausgegeben werden! 
 
-## The Importance of Scoping Instance Properties
+## Warum der Gültigkeitsbereich (Scope) der Instanzen-Eigenschaften wichtig ist
 
-You may be wondering:
+Sie könten sich fragen:
 
-> "Why does `appName` start with `$`? Is that important? What does it do?
+> "Warum beginnt `appName` mit `$`? Ist das wichtig? Was macht es?
 
-No magic is happening here. `$` is a convention Vue uses for properties that are available to all instances. This avoids conflicts with any defined data, computed properties, or methods.
+Da gibt es keine Zauberei. `$` ist eine Vue-Konvention, die besagt, dass die jeweilige Eigenschaft allen Instanzen zur Verfügung steht. Dadurch werden Konflikte mit definierten Daten, berechneten Eigenschaften und Methoden vermieden.
 
-> "Conflicts? What do you mean?"
+> "Konflikte?" Was meinen Sie damit?
 
-Another great question! If you set:
+Noch eine gute Frage! Wenn Sie
 
 ```js
 Vue.prototype.appName = 'My App'
 ```
 
-Then what would you expect to be logged below?
+schreiben, was würden Sie erwarten, dass im Beispiel unten ausgegeben wird?
 
 ```js
 new Vue({
   data: {
-    // Uh oh - appName is *also* the name of the
-    // instance property we defined!
+    // Autsch - appName ist *auch* der Name einer
+    // Instanzeneigenschaft, die wir definiert haben!
     appName: 'The name of some other app'
   },
   beforeCreate: function() {
@@ -58,7 +58,8 @@ new Vue({
 })
 ```
 
-It would be `"My App"`, then `"The name of some other app"`, because `this.appName` is overwritten ([sort of](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)) by `data` when the instance is created. We scope instance properties with `$` to avoid this. You can even use your own convention if you'd like, such as `$_appName` or `ΩappName`, to prevent even conflicts with plugins or future features.
+Zuerst würde `"My App"`, dann `"The name of some other app"` ausgegeben werden, weil `this.appName` durch `data` [mehr oder minder](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) überschrieben wurde, als die Instanz erstellt wurde. Wir geben den Gültigkeitsbereich der Instanzeneigenschaften mit `$` an, um dies zu verhindern. Sie können sogar eigene Konventionen nutzen, wenn Sie wollen (z. B. `$_appName` oder `ΩappName`). Damit vermeiden Sie Konflikte mit künftigen Plugins oder Funktionalitäten. 
+
 
 ## Real-World Example: Replacing Vue Resource with Axios
 
