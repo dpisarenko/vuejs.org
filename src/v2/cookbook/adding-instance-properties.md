@@ -60,12 +60,11 @@ new Vue({
 
 Zuerst würde `"My App"`, dann `"The name of some other app"` ausgegeben werden, weil `this.appName` durch `data` [mehr oder minder](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md) überschrieben wurde, als die Instanz erstellt wurde. Wir geben den Gültigkeitsbereich der Instanzeneigenschaften mit `$` an, um dies zu verhindern. Sie können sogar eigene Konventionen nutzen, wenn Sie wollen (z. B. `$_appName` oder `ΩappName`). Damit vermeiden Sie Konflikte mit künftigen Plugins oder Funktionalitäten. 
 
+## Realistisches Beispiel: Vue-Ressourcen mit Axios ersetzen
 
-## Real-World Example: Replacing Vue Resource with Axios
+Nehmen wir an, Sie wollen eine [veraltete Vue Ressource](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4) ersetzen. Sie haben den Zugriff auf Methoden über `this.$http` genossen und wollen das Gleiche mit Axios machen.
 
-Let's say you're replacing the [now-retired Vue Resource](https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4). You really enjoyed accessing request methods through `this.$http` and you want to do the same thing with Axios instead.
-
-All you have to do is include axios in your project:
+Das Einzige, was Sie machen müssen ist, Axios zu Ihrem Projekt hinzuzufügen:
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
@@ -77,14 +76,13 @@ All you have to do is include axios in your project:
 </div>
 ```
 
-Alias `axios` to `Vue.prototype.$http`:
+Erstellen Sie einen Alias `axios`, der auf `Vue.prototype.$http` verweist:
 
 ```js
 Vue.prototype.$http = axios
 ```
 
-Then you'll be able to use methods like `this.$http.get` in any Vue instance:
-
+Dann werden Sie in der Lage sein, Methoden wie `this.$http.get` in jeder Vue-Instanz aufzurufen:  
 ```js
 new Vue({
   el: '#app',
@@ -102,11 +100,11 @@ new Vue({
 })
 ```
 
-## The Context of Prototype Methods
+## Der Kontext der Prototyp-Methoden
 
-In case you're not aware, methods added to a prototype in JavaScript gain the context of the instance. That means they can use `this` to access data, computed properties, methods, or anything else defined on the instance.
+Falls Sie es nicht wissen, bekommen Methoden, die zu einem Prototyp hinzugefügt werden, den Kontext der jeweligen Instanz. Das heisst, sie können `this` verwenden, um auf Daten, berechnete Eigenschaften, Methoden und alle andere Elemente der Instanz zuzugreifen.
 
-Let's take advantage of this in a `$reverseText` method:
+Nutzen wir das einmal in der `$reverseText`-Methode:
 
 ```js
 Vue.prototype.$reverseText = function(propertyName) {
@@ -128,7 +126,7 @@ new Vue({
 })
 ```
 
-Note that the context binding will **not** work if you use an ES6/2015 arrow function, as they implicitly bind to their parent scope. That means the arrow function version:
+Beachten Sie, dass die Kontextbindung **nicht** funktionieren wird, wenn Sie die Pfeilnotation aus ES6/2015 verwenden, da sie implizit an den Gültigkeitsbereich ihres Eltern-Elements bindet. Dass bedeutet, dass der Code
 
 ```js
 Vue.prototype.$reverseText = propertyName => {
@@ -139,17 +137,18 @@ Vue.prototype.$reverseText = propertyName => {
 }
 ```
 
-Would throw an error:
+einen Fehler werfen wird:
 
 ```log
 Uncaught TypeError: Cannot read property 'split' of undefined
 ```
 
-## When To Avoid This Pattern
+## Wann dieses Muster vermieden werden soll
 
-As long as you're vigilant in scoping prototype properties, using this pattern is quite safe - as in, unlikely to produce bugs.
+Solange Sie auf den Gültigkeitsbereich der Prototypeneigenschaften aufpassen, ist die Verwendung dieses Musters relativ sicher, d. h. es ist unwahrscheinlich, dass dadurch Fehler produziert werden. 
 
-However, it can sometimes cause confusion with other developers. They might see `this.$http`, for example, and think, "Oh, I didn't know about this Vue feature!" Then they move to a different project and are confused when `this.$http` is undefined. Or, maybe they want to Google how to do something, but can't find results because they don't realize they're actually using Axios under an alias.
+Jedoch kann es manchmal Verwirrung bei anderen Entwicklern stiften. Sie können z. B. `this.$http` sehen und sich denken "Oh, ich habe diese Vue-Funktionalität nicht gekannt!" Dann gehen sie zu einem anderen Projekt und sind verwirrt, wenn `this.$http` undefiniert ist. Oder sie wollen googeln, wie man etwas macht und finden keine Ergebnisse, weil sie nicht begreifen, dass sie in Wirklichkeit Axios über einen Alias nutzen.
+
 
 **The convenience comes at the cost of explicitness.** When looking at a component, it's impossible to tell where `$http` came from. Vue itself? A plugin? A coworker?
 
