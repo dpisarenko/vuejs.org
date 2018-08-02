@@ -149,26 +149,26 @@ Solange Sie auf den Gültigkeitsbereich der Prototypeneigenschaften aufpassen, i
 
 Jedoch kann es manchmal Verwirrung bei anderen Entwicklern stiften. Sie können z. B. `this.$http` sehen und sich denken "Oh, ich habe diese Vue-Funktionalität nicht gekannt!" Dann gehen sie zu einem anderen Projekt und sind verwirrt, wenn `this.$http` undefiniert ist. Oder sie wollen googeln, wie man etwas macht und finden keine Ergebnisse, weil sie nicht begreifen, dass sie in Wirklichkeit Axios über einen Alias nutzen.
 
+**Der Preis der Bequemlicheit ist die fehlende Ausdrücklichkeit.** Wenn Sie eine Komponente ansehen, ist es unmöglich herauszufinden, woher `$http` kommt. Ist es in Vue eingebaut? Aus einem Plugin? Hat's ein Kollege hinzugefügt?
 
-**The convenience comes at the cost of explicitness.** When looking at a component, it's impossible to tell where `$http` came from. Vue itself? A plugin? A coworker?
+Was sind also die Alternativen?
 
-So what are the alternatives?
+## Alternative Entwurfsmuster
 
-## Alternative Patterns
+### Wenn kein Modulsystem verwendet wird
 
-### When Not Using a Module System
+In Anwendungen **ohne** ein Modulsystem (z. B. WebPack oder Browserify), gibt es ein Entwurfsmuster das oft mit _beliebigen_ JavaScript-erweiterten Frontends verwendet wird: ein globales `App`-Objekt.
 
-In applications with **no** module system (e.g. via Webpack or Browserify), there's a pattern that's often used with _any_ JavaScript-enhanced frontend: a global `App` object.
-
-If what you want to add has nothing to do with Vue specifically, this may be a good alternative to reach for. Here's an example:
+Es könnte eine gute Wahl sein, wenn das, was Sie himzufügen wollen, nichts mit Vue an sich zu tun. Hier ist ein Beispiel:
 
 ```js
 var App = Object.freeze({
   name: 'My App',
   version: '2.1.4',
   helpers: {
-    // This is a purely functional version of
-    // the $reverseText method we saw earlier
+    // Dies ist eine rein funktionale Version
+    // der $reverseText-Methode, die wir vorhin
+    // gesehen haben.
     reverseText: function(text) {
       return text
         .split('')
@@ -178,13 +178,13 @@ var App = Object.freeze({
   }
 })
 ```
+<p class="tip">`Object.freeze` verhindert, dass das Objekt in Zukunft verändert wird. Dieser Aufruf macht alle Eigenschaften zu Konstanten und schützt Sie damit vor Fehlern, die durch die Veränderung des Zustands verursacht werden.
+</p>
 
-<p class="tip">If you raised an eyebrow at `Object.freeze`, what it does is prevent the object from being changed in the future. This essentially makes all its properties constants, protecting you from future state bugs.</p>
+Jetzt ist die Quelle dieser geteilten Eigeschaften offensichtlicher: es gibt ein `App`-Objekt, das irgendwo in der Anwendung definiert ist. Um es zu finden, können die Entwickler eine projektweite Suche durchführen.
 
-Now the source of these shared properties is more obvious: there's an `App` object defined somewhere in the app. To find it, developers can run a project-wide search.
-
-Another advantage is that `App` can now be used _anywhere_ in your code, whether it's Vue-related or not. That includes attaching values directly to instance options, rather than having to enter a function to access properties on `this`:
-
+Ein anderer Vorteil ist, dass `App` jetzt _überall_ in Ihrem Code verwendet werden kann, unabhängig davon, ob es Vue-bezogen ist oder nicht. Unter anderem können Sie Werte direkt an Instanzenoptionen anfügen, statt eine Funktion für den Zugriff auf `this`-Eigenschaften zu verwenden:
+ 
 ```js
 new Vue({
   data: {
@@ -195,9 +195,8 @@ new Vue({
   }
 })
 ```
+### Wenn ein Modulsystem verwendet wird
 
-### When Using a Module System
+Wenn Sie Zugang zu einem Modulsystem haben, können Sie geteilten Code mittels Module organisieren. Dann können Sie mit `require`/`import` diese Module dort verwenden, wo Sie sie brauchen. Das ist der Inbegriff der Eindeutigkeit, weil Sie in jeder Datei eine Liste der Abhängigkeiten haben. Sie wissen _exakt_, wo jede von ihnen herkommt.
 
-When you have access to a module system, you can easily organize shared code into modules, then `require`/`import` those modules wherever they're needed. This is the epitome of explicitness, because in each file you gain a list of dependencies. You know _exactly_ where each one came from.
-
-While certainly more verbose, this approach is definitely the most maintainable, especially when working with other developers and/or building a large app.
+Obwohl dieser Ansatz wortreicher ist, ist er zugleich definitiv am Besten zu warten, besonders, wenn Sie mit anderen Entwickler zusammenarbeiten und/oder eine große Anwendung schreiben.
