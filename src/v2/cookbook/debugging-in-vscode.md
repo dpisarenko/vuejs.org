@@ -14,17 +14,17 @@ Sie müssen Chrome und VS Code installiert haben. Stellen Sie sicher, dass die a
 
 Installieren und erstellen Sie ein Projekt mittels [vue-cli](https://github.com/vuejs/vue-cli). Die Anleitung zum Installieren befindet sich in der README-Datei des Projekts. Wechseln Sie in das neu erstellte Anwendungsverzeichnis und öffnen Sie VS Code.
 
-### Showing Source Code in the Chrome Devtools
+### Quellcode in Chrome Devtools anzeigen
 
-Before you can debug your Vue components from VS Code you need to update the generated Webpack config to build sourcemaps. We do this so that our debugger has a way to map the code within a compressed file back to its position in the original file. This ensures that you can debug an application even after your assets have been optimized by Webpack.
+Bevor Sie Ihre Vue-Komponenten von VS Code aus debuggen können, müssen Sie die generierte Webpack-Konfiguration aktualisieren, damit Sourcemaps erstellt werden. Wir machen das, damit unser Debugger weiß, welchen Codeteilen in einer komprimierten Datei welche Originaldateien entsprechen. Dies stellt sicher, dass Sie auch dann eine Anwendung debuggen können, wenn Ihre Assets durch WebPack optimiert wurden.
 
-Go to `config/index.js` and find the `devtool` property. Update it to:
+Öffnen Sie `config/index.js` und finden Sie dort die Eigenschaft `devtool`. Verändern Sie sie, dass die Zeile so aussieht:
 
 ```json
 devtool: 'source-map',
 ```
 
-With Vue CLI 3 you need set `devtool` property inside `vue.config.js`:
+In Vue CLI 3 müssen Sie die `devtool`-Eigenschaft in `vue.config.js` setzen:
 
 ```js
 module.exports = {
@@ -34,9 +34,9 @@ module.exports = {
 }
 ```
 
-### Launching the Application from VS Code
+### Anwendung aus VS Code heraus starten
 
-Click on the Debugging icon in the Activity Bar to bring up the Debug view, then click on the gear icon to configure a launch.json file, selecting **Chrome** for the environment. Replace content of the generated launch.json with the following two configurations:
+Klicken Sie auf das Debugger-Icon in der Activity-Leiste, um die Debug-Ansicht einzublenden. Dann klicken Sie auf das Zahnrad-Icon, um eine `launch.json`-Datei zu konfigurieren. Wählen Sie dabei **Chrome** als Umgebung aus. Ersetzen Sie den Inhalt der generierten `launch.json`-Datei mit den folgenden zwei Konfigurationen:
 
 ![Add Chrome Configuration](/images/config_add.png)
 
@@ -59,7 +59,7 @@ Click on the Debugging icon in the Activity Bar to bring up the Debug view, then
 }
 ```
 
-## Setting a Breakpoint
+## Einen Haltepunkt setzen
 
 1.  Set a breakpoint in **src/components/HelloWorld.vue** on `line 90` where the `data` function returns a string.
 
