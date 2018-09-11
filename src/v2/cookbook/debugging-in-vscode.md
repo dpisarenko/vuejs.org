@@ -81,23 +81,23 @@ Klicken Sie auf das Debugger-Icon in der Activity-Leiste, um die Debug-Ansicht e
 
 ### Vue Devtools
 
-There are other methods of debugging, varying in complexity. The most popular and simple of which is to use the excellent [vue-devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd). Some of the benefits of working with the devtools are that they enable you to live-edit data properties and see the changes reflected immediately. The other major benefit is the ability to do time travel debugging for Vuex.
+Es gibt andere Debug-Methoden unterschiedlicher Komplexität. Die beliebteste und einfachste davon ist [vue-devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd). Einer der Vorteile ist dass sie es erlauben, die Daten-Eigenschaften live zu verändern und die Veränderungen sofort zu sehen. Der andere wichtige Vorteil ist die Fähigkeit der "Zeitreisen" beim Debuggen von Vuex.
 
-![Devtools Timetravel Debugger](/images/devtools-timetravel.gif)
+![Zeitreisender Debugger von devtools](/images/devtools-timetravel.gif)
 
-<p class="tip">Please note that if the page uses a production/minified build of Vue.js (such as the standard link from a CDN), devtools inspection is disabled by default so the Vue pane won't show up. If you switch to an unminified version, you may have to give the page a hard refresh to see them.</p>
+<p class="tip">Bitte beachten Sie, dass wenn die Seite einen Produktions- bzw. minifizierten Build von Vue.js verwendet (wie jener auf dem Standard-Link vom CDN), die devtools-Inspektion per Voreinstellung ausgeschaltet ist. Deswegen wird der Vue-Abschnitt nicht sichtbar sein. Wenn Sie zur nicht-minifizierten Version umschalten, könnte es notwendig sein, die Seit "hart" zu aktualisieren, damit die Veränderungen sichtbar werden.</p>
 
 ### Vuetron
 
-[Vuetron](http://vuetron.io/) is a really nice project that extends some of the work that vue-devtools has done. In addition to the normal devtools workflow, you are able to:
+[Vuetron](http://vuetron.io/) ist ein sehr nettes Projekt, das die Funktionalität von vue-devtools erweitert. Zusätzlich zum normalen devtools-Workflow können Sie:
 
-* Quickly view API Request/Response: if you're using the fetch API for requests, this event is displayed for any request sent. The expanded card displays the request data as well as the response data.
-* Subscribe to specific parts of your application’s state for faster debugging
-* Visualize component hierarchy, and an animation allows you to collapse or expand the tree for specific hierarchy views.
+* Schnell die API-Anfragen und -Antworten betrachten: Wenn Sie die Fetch API für die Anfragen verwenden, werden Ereignisse für alle abgeschickten Anfragen dargestellt. Die ausgerollten Kartenansicht enthält sowohl die Anfrage- als auch die Antwort-Daten.
+* Abonnieren von spezifischen Teilen des Zustands Ihrer Anwendung, um das Debuggen zu beschleunigen
+* Visualisieren der Komponentenhierarchie. Eine Animation erlaubt Ihnen, den Baum ein- und auszuklappen, um besondere Hierarchie-Ansichten zu haben.
 
-![Vuetron Heirarchy](/images/vuetron-heirarchy.gif)
+![Hierarchie von Vuetron](/images/vuetron-heirarchy.gif)
 
-### Simple Debugger Statement
+### Einfacher Debug-Statement
 
 The example above has a great workflow. However, there is an alternative option where you can use the [native debugger statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directly in your code. If you choose to work this way, it's important that you remember to remove the statements when you're done.
 
