@@ -61,23 +61,23 @@ Klicken Sie auf das Debugger-Icon in der Activity-Leiste, um die Debug-Ansicht e
 
 ## Einen Haltepunkt setzen
 
-1.  Set a breakpoint in **src/components/HelloWorld.vue** on `line 90` where the `data` function returns a string.
+1.  Setzen Sie einen Haltepunkt in **src/components/HelloWorld.vue** auf `Zeile 90`, wo die `data`-Funktion einen Text zurückgibt.
 
-  ![Breakpoint Renderer](/images/breakpoint_set.png)
+  ![Renderer des Haltepunkts](/images/breakpoint_set.png)
 
-2.  Open your favorite terminal at the root folder and serve the app using Vue CLI:
+2.  Öffnen Sie Ihr Lieblingsterminal im Wurzelverzeichnis und starten Sie die Anwendung mit der Vue CLI:
 
   ```
   npm start
   ```
 
-3.  Go to the Debug view, select the **'vuejs: chrome'** configuration, then press F5 or click the green play button.
+3.  Gehen Sie in die Debug-Ansicht und wählen Sie dort die **'vuejs: chrome'**-Konfiguration aus. Drücken Sie dann F5 oder klicken Sie auf den grünen Play-Button.
 
-4.  Your breakpoint should now be hit as the new instance of Chrome opens `http://localhost:8080`.
+4.  Wenn die neue Instanz der Anwendung in Chrome unter `http://localhost:8080` geöffnet wird, sollte die Ausführung an Ihrem Haltepunkt stehenbleiben.
 
-  ![Breakpoint Hit](/images/breakpoint_hit.png)
+  ![Haltepunkt wurde getroffen](/images/breakpoint_hit.png)
 
-## Alternative Patterns
+## Alternative Muster
 
 ### Vue Devtools
 
