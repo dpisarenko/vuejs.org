@@ -97,9 +97,9 @@ Es gibt andere Debug-Methoden unterschiedlicher Komplexität. Die beliebteste un
 
 ![Hierarchie von Vuetron](/images/vuetron-heirarchy.gif)
 
-### Einfacher Debug-Statement
+### Einfaches Debug-Statement
 
-The example above has a great workflow. However, there is an alternative option where you can use the [native debugger statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) directly in your code. If you choose to work this way, it's important that you remember to remove the statements when you're done.
+Das Beispiel oben hat einen grossartigen Workflow. Jedoch gibt es eine Alternative, wo Sie das [native Debug-statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) direkt in Ihrem Code verwenden können. Wenn Sie auf diese Weise arbeiten, ist es wichtig, am Ende die Debug-Statements aus dem Code zu entfernen.
 
 ```js
 <script>
@@ -118,6 +118,6 @@ export default {
 </script>
 ```
 
-## Acknowledgements
+## Danksagung
 
-This recipe was based on a contribution from [Kenneth Auchenberg](https://twitter.com/auchenberg), [available here](https://github.com/Microsoft/VSCode-recipes/tree/master/vuejs-cli).
+Dieses Rezept ist basiert auf einem Beitrag von [Kenneth Auchenberg](https://twitter.com/auchenberg), welcher [hier](https://github.com/Microsoft/VSCode-recipes/tree/master/vuejs-cli) verfügbar ist.
