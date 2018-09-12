@@ -121,9 +121,9 @@ Wenn wir uns verpflichten, diesem architektonischen Ansatz zu folgen, bedeutet d
 
 ### Auswirkungen von DevOps
 
-The adoption of [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html) culture, tools and agile engineering practices has, among other things, the nice effect of increasing the collaboration between the roles of development and operations. One of the main problem of the past (but also today in some realities) is that the dev team tended to be uninterested in the operation and maintenance of a system once it was handed over to the ops team, while the latter tended to be not really aware of the system's business goals and, therefore, reluctant in satisfying the operational needs of the system (also referred to as "whims of developers").
+Wenn wir die [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html)-Kultur, Werkzeuge und die agilen Ingenieurspraktiken wählen, führt das, unter anderem, zu einer Netten Nebenwirkung -- die Zusammenarbeit zwischen den Entwicklern (development) und Administratoren (operations) steigt. Eines der Probleme in der Vergangenheit (und der Gegenwart in manchen Firmen) ist das Folgende. Das Entwicklungsteam interessiert sich nicht für Belange des Betriebs und der Instandhaltung des Systems sobald es an die Admins übergeben wird. Die Admins interessieren sich nicht für die Geschäftsziele des Systems und reagieren zurückhaltend, wenn es darum geht, die operativen Bedürfnisse des Systems zufriedenzustellen (auch bekannt als "die Launen der Entwickler").
 
-So, delivering our Vue.js app as a Docker image helps reducing, if not removing entirely, the difference between running the service on a deveveloper's laptop, the production environment or any environment we may think of.
+Das Auslifern unserer Vue.js-Anwendung als ein Docker-Image minimiert den Unterschied zwischen dem Laufenlassen eines Dienstes auf dem Laptop eines Entwicklers, der Produktions- oder jeder anderen möglichen Umgebung.
 
 ### Effects of Continuous Delivery
 
