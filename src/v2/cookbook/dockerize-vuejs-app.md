@@ -53,15 +53,17 @@ docker run -it -p 8080:8080 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/doc
 
 Wir sollten in der Lage sein, auf unsere Vue.js-Anwendung über `localhost:8080` zuzugreifen.
 
-## Real-World Example
+## Ein realistisches Beispiel
 
-In the previous example, we used a simple, zero-configuration command-line [http server](https://github.com/indexzero/http-server) to serve our Vue.js app which is perfectly ok for quick prototyping and _may_ even be ok for simple production scenarios. After all, the documentation says:
+Im vorigen Beispiel verwendeten wir einen einfachen Kommandozeilen-[HTTP-Server](https://github.com/indexzero/http-server) für unsere Vue.js-Anwendung. Das geht in Ordnung zum schnellen Ausprobieren und _könnte_ sogar in einfachen Produktionsszenarien gut funktionieren. Schliesslich besagt die Dokumentation:
 
-> It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+> Es ist leistungsfähig genug für Verwendung in Produktion, aber einfach
+> und hackbar genug, damit man es fürs Testen, lokale Entwicklung und Lernen
+> verwenden kann.
 
-Nevertheless, for realistically complex production use cases, it may be wiser to stand on the shoulders of some giant like [NGINX](https://www.nginx.com/) or [Apache](https://httpd.apache.org/) and that is exactly what we are going to do next: we are about to leverage NGINX to serve our vue.js app because it is considered to be one of the most performant and battle-tested solutions out there.
+Jedoch kann es in realistischen, komplexen Produktionsszenarien weiser sein, sich auf die Schultern eines Giganten wie [NGINX](https://www.nginx.com/) or [Apache](https://httpd.apache.org/) zu stellen. Genau das werden wir als Nächstes machen: Wir werden NGINX verwenden, um unsere Vue.js-Anwendung laufen zu lassen, weil er als eine der schnellsten und kampferprobtesten Lösung ist.
 
-Let's refactor our `Dockerfile` to use NGINX:
+Reorganisieren wir einmal unser `Dockerfile`, so dass er NGINX verwendet:
 
  ```docker
 # build stage
@@ -79,12 +81,13 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-Ok, let's see what's going on here:
-* we have split our original `Dockerfile` in multiple stages by leveraging the Docker [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/) feature;
-* the first stage is responsible for building a production-ready artifact of our Vue.js app;
-* the second stage is responsible for serving such artifact using NGINX.
+OK, sehen wir mal, was hier passiert:
 
-Now let's build the Docker image of our Vue.js app:
+* Wir haben unser ursprüngliches `Dockerfile` in mehrere Stages aufgeteilt, indem wir die Funktionalität [Multi-stage-Builds](https://docs.docker.com/develop/develop-images/multistage-build/) von Docker verwendeten.
+* Die erste Umgebung (stage) ist für das Kompilieren eines Produktions-Artefakts unserer Vue.js-Anwendung verantwortlich.
+* Die zweite Umgebung (stage) ist für das Laufenlassen eines solchen Artefakts auf NGINX verantwortlich.
+
+Jetzt werden wir das Docker-Image unserer Vue.js-Anwendung kompilieren:
 
 ```bash
 docker build -t vuejs-cookbook/dockerize-vuejs-app .

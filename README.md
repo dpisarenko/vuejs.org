@@ -25,3 +25,5 @@ Wenn Sie Fehler in der Übersetzung entdecken bzw. letztere auf den neuesten Sta
 Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassung bestimmt.
 
 * to build a Docker image: ein Docker-Image kompilieren
+* to serve a vue.js app (an artifact): eine vue.js-Anwendung (ein Artefakt) laufen zu lassen
+* 
