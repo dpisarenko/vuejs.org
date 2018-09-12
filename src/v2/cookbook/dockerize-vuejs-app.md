@@ -93,32 +93,33 @@ Jetzt werden wir das Docker-Image unserer Vue.js-Anwendung kompilieren:
 docker build -t vuejs-cookbook/dockerize-vuejs-app .
 ```
 
-Finally, let's run our Vue.js app in a Docker container:
+Schließlich, lassen wir mal unsere Vue.js-Anwendung in einem Docker-Container laufen:
 
 ```bash
 docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
 ```
 
-We should be able to access our Vue.js app on `localhost:8080`.
+Wir sollten in der Lage sein, auf unsere Vue.js-Anwendung über `localhost:8080` zuzugreifen.
 
-## Additional Context
+## Zusätzlicher Kontext
 
-If you are reading this cookbook, chances are you already know why you decided to dockerize your Vue.js app. But if you simply landed on this page after hitting the Google's `I'm feeling lucky` button, let me share with you a couple of good reasons for doing that.
+Wenn Du dieses Kochbuch liest, weisst Du wahrscheinlich, warum Du Deine Vue.js-Anwendung dockerisieren willst. Aber wenn Du auf dieser Seite gelandet bist, nachdem Du in Google die `Auf gut Glück!`-Taste gedrückt hast, werde ich Dir ein paar gute Gründe dafür geben.
 
-Today's modern trend is to build applications using the [Cloud-Native](https://pivotal.io/cloud-native) approach which revolves mainly around the following buzzwords:
+Heute tendiert die Webentwicklung zum Ansatz von [Cloud-Native](https://pivotal.io/cloud-native), welches sich um die folgenden Buzzwords dreht:
+
 * Microservices
 * DevOps
 * Continuous Delivery
 
-Let's see how these concepts actually affect our decision of dockerizing our Vue.js app.
+Lass uns sehen, wie diese Konzepte die Entscheidung für und wider das Dockerisieren unserer Vue.js-Anwendung beeinflussen.
 
-### Effects of Microservices
+### Auswirkungen der Microservices
 
-By adopting the [microservices architectural style](https://martinfowler.com/microservices/), we end up building a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms. These services are built around business capabilities and independently deployable by fully automated deployment machinery.
+Wenn wir uns für die [Mikroservice-Architektur](https://martinfowler.com/microservices/) entscheiden, dann bauen wir eine Anwendung als ein System aus mehreren kleinen Diensten. Jeder davon läuft in seinem eigenen Prozess und kommuniziert mit anderen leichtgewichtigen Mechanismen. Diese Dienste werden rund um die Geschäftslogik-Funktionalitäten gebaut und unabhängig voneinander durch vollautomatische Maschinerie installiert.
 
-So, committing to this architectural approach most of the time implies developing and delivering our front-end as an independent service.
+Wenn wir uns verpflichten, diesem architektonischen Ansatz zu folgen, bedeutet dies, dass wir unser Frontend wie einen unabhängigen Dienst entwickeln und installieren.
 
-### Effects of DevOps
+### Auswirkungen von DevOps
 
 The adoption of [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html) culture, tools and agile engineering practices has, among other things, the nice effect of increasing the collaboration between the roles of development and operations. One of the main problem of the past (but also today in some realities) is that the dev team tended to be uninterested in the operation and maintenance of a system once it was handed over to the ops team, while the latter tended to be not really aware of the system's business goals and, therefore, reluctant in satisfying the operational needs of the system (also referred to as "whims of developers").
 
