@@ -19,3 +19,9 @@ Wenn Sie Fehler in der Übersetzung entdecken bzw. letztere auf den neuesten Sta
 
 * mich, Dmitri Pisarenko, unter [altruix@pm.me](mailto:altruix@pm.me) oder
 * das [Übersetzungsteam](https://github.com/vuejs/vuejs.org#on-translations) kontaktieren. 
+
+## Wiederkehrende Ausdrücke und ihre vorläufigen Übersetzungen
+
+Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassung bestimmt.
+
+* to build a Docker image: ein Docker-Image kompilieren
