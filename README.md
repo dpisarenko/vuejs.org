@@ -27,3 +27,4 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * to build a Docker image: ein Docker-Image kompilieren
 * to serve a vue.js app (an artifact): eine vue.js-Anwendung (ein Artefakt) laufen zu lassen
 * to deploy: installieren
+* alternative pattern: Alternative Muster

@@ -125,16 +125,16 @@ Wenn wir die [DevOps](https://martinfowler.com/bliki/DevOpsCulture.html)-Kultur,
 
 Das Auslifern unserer Vue.js-Anwendung als ein Docker-Image minimiert den Unterschied zwischen dem Laufenlassen eines Dienstes auf dem Laptop eines Entwicklers, der Produktions- oder jeder anderen möglichen Umgebung.
 
-### Effects of Continuous Delivery
+### Auswirkungen der Continuous Delivery
 
-By leveraging the [Continuous Delivery](https://martinfowler.com/bliki/ContinuousDelivery.html) discipline we build our software in a way that it can potentially be released to production at any time. Such engineering practice is enabled by means of what is normally called [continuous delivery pipeline](https://martinfowler.com/bliki/DeploymentPipeline.html). The purpose of a continuous delivery pipeline is to split our build into stages (e.g. compilation, unit tests, integration tests, performance tests, etc.) and let each stage verify our build artifact whenever our software changes. Ultimately, each stage increases our confidence in the production readiness of our build artifact and, therefore, reduces the risk of breaking things in production (or any other environment for that matters).
+Wenn wir die [Continuous Delivery](https://martinfowler.com/bliki/ContinuousDelivery.html)-Disziplin wirksam einsetzen, dann bauen wir unsere Software so, dass sie jederzeit in die Produktionsumgebung installiert werden kann. Eine solche Ingenieurspraktik wird meistens mittels einer [continuous delivery-Pipeline](https://martinfowler.com/bliki/DeploymentPipeline.html) umgesetzt. Deren Zweck besteht darin, den Build-Prozess in Etappen zu unterteilen (z. B. Kompilieren, Unit-Tests ausführen, Integrationstests ausführen, Performance-Tests ausführen etc.), sodass jede dieser Etappen das fertig kompilierte Programm nach jeder Änderung überprüft. Jede Etappe erhöht unsere Zuversicht, dass die Software bereit für den Produktionseinsatz ist. Daher wird das Risiko reduziert, dass Fehler in der Produktons- oder jeder anderen Umgebung auftreten.
 
-So, creating a Docker image for our Vue.js app is a good choice here because that would represent our final build artifact, the same artifact that would be verified against our continuous delivery pipeline and that could potentially be released to production with confidence.
+Das Erstellen eines Docker-Image für unsere Vue.js-Anwendung ist eine gute Wahl, weil das Docker-Image das letztendliche Build-Artefakt darstellen würde. Das gleiche Artefakt würde durch unsere continous delivery pipeline überprüft werden. Danach könnte man es in der Produktionsumgebung mit Zuversicht einsetzen.
 
-## Alternative Patterns
+## Alternative Muster
 
-If your company is not into Docker and Kubernetes just yet or you simply want to get your MVP out the door, maybe dockerizing your Vue.js app is not what you need.
+Wenn Deine Firma Docker und Kubernetes noch nicht verwendet, oder du ganz einfach Dein MVP so schnell wie möglich fertigstellen willst, dann ist vielleicht das Dockerisieren Deiner Anwendung nicht das Richtige für Dich.
 
-Common alternatives are:
-* leveraging an all-in-one platform like [netlify](https://www.netlify.com/);
-* hosting your SPA on [Amazon S3](https://aws.amazon.com/s3/) and serving it with [Amazon CloudFront](https://aws.amazon.com/cloudfront/) (see [this](https://serverless-stack.com/chapters/deploy-the-frontend.html) link for a detailed guide).
+Übliche Alternativen sind:
+* Verwendung einer Alles-in-Einem-Plattform wie [netlify](https://www.netlify.com/);
+* Hosten Deiner SPA auf [Amazon S3](https://aws.amazon.com/s3/) und Laufenlassen mit [Amazon CloudFront](https://aws.amazon.com/cloudfront/) (siehe [diesen](https://serverless-stack.com/chapters/deploy-the-frontend.html) Link mit einer detaillierten Anleitung).
