@@ -1,33 +1,35 @@
 ---
-title: Introduction
+title: Einführung
 type: cookbook
 order: 0
 ---
 
-## The Cookbook vs the Guide
+## Das Kochbuch und die Anleitung
 
-How is the cookbook different from the guide? Why is this necessary?
+Wie unterscheidet sich das Kochbuch von der Anleitung? Warum ist das notwendig?
 
-* **Greater Focus**: In the guide, we're essentially telling a story. Each section builds on and assumes knowledge from each previous section. In the cookbook, each recipe can and should stand on its own. This means recipes can focus on one specific aspect of Vue, rather than having to give a general overview.
+* **Bessere Fokussierung**: In der Anleitung erzählen wir eine Geschichte. Jeder Abschnitt baut auf dem vorigen auf und setzt voraus, dass der Leser das Wissen des vorigen Abschnitts verinnerlicht hat. Im Kochbuch kann und soll jedes Rezept für sich allein, isoliert stehen. Das bedeutet, dass die Rezepte sich jeweils ein spezifisches Aspekt von Vue konzentrieren können, statt einen allgemeinen Überblick zu geben.
 
-* **Greater Depth**: To avoid making the guide too long, we try to include only the simplest possible examples to help you understand each feature. Then we move on. In the cookbook, we can include more complex examples, combining features in interesting ways. Each recipe can also be as long and detailed as it needs to be, in order to fully explore its niche.
+* **Größere Tiefe**: Um zu verhindern, dass die Anleitung zu lang wird, versuchen wir immer die einfachsten möglichen Beispiele zu jeder Funktionalität zu inkludieren. Dann gehen wir weiter. Im Kochbuch können wir komplexere Beispiele inkludieren und Funktionalitäten miteinander kombinieren. Jedes Rezept kann so lang und so detailliert sein, wie es muss, um die jeweilige Niche vollständig zu beleuchten.
 
-* **Teaching JavaScript**: In the guide, we assume at least intermediate familiarity with ES5 JavaScript. For example, we won't explain how `Array.prototype.filter` works in a computed property that filters a list. In the cookbook however, essential JavaScript features (including ES6/2015+) can be explored and explained in the context of how they help us build better Vue applications.
+* **JavaScript lehren**: In der Anleitung setzen wir zumindest mittlere Vertrautheit mit ES5 JavaScript voraus. Zum Beispiel werden nicht erklären, wie `Array.prototype.filter` in einer berechneten Eigenschaft funktioniert, die eine Liste filtert. Im Kochbuch dagegen können grundlegende JavaScript-Funktionalitäten (inklusive ES6/2015+) weiter erforscht und im Kontext erklärt werden, wie sie uns helfen, bessere Vue-Anwendungen zu kreiern.
 
-* **Exploring the Ecosystem**: For advanced features, we assume some ecosystem knowledge. For example, if you want to use single-file components in Webpack, we don't explain how to configure the non-Vue parts of the Webpack config. In the cookbook, we have the space to explore these ecosystem libraries in more depth - at least to the extent that is universally useful for Vue developers.
+* **Das Ökosystem erforschen**: Bei fortgeschrittenen Funktionalitäten setzen wir eine gewisse Kenntnis des Ökosystems voraus. Zum Beispiel, wenn Du 1-Datei-Komponenten in Webpack verwenden willst, werden wir nicht erklären, wie Du nicht-Vue-Teile von Webpack konfigurieren sollst. Im Kochbuch haben wir den Raum, um diese Ökosystem-Bibliotheken tiefer zu erforschen - zumindest so weit, wie das für die Vue-Entwickler universell nützlich ist.
 
-## Cookbook Contributions
+## Beiträge zum Kochbuch
 
-### What we're looking for
+### Was wir suchen
 
-The Cookbook gives developers examples to work off of that both cover common or interesting use cases, and also progressively explain more complex detail. Our goal is to move beyond a simple introductory example, and demonstrate concepts that are more widely applicable, as well as some caveats to the approach.
+Das Kochbuch gibt Entwicklern Beispiele, auf denen sie aufbauen können. Diese beziehen sich sowohl auf häufige, als auch interessante Anwendungsfälle. Sie erklären die einzelnen Themen mit zunehmend komplexeren Details. Unser Ziel ist es, über einfache einführende Beispiele hinauszugehen und jene Konzepte zu zeigen, die weiter anwendbar sind, aber auch Vorbehalte gegen diese Ansätze aufzuzeigen.
 
-If you're interested in contributing, please initiate collaboration by filing an issue under the tag **cookbook idea** with your concept so that we can help guide you to a successful pull request. After your idea has been approved, please follow the template below as much as possible. Some sections are required, and some are optional. Following the numerical order is strongly suggested, but not required.
+Wenn Du einen beitragen willst, starte bitte die Zusammenarbeit indem Du ein Issue mit dem Tag **cookbook idea** mit Deinem Konzept einträgst. So können wir Dich zu einem erfolgreichen Pull Request begleiten. Nachdem Deine Idee genehmigt wurde, folge bitte der untenstehenden Vorlage soweit wie möglich. Einige Abschnitte sind obligatorisch, einige optional. Das Befolgen der numerischen Reihenfolge wird stark empfohlen, aber nicht benötigt.
 
-Recipes should generally:
+Rezepte sollten im Allgemeinen:
 
-> * Solve a specific, common problem
-> * Start with the simplest possible example
+> * Ein spezifisches, allgemeines Problem lösen
+> * Mit einem kleinstmöglichen Beispiel beginnen
+> * 
+
 > * Introduce complexities one at a time
 > * Link to other docs, rather than re-explaining concepts
 > * Describe the problem, rather than assuming familiarity
