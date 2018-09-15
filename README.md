@@ -31,3 +31,4 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * Base Example: Grundlegendes Beispiel
 * slot: Slot
 * accessibility: Zugänglichkeit (Alternative: Behindertenfreundlichkeit)
+* on the fly: im laufenden Betrieb

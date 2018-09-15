@@ -104,9 +104,9 @@ Wenn wir mehrere Größen des Icons haben wollen, können wir das sehr leicht ma
 
 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Screen%20Shot%202018-01-01%20at%204.51.40%20PM.png" width="450" />
 
-## Animatable Icons
+## Animierbare Icons
 
-Keeping icons in components comes in very handy when you'd like to animate them, especially on an interaction. Inline SVGs have the highest support for interaction of any method. Here's a very basic example of an icon that's animated on click:
+Komponenten für Icons sind hilfreich, wenn Du sie animieren willst, insbesondere in einer Interaktion. Inline SVGs unterstützen die Interatktionen am Besten. Hier ist ein sehr einfaches Beispiel eines Icons, welches nach einem Klick animiert wird:
 
 ```html
 <template>
@@ -161,13 +161,13 @@ export default {
 }
 ```
 
-We're applying `refs` to the groups of paths we need to move, and as both sides of the scissors have to move in tandem, we'll create a function we can reuse where we'll pass in the `refs`. The use of GreenSock helps resolve animation support and `transform-origin` issues across browser.
+Wir wenden `refs` auf Gruppen der Pfade an, die wir bewegen müssen. Weil beide Seiten der Schere sich in Tandem bewegen müssen, werden wir eine Funktion erstellen, die wir wiederverwenden und in die wir `refs` übergeben werden. Die Verwendung von GreenSock hilft uns, Probleme bei der Unterstützung der Animiation und der `transform-origin`-bezogenen Fehler in unterschiedlichen Browsern, zu beheben.
 
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Editable SVG Icon System: Animated icon" class="codepen">See the Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Editable SVG Icon System: Animated icon</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<p style="margin-top:-30px">Pretty easily accomplished! And easy to update on the fly.</p>
+<p style="margin-top:-30px">Das haben wir ziemlich leicht bewerkstelligt! Eine einfache Aktualisierung im laufenden Betrieb.</p>
 
-You can see more animated examples in the repo [here](https://github.com/sdras/vue-sample-svg-icons/)
+Du kannst mehr animierte Beispiele im Repository [hier](https://github.com/sdras/vue-sample-svg-icons/) finden.
 
 ## Additional Notes
 
