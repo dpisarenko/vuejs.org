@@ -78,12 +78,13 @@ _optional_
 
 Dieser Abschnitt ist nicht erforderlich, aber stark empfohlen. Es macht keinen Sinn, einen solchen Abschnitt über derart simple Sachen wie das Umschalten von Klassen bei der Veränderung des Zustands zu schreiben. Für fortgeschrittene Muster wie Mixins ist er jedoch unerlässlich. Die Antwort auf die meisten Fragen über Software-Entwicklung lautet ["Hängt davon ab!"](https://codepen.io/rachsmith/pen/YweZbG). Dieser Abschnitt huldigt diesem Prinzip. Darin sehen wir uns ehrlich an, wann das Muster hilfreich ist, wann es vermieden werden woll, und wo etwas Anderes besser geeignet ist.
 
+### Alternative Muster
 ### Alternative Patterns
 
 _required_
 
-This section is required when you've provided the section above about avoidance. It's important to explore other methods so that people told that something is an antipattern in certain situations are not left wondering. In doing so, consider that the web is a big tent and that many people have different codebase structures and are solving different goals. Is the app large or small? Are they integrating Vue into an existing project, or are they building from scratch? Are their users only trying to achieve one goal or many? Is there a lot of asynchronous data? All of these concerns will impact alternative implementations. A good cookbook recipe gives developers this context.
+Dieser Abschnitt ist erforderlich, wenn Du den Abschnitt oben über Vermeidung geschrieben hast. Es ist wichtig, andere Methoden zu erforschen. Dann können Menschen, denen gesagt wurde, dass etwas in bestimmten Situationen ein Antipattern ist, erfahren, was sie stattdessen tun sollen. Wenn Du diesen Abschnitt schreibst, denke daran, dass das Web ein grosser Zelt ist, viele Leute darin unterschiedliche Codestrukturen haben und unterschiedliche Ziele verfolgen. Ist die Anwendung gross oder klein? Integrieren sie Vue in ein existierendes Projekt, oder bauen sie etwas vom Scratch? Versuchen ihre Benutzer ein oder mehrere Ziele zu erreichen? Gibt es dort viele asynchrone Daten oder nicht? All diese Faktoren werden die alternativem Implementierungen beeinflussen. Ein gutes Kochrezept gibt dem Entwickler diesen Kontext.
 
-## Thank you
+## Danke!
 
-It takes time to contribute to documentation, and if you spend the time to submit a PR to this section of our docs, you do so with our gratitude.
+Es braucht Zeit, zur Dokumentation beizutragen. Wenn Du Dir Zeit genommen hast, einen PR zu diesem Abschnitt unserer Doku beizutragen, dann danken wir Dir.
