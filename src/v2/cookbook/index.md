@@ -28,14 +28,14 @@ Rezepte sollten im Allgemeinen:
 
 > * Ein spezifisches, allgemeines Problem lösen
 > * Mit einem kleinstmöglichen Beispiel beginnen
-> * 
+> * Eine Komplexität nach der anderen einführen (nicht mehrere auf einmal)
+> * Links zu anderen Dokumenten einfügen statt die Konzepte neu zu erklären
+> * Das Problem beschreiben statt vorauszusetzen, dass der Leser das Problem bereits kennt
+> * Den Prozess erklären, statt nur das Endergebnis
+> * Die Vor- und Nachteile Deiner Strategie erklären, inklusive der Fälle, wenn sie angemessen und nicht angemessen ist
+> * Erwähne gegebenenfalls alternative Lösungen, aber schreibe detaillierte Ausführungen in einem separaten Kochrezept
 
-> * Introduce complexities one at a time
-> * Link to other docs, rather than re-explaining concepts
-> * Describe the problem, rather than assuming familiarity
-> * Explain the process, rather than just the end result
-> * Explain the pros and cons of your strategy, including when it is and isn't appropriate
-> * Mention alternative solutions, if relevant, but leave in-depth explorations to a separate recipe
+Wir verlagen, dass Du der Vorlage unten folgst. Wir verstehen jedoch, dass es manchmal notwendig ist, davon abzuweichen, um die Klarheit oder den Textfluss zu verbessern.
 
 We request that you follow the template below. We understand, however, that there are times when you may necessarily need to deviate for clarity or flow. Either way, all recipes should at some point discuss the nuance of the choice made using this pattern, preferably in the form of the alternative patterns section.
 
