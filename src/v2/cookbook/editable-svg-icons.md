@@ -1,30 +1,30 @@
 ---
-title: Editable SVG Icon Systems
+title: Editierbare SVG-Icon-Systeme
 type: cookbook
 order: 4
 ---
 
-## Base Example
+## Grundlegendes Beispiel
 
-There are many ways to create an SVG Icon System, but one method that takes advantage of Vue's capabilities is to create editable inline icons as components. Some of the advantages of this way of working is:
+Man kann ein SVG-Icon-System auf mehrere Arten erstellen. Aber eine Methode nutzt die Fähigkeiten von Vue, editierbare Inline-Icons als Komponenten zu erstellen. Einige Vorteile davon sind:
 
-* They are easy to edit on the fly
-* They are animatable
-* You can use standard props and defaults to keep them to a typical size or alter them if you need to
-* They are inline, so no HTTP requests are necessary
-* They can be made accessible dynamically
+* Man kann sie leicht "on the fly" editieren
+* Man kann sie animieren
+* Du kannst Standard-Eigenschaften und Defaultwerte verwenden, um eine typische Größe zu erzwingen bzw. zu verändern
+* Sie sind inline, d. h. es sind keine HTTP-Anfragen nötig
+* Sie können dynamisch zugänglich gemacht werden
 
-First, we'll create a folder for all of the icons, and name them in a standardized fashion for easy retrieval:
+Zuerst werden wir ein Verzeichnis für alle Icons erstellen. Wir werden sie nach einem standardisierten Muster benennen, um sie leicht wiederfinden zu können:
 
 > components/icons/IconBox.vue
 > components/icons/IconCalendar.vue
 > components/icons/IconEnvelope.vue
 
-Here's an example repo to get you going, where you can see the entire setup: [https://github.com/sdras/vue-sample-svg-icons/](https://github.com/sdras/vue-sample-svg-icons/)
+Hier ist eine Beispielrepository, damit Du anfangen kannst. Dort kannst Du das Ganze sehen: [https://github.com/sdras/vue-sample-svg-icons/](https://github.com/sdras/vue-sample-svg-icons/)
 
-![Documentation site](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg 'Docs demo')
+![Dokumentations-Webseite](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg 'Demo der Dokumentation')
 
-We'll create a base icon (`IconBase.vue`) component that uses a slot.
+Wir werden eine Komponente (`IconBase.vue`) für ein Basis-Icon erstellen, welche ein Slot verwendet.
 
 ```html
 <template>
@@ -46,9 +46,9 @@ We'll create a base icon (`IconBase.vue`) component that uses a slot.
 </template>
 ```
 
-You can use this base icon as is- the only thing you might need to update is the `viewBox` depending on the `viewBox` of your icons. In the base, we're making the `width`, `height`, `iconColor`, and name of the icon props so that it can be dynamically updated with props. The name will be used for both the `<title>` content and its `id` for accessibility.
+Du kannst Dieses Basis-Icon "as is" verwenden. Das Einzige, was Du vielleicht verändern musst, ist die `viewBox`-Eigenschaft. Die korrekten Werte dafür hängen von der `viewBox` Deiner Icons ab. Im Basisicon machen wir die Eigenschaften `width`, `height`, `iconColor` und den Namen des Icons sodass es dynamisch aktualisiert wird, wenn sich die Eigenschaften verändern. Der Name wird sowohl für den Inhalt von `<title>`, als auch von `id` für die Zugänglichkeit sein.
 
-Our script will look like this, we'll have some defaults so that our icon will be rendered consistently unless we state otherwise:
+Unser Script wird wie folgt aussehen. Wir werden einige Default-Werte haben, sodass unser Icon konsistent gerendert wird, es sei denn wir spezifizieren etwas Anderes:
 
 ```js
 export default {
@@ -73,27 +73,27 @@ export default {
 }
 ```
 
-The `currentColor` property that's the default on the fill will make the icon inherit the color of whatever text surrounds it. We could also pass in a different color as a prop if we wish.
+Die Wert `currentColor` wird dazu führen, dass der Icon die Farbe des ihn umgebenden Textes erben wird. Wir könnten auch eine andere Farbe übergeben, wenn wir wollten.
 
-We can use it like so, with the only contents of `IconWrite.vue` containing the paths inside the icon:
+Wir können es so verwenden, dass sich nur der Inhalt von `IconWrite.vue` innerhalb des Icon-Tags befindet:
 
 ```html
 <icon-base icon-name="write"><icon-write /></icon-base>
 ```
 
-Now, if we'd like to make many sizes for the icon, we can do so very easily:
+Wenn wir mehrere Größen des Icons haben wollen, können wir das sehr leicht machen:
 
 ```html
 <p>
-  <!-- you can pass in a smaller `width` and `height` as props -->
+  <!-- Du kannst einen kleineren Wert für Breite (`width`) und Höhe (`height`) als Eigenschaften übergeben -->
   <icon-base
     width="12"
     height="12"
     icon-name="write"
   ><icon-write /></icon-base>
-  <!-- or you can use the default, which is 18 -->
+  <!-- Du kannst auch den Default-Wert von 18 verwenden -->
   <icon-base icon-name="write"><icon-write /></icon-base>
-  <!-- or make it a little bigger too :) -->
+  <!-- Oder das Icon ein wenig vergrössern :) -->
   <icon-base
     width="30"
     height="30"

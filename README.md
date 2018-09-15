@@ -22,9 +22,12 @@ Wenn Sie Fehler in der Übersetzung entdecken bzw. letztere auf den neuesten Sta
 
 ## Wiederkehrende Ausdrücke und ihre vorläufigen Übersetzungen
 
-Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassung bestimmt.
+Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassung bestimmt. Alternativvorschläge sind willkommen.
 
 * to build a Docker image: ein Docker-Image kompilieren
 * to serve a vue.js app (an artifact): eine vue.js-Anwendung (ein Artefakt) laufen zu lassen
 * to deploy: installieren
 * alternative pattern: Alternative Muster
+* Base Example: Grundlegendes Beispiel
+* slot: Slot
+* accessibility: Zugänglichkeit (Alternative: Behindertenfreundlichkeit)
