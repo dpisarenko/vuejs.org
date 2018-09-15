@@ -35,18 +35,16 @@ Rezepte sollten im Allgemeinen:
 > * Die Vor- und Nachteile Deiner Strategie erklären, inklusive der Fälle, wenn sie angemessen und nicht angemessen ist
 > * Erwähne gegebenenfalls alternative Lösungen, aber schreibe detaillierte Ausführungen in einem separaten Kochrezept
 
-Wir verlagen, dass Du der Vorlage unten folgst. Wir verstehen jedoch, dass es manchmal notwendig ist, davon abzuweichen, um die Klarheit oder den Textfluss zu verbessern.
+Wir verlagen, dass Du der Vorlage unten folgst. Wir verstehen jedoch, dass es manchmal notwendig ist, davon abzuweichen, um die Klarheit oder den Textfluss zu verbessern. Wie auch immer, alle Rezepte sollten irgendwo auf die Nuancen der jeweils gewählten Lösung eingehen, am Besten in Form eines Abschnitts über alternative Muster.
 
-We request that you follow the template below. We understand, however, that there are times when you may necessarily need to deviate for clarity or flow. Either way, all recipes should at some point discuss the nuance of the choice made using this pattern, preferably in the form of the alternative patterns section.
-
-### Base Example
+### Grundlegendes Beispiel
 
 _required_
 
-1.  Articulate the problem in a sentence or two.
-2.  Explain the simplest possible solution in a sentence or two.
-3.  Show a small code sample.
-4.  Explain what this accomplishes in a sentence.
+1.  Beschreibe das Problem in 1-2 Sätzen.
+2.  Erkläre die einfachste Lösung in 1-2 Sätzen.
+3.  Zeige ein kleines Code-Beispiel.
+4.  Erkläre in einem Satz, was dieser Code bewerkstelligt.
 
 ### Details about the Value
 
