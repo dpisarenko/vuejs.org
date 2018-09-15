@@ -169,19 +169,19 @@ Wir wenden `refs` auf Gruppen der Pfade an, die wir bewegen müssen. Weil beide 
 
 Du kannst mehr animierte Beispiele im Repository [hier](https://github.com/sdras/vue-sample-svg-icons/) finden.
 
-## Additional Notes
+## Zusätzliche Anmerkungen
 
-Designers may change their minds. Product requirements change. Keeping the logic for the entire icon system in one base component means you can quickly update all of your icons and have it propagate through the whole system. Even with the use of an icon loader, some situations require you to recreate or edit every SVG to make global changes. This method can save you that time and pain.
+Designers können ihre Meinungen ändern. Anforderungen an das Produkt können sich verändern. Wenn Du die Logik des gesamten Icon-Systems in einer Grundkomponente hältst, kannst Du schnell alle Deine Icons aktualisieren und sicher sein, dass diese Änderungen sich im gesamten System verbreiten werden. Selbst bei Verwendund eines Iconladers kann es vorkommen, dass Du jede SVG-Datei neu erstellen oder bearbeiten musst. Diese Methode kann Dir diese Zeit und Schmerzen sparen.
 
-## When To Avoid This Pattern
+## Wann Du dieses Muster nicht anwenden sollst
 
-This type of SVG icon system is really useful when you have a number of icons that are used in different ways throughout your site. If you're repeating the same icon many times on one page (e.g. a giant table a delete icon in each row), it might make more sense to have all of the sprites compiled into a sprite sheet and use `<use>` tags to load them.
+Diese Art eines SVG-Icon-Systems is nützlich, wenn Du mehrere Icons hast, die auf unterschiedliche Arten auf der gesamten Seite verwendet werden. Wenn Du dagegen ein und dasselbe Icon mehrmals auf gleicher Seite verwendest (z. B. das "Entfernen"-Icon in jeder Zeile einer riesigen Tabelle), dann könnte es sinnvoller sein, alle Sprites zu einem Sprite-Sheet zu kompilieren und die `<use>`-Tags zu verwenden, um sie zu laden.
 
-## Alternative Patterns
+## Alternative Muster
 
-Other tooling to help manage SVG icons includes:
+Andere Werkzeuge für die Verwaltung von SVG-Icons sind, unter Anderem:
 
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
 
-These tools bundle SVGs at compile time, but make them a little harder to edit during runtime, because `<use>` tags can have strange cross-browser issues when doing anything more complex. They also leave you with two nested `viewBox` properties and thus two coordinate systems. This makes the implementation a little more complex.
+Diese Tools verpacken SVGs zur Compile-Zeit, machen es aber etwas schwerer, sie zur Laufzeit zu editieren, weil `<use>`-Tags eigenartige Cross-Browser-Probleme haben können, wenn Du etwas Komplexeres mit ihnen machst. Wenn Du sie verwendest, hast Du außerdem zwei `viewBox`-Eigenschaften und dadurch zwei Koordinatensysteme. Das macht die Implementierung etwas komplexer.

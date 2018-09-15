@@ -32,3 +32,4 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * slot: Slot
 * accessibility: Zugänglichkeit (Alternative: Behindertenfreundlichkeit)
 * on the fly: im laufenden Betrieb
+* pattern: Entwurfsmuster (Alternative: Muster)
