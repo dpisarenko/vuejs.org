@@ -46,37 +46,37 @@ _required_
 3.  Zeige ein kleines Code-Beispiel.
 4.  Erkläre in einem Satz, was dieser Code bewerkstelligt.
 
-### Details about the Value
+### Details über den Wert
 
 _required_
 
-1.  Address common questions that one might have while looking at the example. (Blockquotes are great for this)
-2.  Show examples of common missteps and how they can be avoided.
-3.  Show very simple code samples of good and bad patterns.
-4.  Discuss why this may be a compelling pattern. Links for reference are not required but encouraged.
+1.  Spreche allgemeine Fragen an, die man beim Anschauen des Beispiel stellen könnte (Zitatblöcke sind perfekt dafür).
+2.  Zeige Beispiele von häufigen Fehlern und wie sie vermieden werden können.
+3.  Zeige sehr einfache Beispiele von guten und schlechten Mustern.
+4.  Beschreibe, warum dies ein gutes Muster sein kann. Links zu Nachschlagewerken werden nicht verlangt, sondern empfohlen.
 
-### Real-World Example
+### Beispiel aus der realen Welt
 
 _required_
 
-Demonstrate the code that would power a common or interesting use case, either by:
+Demonstriere den Code, welches in einem häufigen oder interessanten Anwendungsfall verwendet werden würde. Dabei gibt es zwei Möglichkeiten:
 
-1.  Walking through a few terse examples of setup, or
-2.  Embedding a codepen/jsfiddle example
+1.  Durchgehen von einigen wenigen, prägnanten Beispielen, oder
+2.  Einbetten eines codepen/jsfiddle-Beispiels.
 
-If you choose to do the latter, you should still talk through what it is and does.
+Wenn Du Dich für das Letztere entscheidest, solltest Du trotzdem beschreiben, was es ist und was es tut.
 
-### Additional Context
-
-_optional_
-
-It's extremely helpful to write a bit about this pattern, where else it would apply, why it works well, and run through a bit of code as you do so or give people further reading materials here.
-
-### When To Avoid This Pattern
+### Zusätzlicher Kontext
 
 _optional_
 
-This section is not required, but heavily recommended. It won't make sense to write it for something very simple such as toggling classes based on state change, but for more advanced patterns like mixins it's vital. The answer to most questions about development is ["It depends!"](https://codepen.io/rachsmith/pen/YweZbG), this section embraces that. Here, we'll take an honest look at when the pattern is useful and when it should be avoided, or when something else makes more sense.
+Es ist extrem hilfreich ein wenig über dieses Muster zu schreiben: Wo kann es sonst angewandt werden? Warum es gut funktioniert? Dabei ist es gut, wenn Du beim Antworten durch Codebeispiele gehst oder dem Leser Hinweise auf weiterführende Texte gibst.
+
+### Wann dieses Muster vermieden werden soll
+
+_optional_
+
+Dieser Abschnitt ist nicht erforderlich, aber stark empfohlen. Es macht keinen Sinn, einen solchen Abschnitt über derart simple Sachen wie das Umschalten von Klassen bei der Veränderung des Zustands zu schreiben. Für fortgeschrittene Muster wie Mixins ist er jedoch unerlässlich. Die Antwort auf die meisten Fragen über Software-Entwicklung lautet ["Hängt davon ab!"](https://codepen.io/rachsmith/pen/YweZbG). Dieser Abschnitt huldigt diesem Prinzip. Darin sehen wir uns ehrlich an, wann das Muster hilfreich ist, wann es vermieden werden woll, und wo etwas Anderes besser geeignet ist.
 
 ### Alternative Patterns
 
