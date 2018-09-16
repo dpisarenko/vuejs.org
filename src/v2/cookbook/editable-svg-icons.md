@@ -1,30 +1,30 @@
 ---
-title: Editable SVG Icon Systems
+title: Editierbare SVG-Icon-Systeme
 type: cookbook
 order: 4
 ---
 
-## Base Example
+## Grundlegendes Beispiel
 
-There are many ways to create an SVG Icon System, but one method that takes advantage of Vue's capabilities is to create editable inline icons as components. Some of the advantages of this way of working is:
+Man kann ein SVG-Icon-System auf mehrere Arten erstellen. Aber eine Methode nutzt die Fähigkeiten von Vue, editierbare Inline-Icons als Komponenten zu erstellen. Einige Vorteile davon sind:
 
-* They are easy to edit on the fly
-* They are animatable
-* You can use standard props and defaults to keep them to a typical size or alter them if you need to
-* They are inline, so no HTTP requests are necessary
-* They can be made accessible dynamically
+* Man kann sie leicht "on the fly" editieren
+* Man kann sie animieren
+* Du kannst Standard-Eigenschaften und Defaultwerte verwenden, um eine typische Größe zu erzwingen bzw. zu verändern
+* Sie sind inline, d. h. es sind keine HTTP-Anfragen nötig
+* Sie können dynamisch zugänglich gemacht werden
 
-First, we'll create a folder for all of the icons, and name them in a standardized fashion for easy retrieval:
+Zuerst werden wir ein Verzeichnis für alle Icons erstellen. Wir werden sie nach einem standardisierten Muster benennen, um sie leicht wiederfinden zu können:
 
 > components/icons/IconBox.vue
 > components/icons/IconCalendar.vue
 > components/icons/IconEnvelope.vue
 
-Here's an example repo to get you going, where you can see the entire setup: [https://github.com/sdras/vue-sample-svg-icons/](https://github.com/sdras/vue-sample-svg-icons/)
+Hier ist eine Beispielrepository, damit Du anfangen kannst. Dort kannst Du das Ganze sehen: [https://github.com/sdras/vue-sample-svg-icons/](https://github.com/sdras/vue-sample-svg-icons/)
 
-![Documentation site](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg 'Docs demo')
+![Dokumentations-Webseite](https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/screendocs.jpg 'Demo der Dokumentation')
 
-We'll create a base icon (`IconBase.vue`) component that uses a slot.
+Wir werden eine Komponente (`IconBase.vue`) für ein Basis-Icon erstellen, welche ein Slot verwendet.
 
 ```html
 <template>
@@ -46,9 +46,9 @@ We'll create a base icon (`IconBase.vue`) component that uses a slot.
 </template>
 ```
 
-You can use this base icon as is- the only thing you might need to update is the `viewBox` depending on the `viewBox` of your icons. In the base, we're making the `width`, `height`, `iconColor`, and name of the icon props so that it can be dynamically updated with props. The name will be used for both the `<title>` content and its `id` for accessibility.
+Du kannst Dieses Basis-Icon "as is" verwenden. Das Einzige, was Du vielleicht verändern musst, ist die `viewBox`-Eigenschaft. Die korrekten Werte dafür hängen von der `viewBox` Deiner Icons ab. Im Basisicon machen wir die Eigenschaften `width`, `height`, `iconColor` und den Namen des Icons sodass es dynamisch aktualisiert wird, wenn sich die Eigenschaften verändern. Der Name wird sowohl für den Inhalt von `<title>`, als auch von `id` für die Zugänglichkeit sein.
 
-Our script will look like this, we'll have some defaults so that our icon will be rendered consistently unless we state otherwise:
+Unser Script wird wie folgt aussehen. Wir werden einige Default-Werte haben, sodass unser Icon konsistent gerendert wird, es sei denn wir spezifizieren etwas Anderes:
 
 ```js
 export default {
@@ -73,27 +73,27 @@ export default {
 }
 ```
 
-The `currentColor` property that's the default on the fill will make the icon inherit the color of whatever text surrounds it. We could also pass in a different color as a prop if we wish.
+Die Wert `currentColor` wird dazu führen, dass der Icon die Farbe des ihn umgebenden Textes erben wird. Wir könnten auch eine andere Farbe übergeben, wenn wir wollten.
 
-We can use it like so, with the only contents of `IconWrite.vue` containing the paths inside the icon:
+Wir können es so verwenden, dass sich nur der Inhalt von `IconWrite.vue` innerhalb des Icon-Tags befindet:
 
 ```html
 <icon-base icon-name="write"><icon-write /></icon-base>
 ```
 
-Now, if we'd like to make many sizes for the icon, we can do so very easily:
+Wenn wir mehrere Größen des Icons haben wollen, können wir das sehr leicht machen:
 
 ```html
 <p>
-  <!-- you can pass in a smaller `width` and `height` as props -->
+  <!-- Du kannst einen kleineren Wert für Breite (`width`) und Höhe (`height`) als Eigenschaften übergeben -->
   <icon-base
     width="12"
     height="12"
     icon-name="write"
   ><icon-write /></icon-base>
-  <!-- or you can use the default, which is 18 -->
+  <!-- Du kannst auch den Default-Wert von 18 verwenden -->
   <icon-base icon-name="write"><icon-write /></icon-base>
-  <!-- or make it a little bigger too :) -->
+  <!-- Oder das Icon ein wenig vergrössern :) -->
   <icon-base
     width="30"
     height="30"
@@ -104,9 +104,9 @@ Now, if we'd like to make many sizes for the icon, we can do so very easily:
 
 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/Screen%20Shot%202018-01-01%20at%204.51.40%20PM.png" width="450" />
 
-## Animatable Icons
+## Animierbare Icons
 
-Keeping icons in components comes in very handy when you'd like to animate them, especially on an interaction. Inline SVGs have the highest support for interaction of any method. Here's a very basic example of an icon that's animated on click:
+Komponenten für Icons sind hilfreich, wenn Du sie animieren willst, insbesondere in einer Interaktion. Inline SVGs unterstützen die Interatktionen am Besten. Hier ist ein sehr einfaches Beispiel eines Icons, welches nach einem Klick animiert wird:
 
 ```html
 <template>
@@ -161,27 +161,27 @@ export default {
 }
 ```
 
-We're applying `refs` to the groups of paths we need to move, and as both sides of the scissors have to move in tandem, we'll create a function we can reuse where we'll pass in the `refs`. The use of GreenSock helps resolve animation support and `transform-origin` issues across browser.
+Wir wenden `refs` auf Gruppen der Pfade an, die wir bewegen müssen. Weil beide Seiten der Schere sich in Tandem bewegen müssen, werden wir eine Funktion erstellen, die wir wiederverwenden und in die wir `refs` übergeben werden. Die Verwendung von GreenSock hilft uns, Probleme bei der Unterstützung der Animiation und der `transform-origin`-bezogenen Fehler in unterschiedlichen Browsern, zu beheben.
 
 <p data-height="300" data-theme-id="0" data-slug-hash="dJRpgY" data-default-tab="result" data-user="Vue" data-embed-version="2" data-pen-title="Editable SVG Icon System: Animated icon" class="codepen">See the Pen <a href="https://codepen.io/team/Vue/pen/dJRpgY/">Editable SVG Icon System: Animated icon</a> by Vue (<a href="https://codepen.io/Vue">@Vue</a>) on <a href="https://codepen.io">CodePen</a>.</p><script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-<p style="margin-top:-30px">Pretty easily accomplished! And easy to update on the fly.</p>
+<p style="margin-top:-30px">Das haben wir ziemlich leicht bewerkstelligt! Eine einfache Aktualisierung im laufenden Betrieb.</p>
 
-You can see more animated examples in the repo [here](https://github.com/sdras/vue-sample-svg-icons/)
+Du kannst mehr animierte Beispiele im Repository [hier](https://github.com/sdras/vue-sample-svg-icons/) finden.
 
-## Additional Notes
+## Zusätzliche Anmerkungen
 
-Designers may change their minds. Product requirements change. Keeping the logic for the entire icon system in one base component means you can quickly update all of your icons and have it propagate through the whole system. Even with the use of an icon loader, some situations require you to recreate or edit every SVG to make global changes. This method can save you that time and pain.
+Designers können ihre Meinungen ändern. Anforderungen an das Produkt können sich verändern. Wenn Du die Logik des gesamten Icon-Systems in einer Grundkomponente hältst, kannst Du schnell alle Deine Icons aktualisieren und sicher sein, dass diese Änderungen sich im gesamten System verbreiten werden. Selbst bei Verwendund eines Iconladers kann es vorkommen, dass Du jede SVG-Datei neu erstellen oder bearbeiten musst. Diese Methode kann Dir diese Zeit und Schmerzen sparen.
 
-## When To Avoid This Pattern
+## Wann Du dieses Muster nicht anwenden sollst
 
-This type of SVG icon system is really useful when you have a number of icons that are used in different ways throughout your site. If you're repeating the same icon many times on one page (e.g. a giant table a delete icon in each row), it might make more sense to have all of the sprites compiled into a sprite sheet and use `<use>` tags to load them.
+Diese Art eines SVG-Icon-Systems is nützlich, wenn Du mehrere Icons hast, die auf unterschiedliche Arten auf der gesamten Seite verwendet werden. Wenn Du dagegen ein und dasselbe Icon mehrmals auf gleicher Seite verwendest (z. B. das "Entfernen"-Icon in jeder Zeile einer riesigen Tabelle), dann könnte es sinnvoller sein, alle Sprites zu einem Sprite-Sheet zu kompilieren und die `<use>`-Tags zu verwenden, um sie zu laden.
 
-## Alternative Patterns
+## Alternative Muster
 
-Other tooling to help manage SVG icons includes:
+Andere Werkzeuge für die Verwaltung von SVG-Icons sind, unter Anderem:
 
 * [svg-sprite-loader](https://github.com/kisenka/svg-sprite-loader)
 * [svgo-loader](https://github.com/rpominov/svgo-loader)
 
-These tools bundle SVGs at compile time, but make them a little harder to edit during runtime, because `<use>` tags can have strange cross-browser issues when doing anything more complex. They also leave you with two nested `viewBox` properties and thus two coordinate systems. This makes the implementation a little more complex.
+Diese Tools verpacken SVGs zur Compile-Zeit, machen es aber etwas schwerer, sie zur Laufzeit zu editieren, weil `<use>`-Tags eigenartige Cross-Browser-Probleme haben können, wenn Du etwas Komplexeres mit ihnen machst. Wenn Du sie verwendest, hast Du außerdem zwei `viewBox`-Eigenschaften und dadurch zwei Koordinatensysteme. Das macht die Implementierung etwas komplexer.
