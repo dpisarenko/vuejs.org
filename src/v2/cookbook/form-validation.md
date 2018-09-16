@@ -1,14 +1,14 @@
 ---
-title: Form Validation
+title: Formularvalidierung
 type: cookbook
 order: 3
 ---
 
-## Base Example
+## Grundlegendes Beispiel
 
-Form validation is natively supported by the browser, but sometimes different browsers will handle things in a manner which makes relying on it a bit tricky. Even when validation is supported perfectly, there may be times when custom validations are needed and a more manual, Vue-based solution may be more appropriate. Let's begin with a simple example.
+Formularvalidierung wird nativ vom Browser unterstützt. Manchmal handhaben bestimmte Browser dieses Thema so, dass man sich darauf nicht verlassen kann. Selbst wenn die Validierung perfekt unterstützt wird, können spezifische Anpassungen manchmal notwendig sein. In diesen Fällen kann eine manuellere, Vue-basierte besser geeignet sein. Beginnen wir mit einem einfachen Beispiel.
 
-Given a form of three fields, make two required. Let's look at the HTML first:
+In einem Formular mit drei Feldern, mache zwei obligatorisch. Schauen wir uns zuerst den HTML-Code an:
 
 ``` html
 <form
@@ -19,7 +19,7 @@ Given a form of three fields, make two required. Let's look at the HTML first:
 >
 
   <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
+    <b>Bitte korrigieren Sie den/die folgenden Fehler:</b>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>
@@ -36,7 +36,7 @@ Given a form of three fields, make two required. Let's look at the HTML first:
   </p>
 
   <p>
-    <label for="age">Age</label>
+    <label for="age">Alter</label>
     <input
       id="age"
       v-model="age"
@@ -46,7 +46,7 @@ Given a form of three fields, make two required. Let's look at the HTML first:
   </p>
 
   <p>
-    <label for="movie">Favorite Movie</label>
+    <label for="movie">Lieblingsfilm</label>
     <select
       id="movie"
       v-model="movie"
@@ -68,11 +68,11 @@ Given a form of three fields, make two required. Let's look at the HTML first:
 </form>
 ```
 
-Let's cover it from the top. The `<form>` tag has an ID that we'll be using for the Vue component. There's a submit handler that you'll see in a bit, and the `action` is a temporary URL that would point to something real on a server someplace (where you have backup server-side validation of course).
+Gehen wir das Beispiel von oben nach unten durch. Das `<form>`-Tag hat eine ID, die wir für die Vue-Komponente verwenden werden. Es gibt einen Ereignishandler für die Schaltfläche "Abschicken", die Du gleich sehen wirst. `action` ist eine temporäre URL, die auf etwas Reales auf irgendeinem Server verweisen würde (wo Du natürlich eine serverseitige Backup-Validierung hast).
 
-Beneath that there is a paragraph that shows or hides itself based on an error state. This will render a simple list of errors on top of the form. Also note we fire the validation on submit rather than as every field is modified.
+Darunter steht ein Absatz, das sich je nach Fehlerzustand ein- und ausblendet. Das wird eine einfache Liste von Fehlern im oberen Teil des Formulars rendern. Beachte auch, dass wir die Validierung beim Abschicken des Formulars auslösen und nicht bei Änderung eines Feldes.
 
-The final thing to note is that each of the three fields has a corresponding `v-model` to connect them to values we will work with in the JavaScript. Now let's look at that.
+Das Letzte, was Du beachten sollst, ist dass jedes der drei Felder ein zugehöriges `v-model` hat. Diese verbinden die Felder mit den Werten, mit denen wir in JavaScript arbeiten werden. Sehen wir uns das an.
 
 ``` js
 const app = new Vue({
@@ -92,10 +92,10 @@ const app = new Vue({
       this.errors = [];
 
       if (!this.name) {
-        this.errors.push('Name required.');
+        this.errors.push('Name ist ein Pflichtfeld.');
       }
       if (!this.age) {
-        this.errors.push('Age required.');
+        this.errors.push('Age ist ein Pflichtfeld.');
       }
 
       e.preventDefault();
@@ -104,12 +104,13 @@ const app = new Vue({
 })
 ```
 
-Fairly short and simple. We define an array to hold errors and set `null` values for the three form fields. The `checkForm` logic (which is run on submit remember) checks for name and age only as movie is optional. If they are empty we check each and set a specific error for each. And that's really it. You can run the demo below. Don't forget that on a successful submission it's going to POST to a temporary URL.
+Ziemlich kurz und einfach. Wir definieren ein Array, um die Fehler zu speichern und setzen die Werte dreier Felder auf `null`. Die `checkForm`-Logik (welche beim Abschicken des Formulars ausgeführt wird) prüft nur den Namen und das Alter, weil der Lieblingsfilm optional ist. Wenn sie leer sind, prüfen wir jedes davon und setzen einen spezifischen Fehler für jeden von ihnen. Und das war's. Du kannst das Demo unten laufen lassen. Vergiss nicht, dass beim erfolgreichen Abschicken, eine POST-Anfrage an eine temporäre URL geschickt wird.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="GObpZM" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 1" class="codepen">See the Pen <a href="https://codepen.io/cfjedimaster/pen/GObpZM/">form validation 1</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-## Using Custom Validation
+## Verwenden benutzerdefinierter Validierung
+
 
 For the second example, the second text field (age) was switched to email which will be validated with a bit of custom logic. The code is taken from the StackOverflow question, [How to validate email address in JavaScript?](https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript). This is an awesome question because it makes your most intense Facebook political/religious argument look like a slight disagreement over who makes the best beer. Seriously - it's insane. Here is the HTML, even though it's really close to the first example.
 
