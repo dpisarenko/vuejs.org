@@ -19,7 +19,7 @@ In einem Formular mit drei Feldern, mache zwei obligatorisch. Schauen wir uns zu
 >
 
   <p v-if="errors.length">
-    <b>Bitte korrigieren Sie den/die folgenden Fehler:</b>
+    <b>Korrigiere bitte den/die folgenden Fehler:</b>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>
@@ -61,7 +61,7 @@ In einem Formular mit drei Feldern, mache zwei obligatorisch. Schauen wir uns zu
   <p>
     <input
       type="submit"
-      value="Submit"
+      value="Abschicken"
     >
   </p>
 
@@ -92,10 +92,10 @@ const app = new Vue({
       this.errors = [];
 
       if (!this.name) {
-        this.errors.push('Name ist ein Pflichtfeld.');
+        this.errors.push('Der Name ist ein Pflichtfeld.');
       }
       if (!this.age) {
-        this.errors.push('Age ist ein Pflichtfeld.');
+        this.errors.push('Das Alter ist ein Pflichtfeld.');
       }
 
       e.preventDefault();
@@ -111,8 +111,7 @@ Ziemlich kurz und einfach. Wir definieren ein Array, um die Fehler zu speichern 
 
 ## Verwenden benutzerdefinierter Validierung
 
-
-For the second example, the second text field (age) was switched to email which will be validated with a bit of custom logic. The code is taken from the StackOverflow question, [How to validate email address in JavaScript?](https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript). This is an awesome question because it makes your most intense Facebook political/religious argument look like a slight disagreement over who makes the best beer. Seriously - it's insane. Here is the HTML, even though it's really close to the first example.
+Im zweiten Beispiel wird das zweite Feld (Alter) zur E-Mail-Adresse umfunktioniert. Dieses Feld wird mit einem Stück benutzerdefinierter Logik validiert. Der Code wurde aus einer Frage auf StackOverlow [How to validate email address in JavaScript?](https://stackoverflow.com/questions/46155/how-to-validate-email-address-in-javascript) genommen. Das ist eine wunderbare Frage, weil verglichen mit Diskussionen darin die ärgsten politischen/religiösen Debatten auf Facebook wie eine leichte Dissonanz darüber, wer das beste Bier macht, aussehen. Es geht dort wirklich verrückt zu. Hier ist der HTML-Code, obwohl er sich vom ersten Beispiel nicht stark unterscheidet:
 
 ``` html
 <form
@@ -124,7 +123,7 @@ For the second example, the second text field (age) was switched to email which 
 >
 
   <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
+    <b>Korrigiere bitte den/die folgenden Fehler:</b>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>
@@ -141,7 +140,7 @@ For the second example, the second text field (age) was switched to email which 
   </p>
 
   <p>
-    <label for="email">Email</label>
+    <label for="email">E-Mail-Adresse</label>
     <input
       id="email"
       v-model="email"
@@ -151,7 +150,7 @@ For the second example, the second text field (age) was switched to email which 
   </p>
 
   <p>
-    <label for="movie">Favorite Movie</label>
+    <label for="movie">Lieblingsfilm</label>
     <select
       id="movie"
       v-model="movie"
@@ -166,14 +165,14 @@ For the second example, the second text field (age) was switched to email which 
   <p>
     <input
       type="submit"
-      value="Submit"
+      value="Abschicken"
     >
   </p>
 
 </form>
 ```
 
-While the change here is small, note the `novalidate="true"` on top. This is important because the browser will attempt to validate the email address in the field when `type="email"`. Frankly it may make more sense to trust the browser in this case, but as we wanted an example with custom validation, we're disabling it. Here's the updated JavaScript.
+Es gibt hier nur wenige Veränderungen. Beachte den Coe `novalidate="true"` am Anfang des Formulars. Es ist wichtig, weil der Browser versuchen wird, die E-Mail-Adresse zu validieren, weil wird dort `type="email"` angegeben haben. Ehrlich gesagt, macht es in diesem Fall mehr Sinn, dem Browser zu vertrauen. Aber da wir ein Beispiel mit der benutzerdefinierten Validierung haben wollen, werden wir das ausschalten. Hier ist der aktualisierte JavaScript-Code:
 
 ``` js
 const app = new Vue({
@@ -189,12 +188,12 @@ const app = new Vue({
       this.errors = [];
 
       if (!this.name) {
-        this.errors.push("Name required.");
+        this.errors.push("Der Name ist ein Pflichtfeld.");
       }
       if (!this.email) {
-        this.errors.push('Email required.');
+        this.errors.push('Die E-Mail-Adresse ist ein Pflichtfeld.');
       } else if (!this.validEmail(this.email)) {
-        this.errors.push('Valid email required.');
+        this.errors.push('Die E-Mail-Adresse ist ungültig.');
       }
 
       if (!this.errors.length) {
@@ -211,14 +210,14 @@ const app = new Vue({
 })
 ```
 
-As you can see, we've added `validEmail` as a new method and it is simply called from `checkForm`. You can play with this example here:
+Wie Du sehen kannst, haben wir `validEmail` als eine neue Methode hinzugefügt und sie wird einfach aus `checkForm` aufgerufen. Du kannst mit diesem Beispiel hier spielen:
 
 <p data-height="265" data-theme-id="0" data-slug-hash="vWqNXZ" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 2" class="codepen">See the Pen <a href="https://codepen.io/cfjedimaster/pen/vWqNXZ/">form validation 2</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-## Another Example of Custom Validation
+## Anderes Beispiel für eine benutzerdefinierte Validierung
 
-For the third example, we've built something you've probably seen in survey apps. The user is asked to spend a "budget" for a set of features for a new Star Destroyer model. The total must equal 100. First, the HTML.
+Für das dritte Beispiel haben wir etwas gebaut, was Du vermutlich in Umfrage-Anwendungen gesehen hast. Der Benutzer wird aufgefordert, ein "Budget" für eine Ansammlung von Funktionalitäten für ein neues Sternenzerstörer-Modell auszugeben. Der Gesamtbetrag muss 100 ergeben. Zuerst der HTML-Code:
 
 ``` html
 <form
@@ -230,16 +229,17 @@ For the third example, we've built something you've probably seen in survey apps
 >
 
   <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
+    <b>Korrigiere bitte den/die folgenden Fehler:</b>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>
   </p>
 
   <p>
-    Given a budget of 100 dollars, indicate how much
-    you would spend on the following features for the
-    next generation Star Destroyer. Your total must sum up to 100.
+    Angenommen, Du hast ein Budget von 100 Dollar. Gebe an,
+	wieviel Du für die folgenden Funktionalitäten der
+	nächsten Generation eines Sternenzerstörers ausgeben
+	würdest. Dein Gesamtbetrag muss gleich 100 sein.
   </p>
 
   <p>
@@ -247,44 +247,44 @@ For the third example, we've built something you've probably seen in survey apps
       v-model.number="weapons"
       type="number"
       name="weapons"
-    > Weapons <br/>
+    > Waffen <br/>
     <input
       v-model.number="shields"
       type="number"
       name="shields"
-    > Shields <br/>
+    > Schilder <br/>
     <input
       v-model.number="coffee"
       type="number"
       name="coffee"
-    > Coffee <br/>
+    > Kaffee <br/>
     <input
       v-model.number="ac"
       type="number"
       name="ac"
-    > Air Conditioning <br/>
+    > Klimaanlage <br/>
     <input
       v-model.number="mousedroids"
       type="number"
       name="mousedroids"
-    > Mouse Droids <br/>
+    > Maus-Droids <br/>
   </p>
 
   <p>
-    Current Total: {{total}}
+    Aktueller Gesamtbetrag: {{total}}
   </p>
 
   <p>
     <input
       type="submit"
-      value="Submit"
+      value="Abschicken"
     >
   </p>
 
 </form>
 ```
 
-Note the set of inputs covering the five different features. Note the addition of `.number` to the `v-model` attribute. This tells Vue to cast the value to a number when you use it. However, there is a bug with this feature such that when the value is blank, it turns back into a string. You'll see the workaround below. To make it a bit easier for the user, we also added a current total right below so they can see, in real time, what their total is. Now let's look at the JavaScript.
+Beachte die Ansammlung der Eingabefelder, die fünf unterschiedliche Funktionalitäten abdecken. Beachte auch, dass `.number` zum Attribut `v-model` hinzugefügt wurde. Das sagt Vue, dass der Wert zu einer Zahl umgewandet wird, wenn Du es verwendest. Jedoch gibt es einen Fehler in dieser Funktionalität: Wenn kein Wert eingegeben ist, wird er zurück in ein String umgewandelt. Du kannst unten den Workaround sehen. Um es für den Benutzer ein wenig leichter zu machen, haben wir auch den aktuellen Gesamtbetrag hinzugefügt, damit der Benutzer in Echtzeit sehen kann, wie hoch der Gesamtbetrag ist. Sehen wir uns jetzt den JavaScript-Code an.
 
 ``` js
 const app = new Vue({
@@ -299,7 +299,8 @@ const app = new Vue({
   },
   computed: {
      total: function () {
-       // must parse because Vue turns empty value to string
+	   // Wir müssen die Umwandlung machen, weil Vue leere
+	   // Werte in Texte umwandelt
        return Number(this.weapons) +
          Number(this.shields) +
          Number(this.coffee) +
@@ -311,7 +312,7 @@ const app = new Vue({
       this.errors = [];
 
       if (this.total != 100) {
-        this.errors.push('Total must be 100!');
+        this.errors.push('Der Gesamtbetrag muss 100 sein!');
       }
 
       if (!this.errors.length) {
@@ -324,23 +325,23 @@ const app = new Vue({
 })
 ```
 
-We set up the total value as a computed value, and outside of that bug I ran into, it was simple enough to setup. My checkForm method now just needs to see if the total is 100 and that's it. You can play with this here:
+Wir haben den Gesamtbetrag als einen berechneten Wert aufgesetzt. Abgesehen vom oben erwähnten Fehler war es ziemlich einfach. Meine `checkForm`-Methode braucht jetzt nur zu prüfen, ob der Gesamtbetrag 100 ist und das ist es. Du kannst mit diesem Beispiel hier spielen:
 
 <p data-height="265" data-theme-id="0" data-slug-hash="vWqGoy" data-default-tab="html,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 3" class="codepen">See the Pen <a href="https://codepen.io/cfjedimaster/pen/vWqGoy/">form validation 3</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-## Server-side Validation
+## Serverseitige Validierung
 
-In my final example, we built something that makes use of Ajax to validate at the server. The form will ask you to name a new product and will then check to ensure that the name is unique. We wrote a quick [OpenWhisk](http://openwhisk.apache.org/) serverless action to do the validation. While it isn't terribly important, here is the logic:
+In meinem letzten Beispiel haben wir etwas gebaut, das Ajax verwendet, um die Validierung am Server vorzunehmen. Das Formular wird nach einem neuen Produkt fragen und dann prüfen, dass der Name einzigartig ist. Wir haben schnell eine serverlose [OpenWhisk](http://openwhisk.apache.org/)-Aktion geschrieben, um die Validierung umzusetzen. Obwohl sie nicht wirklich wichtig ist, hier ist die Logik:
 
 ``` js
 function main(args) {
     return new Promise((resolve, reject) => {
-        // bad product names: vista, empire, mbp
+        // Schlechte Produktnamen: vista, empire, mbp
         const badNames = ['vista', 'empire', 'mbp'];
 
         if (badNames.includes(args.name)) {
-          reject({error: 'Existing product'});
+          reject({error: 'Das Produkt existiert bereits'});
         }
 
         resolve({status: 'ok'});
@@ -348,7 +349,7 @@ function main(args) {
 }
 ```
 
-Basically any name but "vista", "empire", and "mbp" are acceptable. Ok, so let's look at the form.
+Grundsätzlich sind alle Namen ausser "vista", "empire", und "mbp" akzeptabel. OK, sehen wir uns das Formular an.
 
 ``` html
 <form
@@ -358,14 +359,14 @@ Basically any name but "vista", "empire", and "mbp" are acceptable. Ok, so let's
 >
 
   <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
+    <b>Korrigiere bitte den/die folgenden Fehler:</b>
     <ul>
       <li v-for="error in errors">{{ error }}</li>
     </ul>
   </p>
 
   <p>
-    <label for="name">New Product Name: </label>
+    <label for="name">Neuer Produktname: </label>
     <input
       id="name"
       v-model="name"
@@ -377,14 +378,14 @@ Basically any name but "vista", "empire", and "mbp" are acceptable. Ok, so let's
   <p>
     <input
       type="submit"
-      value="Submit"
+      value="Abschicken"
     >
   </p>
 
 </form>
 ```
 
-There isn't anything special here. So let's go on to the JavaScript.
+Es gibt hier nichts Besonderes. Daher gehen wir weiter zum JavaScript.
 
 ``` js
 const apiUrl = 'https://openwhisk.ng.bluemix.net/api/v1/web/rcamden%40us.ibm.com_My%20Space/safeToDelete/productName.json?name=';
@@ -402,7 +403,7 @@ const app = new Vue({
       this.errors = [];
 
       if (this.name === '') {
-        this.errors.push('Product name is required.');
+        this.errors.push('Produktname wird benötigt.');
       } else {
         fetch(apiUrl + encodeURIComponent(this.name))
         .then(res => res.json())
@@ -410,7 +411,8 @@ const app = new Vue({
           if (res.error) {
             this.errors.push(res.error);
           } else {
-            // redirect to a new URL, or do something on success
+		    // Leite zu einer neuen URL um, or mache etwas im
+			// Erfolgsfall
             alert('ok!');
           }
         });
@@ -420,14 +422,14 @@ const app = new Vue({
 })
 ```
 
-We start off with a variable representing the URL of the API that is running on OpenWhisk. Now look at `checkForm`. In this version, we always prevent the form from submitting (which, by the way, could be done in the HTML with Vue as well). You can see a basic check on `this.name` being empty, and then we hit the API. If it's bad, we add an error as before. If it's good, right now we do nothing (just an alert), but you could navigate the user to a new page with the product name in the URL, or do other actions as well. You can run this demo below:
+Wir starten mit einer Variable, die die URL der auf OpenWhisk laufenden API darstellt. Schaue jetzt `checkForm` an. In dieser Version verhindern wir immer, dass das Formular abgeschickt wird (das Gleiche könnten wir übrigens in HTML ohne Vue auch machen). Du kannst die einfache Überprüfung sehen, ob `this.name` leer ist. Dann wird die API verwendet. Wenn die Überprüfung zum negativen Ergebnis führt, fügen wir einen Fehler hinzu wie vorher. Wenn die Validierung keinen Fehler meldet, tun wir im Augenblick nichts (ausser einem alert). Du könntest jedoch den Benutzer zu einer neuen Seite mit dem eingegebenen Produktnamen in der URL weiterleiten, oder andere Dinge tun. Du kannst dieses Demo hier ausführen:
 
 <p data-height="265" data-theme-id="0" data-slug-hash="BmgzeM" data-default-tab="js,result" data-user="cfjedimaster" data-embed-version="2" data-pen-title="form validation 4" class="codepen">See the Pen <a href="https://codepen.io/cfjedimaster/pen/BmgzeM/">form validation 4</a> by Raymond Camden (<a href="https://codepen.io/cfjedimaster">@cfjedimaster</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-## Alternative Patterns
+## Alternative Entwurfsmuster
 
-While this cookbook entry focused on doing form validation "by hand", there are, of course, some great Vue libraries that will handle a lot of this for you. Switching to a prepackage library may impact the final size of your application, but the benefits could be tremendous. You have code that is (most likely) heavily tested and also updated on a regular basis. Some examples of form validation libraries for Vue include:
+Dieses Kochrezept konzentriert sich auf manuell programmierte Validierung. Es gibt aber auch einige sehr gute Vue-Bibliotheken, die Dir eine Menge Arbeit abnehmen werden. Die Umschaltung zu einer vorverpackten Bibliothek kann die endgültige Größe Deiner Anwendung beeinflussen, aber die Vorteile können enorm sein. Du wirst einen Code haben, der (höchstwahrscheinlich) sehr genau getestet ist und auch regelmäßig aktualisiert wird. Beispiele von Bibliotheken für Formularvalidierung sind:
 
 * [vuelidate](https://github.com/monterail/vuelidate)
 * [VeeValidate](http://vee-validate.logaretm.com/)
