@@ -129,26 +129,25 @@ Unsere Änderungen an package.json sind jetzt vollständig. Als Nächstes brauch
 
 ### Wie sieht meine verpackte Komponente aus?
 
-
-Depending on how your component is being used, it needs to be exposed as either a [CommonJS/UMD](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a) javascript module, an [ES6 javascript](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e) module, or in the case of a `<script>` tag, it will be automatically loaded into Vue via `Vue.use(...)` so it's immediately available to the page. This is accomplished by a simple wrapper.js file which handles the module export and auto-install. That wrapper, in its entirety, looks like this:
+Je nach dem, wie Deine Komponente verwendet wird, muss es entweder als ein [CommonJS/UMD](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#c33a) JavaScript-Modul, oder als [ES6-JavaScript](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#4f5e)-Modul freigegeben werden, oder, im Falle eines `<script>`-Tags, wird sie automatisch in Vue via `Vue.use(...)` geladen und steht dann unmittelbar auf der Seite zur Verfügung. Dies wird durch eine einfache wrapper.js-Datei bewerkstelligt, welche sich um den Export und die automatische Installation kümmert. Der gesamte Code des Wrappers sieht folgendermassen aus:
 
 ```js
-// Import vue component
+// Importiere die Vue-Komponente aus './my-component.vue';
 import component from './my-component.vue';
 
-// Declare install function executed by Vue.use()
+// Deklariere die Installationsfunktion, die von Vue.use() aufgerufen wird
 export function install(Vue) {
 	if (install.installed) return;
 	install.installed = true;
 	Vue.component('MyComponent', component);
 }
 
-// Create module definition for Vue.use()
+// Erstelle die Moduldefinition für Vue.use()
 const plugin = {
 	install,
 };
 
-// Auto-install when vue is found (eg. in browser via <script> tag)
+// Auto-Installation, wenn Vue gefunden wird (z. B. im Browser via <script>-Tag)
 let GlobalVue = null;
 if (typeof window !== 'undefined') {
 	GlobalVue = window.Vue;
@@ -159,7 +158,7 @@ if (GlobalVue) {
 	GlobalVue.use(plugin);
 }
 
-// To allow use as module (npm/webpack/etc.) export component
+// Wir brauchen das folgende Statement, um die Komponente als ein Modul (npm/webpack/etc.) verwenden zu können
 export default component;
 ```
 
