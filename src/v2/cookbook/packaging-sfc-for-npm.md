@@ -169,48 +169,48 @@ Beachte, dass die erste Zeile Dein SFC direkt importiert. Die letzte Zeile expor
 Wenn der Abschnitt `scripts` der package.json-Datei und der SFC-Wrapper fertig sind, dann bleibt uns nur sicherzustellen, dass Rollup richtig konfiguriert ist. Glücklicherweise können wir dies mit einer kleinen, 16-zeiligen rollup.config.js-Datei machen:
 
 ```js
-import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
-import buble from 'rollup-plugin-buble'; // Transpile/polyfill with reasonable browser support
+import vue from 'rollup-plugin-vue'; // Behandle .vue-SFC-Dateien
+import buble from 'rollup-plugin-buble'; // Transpiliere/polyfill mit einer vernünftigen Browser-Unterstützung
 export default {
-    input: 'build/wrapper.js', // Path relative to package.json
+    input: 'build/wrapper.js', // Dieser Pfad ist relativ zu package.json
     output: {
         name: 'MyComponent',
         exports: 'named',
     },
     plugins: [
         vue({
-            css: true, // Dynamically inject css as a <style> tag
-            compileTemplate: true, // Explicitly convert template to render function
+            css: true, // Injiziere CSS dynamisch als <style>-Tag
+            compileTemplate: true, // Wandle explizit Vorlagen zur Render-Funktionen
         }),
-        buble(), // Transpile to ES5
+        buble(), // Transpiliere zu ES5
     ],
 };
 ```
 
-This sample config file contains the minimum settings to package your SFC for npm. There is room for customization, such as extracting CSS to a separate file, using a CSS preprocessor, uglifying the JS output, etc.
+Diese Beispielkonfiguration enthält die minimalen Einstellungen, die notwendig sind, um Deine SFC für npm zu verpacken. Anpassungen wie  Extraktion von CSS in eine separate Datei, Verwendung von CSS-Präprozessor, die JS-Ausgabe verwirrden machen etc., sind möglich.
 
-Also, it is worth noting the `name` given the component here. This is a PascalCase name that the component will be given, and should correspond with the kebab-case name used elsewhere throughout this recipe.
+Beachte außerdem den Namen (`name`), der der Komponente vergeben wurde. Das ist ein Name in PascalCase, den die Komponente haben wird und sollte dem Namen in kebab-case entsprechen, der an anderen Stellen in diesem Rezept verwendet wurde.
 
-### Will this replace my current development process?
+### Wird dies meinen derzeit verwendeten Entwicklungsprozess ersetzen?
 
-The configuration here is not meant to replace the development process that you currently use. If you currently have a webpack setup with hot module reloading (HMR), keep using it! If you're starting from scratch, feel free to install [Vue CLI 3](https://github.com/vuejs/vue-cli/), which will give you the whole HMR experience config free:
+Das Ziel der hier angeführten Konfiguration ist es nicht, den Entwicklungsprozess zu ersetzen, den Du jetzt verwendest. Wenn Du momentan einen Webpack-Setup mit Hot Module Reloading (HMR) hast, verwende es weiter! Wenn Du von Null anfängst, kannst Du gerne [Vue CLI 3](https://github.com/vuejs/vue-cli/) installieren, welche Dir das ganze HMR-Erlebnis konfigurationsfrei geben wird:
 
 ```bash
 vue serve --open src/my-component.vue
 ```
 
-In other words, do all of your development in whatever way you are comfortable. The things outlined in this recipe are more like 'finishing touches' than a full dev process.
+Mit anderen Worten: Entwickle so, wie Dir am bequemsten ist. Die hier besprochenen Dinge sind eher 'abschließende Striche' als ein vollständiger Entwicklungsprozess.
 
-## When to Avoid this Pattern
+## Wann dieses Muster vermieden werden soll
 
-Packaging SFCs in this manner might not be a good idea in certain scenarios. This recipe doesn't go into detail on how the components themselves are written. Some components might provide side effects like directives, or extend other libraries with additional functionality. In those cases, you will need to evaluate whether or not the changes required to this recipe are too extensive.
+In machen Fällen ist es keine gute Idee, SFC auf diese Weise zu verpacken. Dieses Rezept geht nicht im Detail darauf ein, wie die Komponenten geschrieben sind. Manche Komponenten können Nebenwirkungen wie Direktiven haben, oder andere Bibliotheken erweitern. In diesen Fällen musst Du evaluieren, ob sich die hier besprochenen Veränderungen in Deinem Fall auszahlen.
 
-In addition, pay attention to any dependencies that your SFC might have. For example, if you require a third party library for sorting or communication with an API, Rollup might roll those packages into the final code if not properly configured. To continue using this recipe, you would need to configure Rollup to exclude those files from the output, then update your documentation to inform your users about these dependencies.
+Zusätzlich beachte, welche Abhängigkeiten Dein SFC haben kann. Zum Beispiel, wenn Du eine externe Bibliothek zum Sortieren oder Kommunizieren mit einer API brauchst, kann Rollup diese Pakete in den finalen Code einpacken, wenn er nicht richtig konfiguriert ist. Um dieses Rezept weiterhin verwenden zu können, würdest Du Rollup konfigurieren müssen, sodass es diese Dateien aus der Ausgabe ausschließt. Dann würdest Du die Dokumentation aktualisieren und Deine Benutzer über diese Abhängigkeiten informieren.
 
-## Alternative Patterns
+## Alternative Muster
 
-At the time this recipe was written, Vue CLI 3 was itself in beta. This version of the CLI comes with a built-in `library` build mode, which creates CommonJS and UMD versions of a component. This might be adequate for your use cases, though you will still need to make sure your package.json file points to `main` and `unpkg` properly. Also, there will be no ES6 `module` output unless that capability is added to the CLI before its release or via plugin.
+Zur Zeit, wenn dieses Rezept geschrieben wurde, befand sich Vue CLI 3 selbst in Beta. Diese Version von CLI wurde mit einem eingebauten Build-Modus `library` ausgeliefert, welcher CommonJS- und UMD-Versionen einer Komponente erstellt. Diese Option könnte für Deine Anwendungsfälle angemessen sein, obwohl Du dennoch sicherstellen musst, dass Deine package.json-Datei auf `main` und `unpkg` korrekt verweist. Es wird außerdem keine ES `module`-Ausgabe geben, es sei denn, diese Funktionalität wird zur CLI vor deren Herausgabe hinzugefügt (oder über einen Plugin).
 
-## Acknowledgements
+## Danksagung
 
-This recipe is the result of a lightning talk given by [Mike Dodge](https://twitter.com/mgdodgeycode) at VueConf.us in March 2018. He has published a utility to npm which will quickly scaffold a sample SFC using this recipe. You can download the utility, [vue-sfc-rollup](https://www.npmjs.com/package/vue-sfc-rollup), from npm. You can also [clone the repo](https://github.com/team-innovation/vue-sfc-rollup) and customize it.
+Dieses Rezept ist das Ergebnis eines Blitzvortrags von [Mike Dodge](https://twitter.com/mgdodgeycode) bei VueConf.us in März 2018. Er hat eine Utility für npm publiziert, die schnell das Gerüst eines Beispiel-SFC auf Basis dieses Rezepts machen kann. Du kannst dieses Programm, [vue-sfc-rollup](https://www.npmjs.com/package/vue-sfc-rollup), von npm herunterladen. Du kannst auch die [Repo klonen](https://github.com/team-innovation/vue-sfc-rollup) und anpassen.
