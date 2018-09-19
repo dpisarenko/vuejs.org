@@ -162,11 +162,11 @@ if (GlobalVue) {
 export default component;
 ```
 
-Notice the first line directly imports your SFC, and the last line exports it unchanged. As indicated by the comments in the rest of the code, the wrapper provides an `install` function for Vue, then attempts to detect Vue and automatically install the component. With 90% of the work done, it's time to sprint to the finish!
+Beachte, dass die erste Zeile Dein SFC direkt importiert. Die letzte Zeile exportiert sie unverändert. Wie in den Kommentaren im übrigen Code angegeben, stellt der Wrapper eine `install`-Funktion für Vue zur Verfügung, dann versucht er, Vue zu entdecken und automatisch die Komponente zu installieren. 90% der Arbeit ist getan, es ist Zeit zur Ziellinie zu sprinten!
 
-### How do I configure the Rollup build?
+### Wie konfiguriere ich den Rollup-Build?
 
-With the package.json `scripts` section ready and the SFC wrapper in place, all that is left is to ensure Rollup is properly configured. Fortunately, this can be done with a small 16 line rollup.config.js file:
+Wenn der Abschnitt `scripts` der package.json-Datei und der SFC-Wrapper fertig sind, dann bleibt uns nur sicherzustellen, dass Rollup richtig konfiguriert ist. Glücklicherweise können wir dies mit einer kleinen, 16-zeiligen rollup.config.js-Datei machen:
 
 ```js
 import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
