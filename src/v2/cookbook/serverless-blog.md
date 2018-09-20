@@ -1,39 +1,39 @@
 ---
-title: Create a CMS-Powered Blog
+title: Erstellen eines CMS-getriebenen Blogs
 type: cookbook
 order: 5
 ---
 
-So you've just launched your Vue.js website, congrats! Now you want to add a blog that quickly plugs into your website and you don't want to have to spin up a whole server just to host a Wordpress instance (or any DB-powered CMS for that matter). You want to just be able to add a few Vue.js blog components and some routes and have it all just work, right? What you're looking for is a blog that's powered entirely by API's you can consume directly from your Vue.js application. This tutorial will teach you how to do just that, let's dive in!
+Du hast also Deine Vue.js-Webseite gestartet, Gratulation! Jetzt willst Du ein Blog hinzufügen, das sich leicht in die Webseite einbauen lässt und für das Du keinen eigenen Server aufsetzen musst (wie dies bei WordPress und jeder anderen Datebankgetriebenen CMS der Fall ist). Du willst in der Lage sein, einfach einige wenige Vue.js Blogkomponenten und Routen hinzuzufügen und danach soll alles funktionieren, richtig? Wonach Du suchst ist ein Blog, das zur Gänze durch APIs getrieben wird, die Du direkt aus Deiner Vue.js-Anwendung heraus konsumieren kannst. Diese Anleitung wird Dir beibringen, wie Du genau das tun kannst. Lass uns einsteigen!
 
-We're going to quickly build a CMS-powered blog with Vue.js. It uses [ButterCMS](https://buttercms.com/), an API-first CMS that lets you manage content using the ButterCMS dashboard and integrate our content API into your Vue.js app. You can use ButterCMS for new or existing Vue.js projects.
+Wir werden schnell ein CMS-getriebenes Blog mit Vue.js bauen. Es verwendet [ButterCMS](https://buttercms.com/), ein CMS mit der "API hat Vorrang"-Philosophie. Es erlaubt Dir, die Inhalte über die ButterCMS-Konsole zu verwalten und die Inhalts-API in die Vue.js-Anwendung zu integrieren. Du kannst ButterCMS für neue und existierende Vue.js-Projekte verwenden.
 
-![Butter Dashboard](https://user-images.githubusercontent.com/160873/36677285-648798e4-1ad3-11e8-9454-d22fca8280b7.png "Butter Dashboard")
+![ButterCMS-Konsole](https://user-images.githubusercontent.com/160873/36677285-648798e4-1ad3-11e8-9454-d22fca8280b7.png "Butter Dashboard")
 
-## Install
+## Installieren
 
-Run this in your commandline:
+Führe den folgenden Befehl in der Kommandozeile aus:
 
 `npm install buttercms --save`
 
-Butter can also be loaded using a CDN:
+Butter kann auch über ein CDN geladen werden:
 
 `<script src="https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"></script>`
 
-## Quickstart
+## Schneller Start
 
-Set your API token:
+Setze Deinen API-Token:
 
-`var butter = require('buttercms')('your_api_token');`
+`var butter = require('buttercms')('Dein_API_Token');`
 
-Using ES6:
+Mit ES6:
 
 ```javascript
 import Butter from 'buttercms';
-const butter = Butter('your_api_token');
+const butter = Butter('Dein_API_Token');
 ```
 
-Using CDN:
+Mit CDN:
 
 ```html
 <script src="https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"></script>
@@ -42,7 +42,7 @@ Using CDN:
 </script>
 ```
 
-Import this file into any component you want to use ButterCMS. Then from the console run:
+Importiere diese Datei in jede Komponente, wo Du ButterCMS verwenden willst. Dann führe folgenden Befehl in der Konsole aus:
 
 ```javascript
 butter.post.list({page: 1, page_size: 10}).then(function(response) {
@@ -50,13 +50,13 @@ butter.post.list({page: 1, page_size: 10}).then(function(response) {
 })
 ```
 
-This API request fetches your blog posts. Your account comes with one example post which you'll see in the response.
+Diese API-Anfrage holt Deine Blog-Beiträge. Dein Konto hat einen Beispiel-Beitrag, den Du in der Antwort sehen wirst.
 
-## Display posts
+## Beiträge anzeigen
 
-To display posts we create a `/blog` route (using Vue Router) in our app and fetch blog posts from the Butter API, as well as a `/blog/:slug` route to handle individual posts.
+Um Blogbeiträge anzuzeigen werden wir in unserer Anwendung eine `/blog`-Route erstellen (mittels Vue Router) und Blog-Beiträge aus der Butter API holen. Wir werden zusätzlich die Route `/blog/:slug` einführen, über die jeder Blog-Beitrag für sich abrufbar sein wird.
 
-See the ButterCMS [API reference](https://buttercms.com/docs/api/?javascript#blog-posts) for additional options such as filtering by category or author. The response also includes some metadata we'll use for pagination.
+Siehe die [API-Referenz](https://buttercms.com/docs/api/?javascript#blog-posts) für mehr Optionen wie das Filtern nach Kategorie oder Autor. Die Antwort enthält auch Metadaten, die wir für die seitenweise Ausgabe verwenden werden.
 
 `router/index.js:`
 
