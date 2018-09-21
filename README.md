@@ -42,3 +42,4 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * single-file components: 1-Datei-Komponente
 * bundler: Bundler
 * lifecycle hook: Lebenszyklushook
+* markup: HTML-Code
