@@ -1,12 +1,12 @@
 ---
-title: Using Axios to Consume APIs
+title: Verwendung von Axios zum Konsumieren von APIs
 type: cookbook
 order: 9
 ---
 
-## Base Example
+## Grundlegendes Beispiel
 
-There are many times when building application for the web that you may want to consume and display data from an API. There are several ways to do so, but a very popular approach is to use [axios](https://github.com/axios/axios), a promise-based HTTP client.
+Es kommt oft vor, dass Du eine Web-Anwendung baust, die Daten einer API konsumiert und ausgibt. Es gibt mehrere Arten, wie man das tun kann. Ein sehr beliebter Ansatz ist [axios](https://github.com/axios/axios), ein promise-basierter HTTP-Client.
 
 In this exercise, we'll use the [CoinDesk API](https://www.coindesk.com/api/) to walk through displaying Bitcoin prices, updated every minute. First, we'd install axios with either npm/yarn or through a CDN link.
 
