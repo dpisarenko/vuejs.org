@@ -35,3 +35,16 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * pattern: Entwurfsmuster (Alternative: Muster)
 * computed property: Berechnete Eigenschaft
 * single-file components: 1-Datei-Komponente
+* Essentials: Grundlagen
+* Components In-Depth: Komponenten im Detail
+* Transitions & Animation: Übergänge und Animationen
+* Reusability & Composition: Wiederverwendbarkeit und Komposition
+* Tooling: Werkzeug
+* Scaling Up: Skalierbarkeit
+* Internals: Interna
+* Migrating: Migration
+* Meta: Meta
+* Special Sponsor: Außerordentliche Sponsoren
+* Guide: Handbuch
+* Cookbook: Kochbuch
+* Style guide: Styleguide
