@@ -56,3 +56,5 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * Guide: Handbuch
 * Cookbook: Kochbuch
 * Style guide: Styleguide
+* loader: Lader
+* native: nativ
