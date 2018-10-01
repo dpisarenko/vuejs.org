@@ -24,9 +24,9 @@ Dennoch ist es unvermeidlich, dass dieser Vergleich einigen Benutzern voreingeno
 
 Außerdem könnten einige Teile aufgrund rezenter Veränderungen in React 16+ unten ein wenig veraltet sein. Wir planen, in naher Zukunft mit der React-Community zusammenzuarbeiten, um diesen Abschnitt zu modernisieren.
 
-### Runtime Performance
+### Performance zur Laufzeit
 
-Both React and Vue are exceptionally and similarly fast, so speed is unlikely to be a deciding factor in choosing between them. For specific metrics though, check out this [3rd party benchmark](http://www.stefankrause.net/js-frameworks-benchmark7/table.html), which focuses on raw render/update performance with very simple component trees.
+Sowohl React, als auch Vue sind außerordentlich und ähnlich schnell. Daher ist es unwahrscheinlich, dass die Geschwindigkeit über die Wahl zwischen ihnen entscheiden wird. Für spezifische Messungen verweisen wir auf dieses [von einer dritten Partei erstelltes Benchmark](http://www.stefankrause.net/js-frameworks-benchmark7/table.html), das sich auf die rohe Render- und Update-Performance mit sehr einfachen Komponentenbäumen konzentriert.
 
 #### Optimization Efforts
 
