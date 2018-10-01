@@ -52,15 +52,15 @@ Render-Funktionen mit JSX haben mehrere Vorteile:
 
 - Die Unterstützung durch Werkzeugen (z. B. Linting, Typüberprüfung, Autovervollständigen im Editor) für JSX ist in bestimmten Bereichen fortgeschrittener als das, was derzeit für Vue-Vorlagen verfügbar ist.
 
-In Vue, we also have [render functions](render-function.html) and even [support JSX](render-function.html#JSX), because sometimes you do need that power. However, as the default experience we offer templates as a simpler alternative. Any valid HTML is also a valid Vue template, and this leads to a few advantages of its own:
+In Vue haben wir ebenfalls [Render-Funktionen](render-function.html) sogar die [JSX-Unterstützung](render-function.html#JSX), weil wir manchmal diese Leistungsfähigkeit brauchen. Meistens verwenden wir jedoch Vorlagen als eine einfachere Alternative. Jedes gültige HTML-Code ist eine gültige HTML-Vorlage, und dies führt zu mehreren Vorteilen:
 
-- For many developers who have been working with HTML, templates feel more natural to read and write. The preference itself can be somewhat subjective, but if it makes the developer more productive then the benefit is objective.
+- Für viele Entwickler, die mit HTML gearbeitet haben, fühlen sich Vorlagen natürlicher zum Lesen und Schreiben an. Die Vorliebe selber ist zwar subjektiv, aber wenn der Entwickler dadurch produktiver wird, ist der Vorteil objektiv.
 
--  HTML-based templates make it much easier to progressively migrate existing applications to take advantage of Vue's reactivity features.
+- HTML-basierte Vorlagen machen es einfacher, existierende Anwendungen schrittweise zu migrieren, um die Vorteile der Reaktivität von Vue zu nutzen.
 
-- It also makes it much easier for designers and less experienced developers to parse and contribute to the codebase.
+- Für Designer und weniger erfahrene Entwickler wird das Lesen und Beitragen zum Code viel leichter.
 
-- You can even use pre-processors such as Pug (formerly known as Jade) to author your Vue templates.
+- Du kannst sogar Präprozessoren wie Pug (vormals Jade) verwenden, um Deine Vue-Vorlagen zu erstellen.
 
 Some argue that you'd need to learn an extra DSL (Domain-Specific Language) to be able to write templates - we believe this difference is superficial at best. First, JSX doesn't mean the user doesn't need to learn anything - it's additional syntax on top of plain JavaScript, so it can be easy for someone familiar with JavaScript to learn, but saying it's essentially free is misleading. Similarly, a template is just additional syntax on top of plain HTML and thus has very low learning cost for those who are already familiar with HTML. With the DSL we are also able to help the user get more done with less code (e.g. `v-on` modifiers). The same task can involve a lot more code when using plain JSX or render functions.
 
