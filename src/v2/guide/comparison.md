@@ -38,9 +38,9 @@ Deswegen ist eine ganze Klasse von Performance-Optimierungen unnötig. Die Entwi
 
 ### HTML & CSS
 
-In React, everything is just JavaScript. Not only are HTML structures expressed via JSX, the recent trends also tend to put CSS management inside JavaScript as well. This approach has its own benefits, but also comes with various trade-offs that may not seem worthwhile for every developer.
+In React ist alles JavaScript. Nicht nur werden HTML-Strukturen als JSX ausgedrückt, der neue Trend geht dazu, auch CSS innerhalb von JavaScript zu verwalten. Dieser Ansatz hat seine Vorteile, ist aber mit Kompromissen verbunden, die nicht für alle Entwickler gut sind.
 
-Vue embraces classic web technologies and builds on top of them. To show you what that means, we'll dive into some examples.
+Vue verwendet klassische Web-Technologien und baut auf ihnen auf. Um zu zeigen, was das bedeutet, werden wir in einige Beispiele eintauchen.
 
 #### JSX vs Templates
 
