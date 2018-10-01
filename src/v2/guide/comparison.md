@@ -1,14 +1,14 @@
 ---
-title: Comparison with Other Frameworks
+title: Vergleich mit anderen Frameworks
 type: guide
 order: 801
 ---
 
-This is definitely the most difficult page in the guide to write, but we do feel it's important. Odds are, you've had problems you tried to solve and you've used another library to solve them. You're here because you want to know if Vue can solve your specific problems better. That's what we hope to answer for you.
+Diese Seite war am Schwierigsten zu schreiben in der gesamten Anleitung. Jedoch glauben wir, dass sie wichtig ist. Wahrscheinlich hast Du bereits Aufgaben gehabt, die Du versucht hast, zu lösen und Du hast dafür eine andere Bibliothek verwendet. Du bist hier, weil Du wissen willst, ob Vue Deine spezifischen Probleme besser lösen kann. Diese Frage hoffen wir hier zu beantworten.
 
-We also try very hard to avoid bias. As the core team, we obviously like Vue a lot. There are some problems we think it solves better than anything else out there. If we didn't believe that, we wouldn't be working on it. We do want to be fair and accurate though. Where other libraries offer significant advantages, such as React's vast ecosystem of alternative renderers or Knockout's browser support back to IE6, we try to list these as well.
+Wir bemühen uns, möglichst unvoreingenommen zu sein. Als Kernteam mögen wir Vue sehr. Es gibt bestimmte Aufgaben, die es besser löst als alles Andere auf dem Markt. Hätten wir das nicht geglaubt, dann würden wir nicht daran arbeiten. Wir wollen jedoch fair und genau sein. Dort wo andere Bibliotheken signifikante Vorteile bieten, versuchen wir, diese auch aufzulisten. Dies gilt z. B. für das umfangreiche Ökosystem von alternativen Renderern bei React oder die unterstützung von Browsern bis IE6 bei Knockout.
 
-We'd also like **your** help keeping this document up-to-date because the JavaScript world moves fast! If you notice an inaccuracy or something that doesn't seem quite right, please let us know by [opening an issue](https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
+Wir wollen auch, dass **Du** uns hilfst, dieses Dokument aktuell zu halten, weil sich die JavaScript-Welt rasch bewegt! Wenn Du eine Ungenauigkeit oder etwas Falsches bemerkst, lass uns bitte wissen, indem Du [ein Issue öffnest](https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
 
 ## React
 
