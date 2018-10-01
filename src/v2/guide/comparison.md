@@ -12,13 +12,13 @@ Wir wollen auch, dass **Du** uns hilfst, dieses Dokument aktuell zu halten, weil
 
 ## React
 
-React and Vue share many similarities. They both:
+React und Vue haben viel gemeinsam. Beide
 
-- utilize a virtual DOM
-- provide reactive and composable view components
-- maintain focus in the core library, with concerns such as routing and global state management handled by companion libraries
+- verwenden ein virtuelles DOM
+- stellen reaktive und zusammensetzbare Ansichtskomponenten zur Verfügung
+- konzentrieren sich auf die Kernbibliothek und behandeln Sachen wie Routing und globale Zustandsverwaltung in Begleitbibliotheken
 
-Being so similar in scope, we've put more time into fine-tuning this comparison than any other. We want to ensure not only technical accuracy, but also balance. We point out where React outshines Vue, for example in the richness of their ecosystem and abundance of their custom renderers.
+Weil sie so ähnlich sind, haben wir am mehr Zeit in Feinabstimmung des Vergleichs mit React investiert, als in Vergleiche mit allen anderen Bibliotheken. Wir wollen nicht nur technische Genauigkeit, sondern auch das Gleichgewicht sicherstellen. Wir zeigen, wo React Vue überstrahlt, z. B. in der Reichhaltigkeit deren Ökosystems und im Überfluss ihrer benutzerdefinierten Renderer.
 
 With that said, it's inevitable that the comparison would appear biased towards Vue to some React users, as many of the subjects explored are to some extent subjective. We acknowledge the existence of varying technical taste, and this comparison primarily aims to outline the reasons why Vue could potentially be a better fit if your preferences happen to coincide with ours.
 
