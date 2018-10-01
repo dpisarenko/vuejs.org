@@ -32,9 +32,9 @@ Sowohl React, als auch Vue sind außerordentlich und ähnlich schnell. Daher ist
 
 In React löst eine Zustandsänderung einer Komponente das Neurendern des gesamten Komponenten-Unterbaums, angefangen bei dieser Komponente als Wurzel. Um unnötiges Rendern der Kindkomponenten zu vermeiden, musst Du entweder `PureComponent` verwenden oder `shouldComponentUpdate` umsetzen, wann immer Du kannst. Du könntest auch unveränderliche Datenstrukturen verwenden, um Deine Zustandsänderungen optimierungsfreundlicher zu machen. Jedoch, kannst Du Dich in bestimmten Fällen nicht auf solche Optimierungen verlassen, weil  `PureComponent/shouldComponentUpdate` annimmt, dass die Render-Ausgabe des gesamten Unterbaums durch die Eigenschaften der aktuellen Komponente bestimmt wird. Ist das nicht der Fall, können solche Optimiereungen zum inkonsistenten DOM-Zustand führen.
 
-In Vue, a component's dependencies are automatically tracked during its render, so the system knows precisely which components actually need to re-render when state changes. Each component can be considered to have `shouldComponentUpdate` automatically implemented for you, without the nested component caveats.
+In Vue werden die Abhängigkeiten einer Komponente beim Rendern automatisch verfolgt. Dadurch weiss das System exakt, welche Komponenten wirklich neugerendert werden müssen, wenn sich der Zustand verändert. Du kannst es Dir so vorstellen: Bei jeder Komponente ist `shouldComponentUpdate` automatisch implementiert, ohne die Vorbehalte bezüglich verschachtelter Komponenten.
 
-Overall this removes the need for a whole class of performance optimizations from the developer's plate, and allows them to focus more on building the app itself as it scales.
+Deswegen ist eine ganze Klasse von Performance-Optimierungen unnötig. Die Entwickler können sich mehr auf das Bauen der eigentlichen, wachsenden Anwendung konzentrieren.
 
 ### HTML & CSS
 
