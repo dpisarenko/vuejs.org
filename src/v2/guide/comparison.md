@@ -20,9 +20,9 @@ React und Vue haben viel gemeinsam. Beide
 
 Weil sie so ähnlich sind, haben wir am mehr Zeit in Feinabstimmung des Vergleichs mit React investiert, als in Vergleiche mit allen anderen Bibliotheken. Wir wollen nicht nur technische Genauigkeit, sondern auch das Gleichgewicht sicherstellen. Wir zeigen, wo React Vue überstrahlt, z. B. in der Reichhaltigkeit deren Ökosystems und im Überfluss ihrer benutzerdefinierten Renderer.
 
-With that said, it's inevitable that the comparison would appear biased towards Vue to some React users, as many of the subjects explored are to some extent subjective. We acknowledge the existence of varying technical taste, and this comparison primarily aims to outline the reasons why Vue could potentially be a better fit if your preferences happen to coincide with ours.
+Dennoch ist es unvermeidlich, dass dieser Vergleich einigen Benutzern voreingenommen zugunsten Vue erscheinen wird, weil viele der besprochenen Themen zu einem gewissen Grad subjektiv sind. Wir erkennen die Existend unterschiedlicher technischer Geschmäcker an. Dieser Vergleich zielt primär darauf ab, die Gründe zu umreissen, warum Vue potentiell eine bessere Wahl sein kann, wenn Deine Präferenzen mit unseren übereinstimmen.
 
-Some of the sections below may also be slightly outdated due to recent updates in React 16+, and we are planning to work with the React community to revamp this section in the near future.
+Außerdem könnten einige Teile aufgrund rezenter Veränderungen in React 16+ unten ein wenig veraltet sein. Wir planen, in naher Zukunft mit der React-Community zusammenzuarbeiten, um diesen Abschnitt zu modernisieren.
 
 ### Runtime Performance
 
