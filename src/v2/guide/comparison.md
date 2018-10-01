@@ -42,15 +42,15 @@ In React ist alles JavaScript. Nicht nur werden HTML-Strukturen als JSX ausgedr�
 
 Vue verwendet klassische Web-Technologien und baut auf ihnen auf. Um zu zeigen, was das bedeutet, werden wir in einige Beispiele eintauchen.
 
-#### JSX vs Templates
+#### JSX gegen Vorlagen
 
-In React, all components express their UI within render functions using JSX, a declarative XML-like syntax that works within JavaScript.
+In React drücken alle Komponenten ihre Benutzeroberfläche in Render-Fuktionen mit JSX aus, einer deklarativen XML-ähnlichen Syntax, die innerhalb von JavaScript funktioniert.
 
-Render functions with JSX have a few advantages:
+Render-Funktionen mit JSX haben mehrere Vorteile:
 
-- You can leverage the power of a full programming language (JavaScript) to build your view. This includes temporary variables, flow controls, and directly referencing JavaScript values in scope.
+- Du kannst die Kraft einer richtigen Programmiersprache (JavaScript) zu Deinem grössten Vorteil nutzen, wenn Du Ansichten definierst. Das beinhaltet temporäre Variablen, Flusskontrolle, und das direkte Referenzieren der JavaScript-Werte.
 
-- The tooling support (e.g. linting, type checking, editor autocompletion) for JSX is in some ways more advanced than what's currently available for Vue templates.
+- Die Unterstützung durch Werkzeugen (z. B. Linting, Typüberprüfung, Autovervollständigen im Editor) für JSX ist in bestimmten Bereichen fortgeschrittener als das, was derzeit für Vue-Vorlagen verfügbar ist.
 
 In Vue, we also have [render functions](render-function.html) and even [support JSX](render-function.html#JSX), because sometimes you do need that power. However, as the default experience we offer templates as a simpler alternative. Any valid HTML is also a valid Vue template, and this leads to a few advantages of its own:
 
