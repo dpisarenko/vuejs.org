@@ -28,9 +28,9 @@ Außerdem könnten einige Teile aufgrund rezenter Veränderungen in React 16+ un
 
 Sowohl React, als auch Vue sind außerordentlich und ähnlich schnell. Daher ist es unwahrscheinlich, dass die Geschwindigkeit über die Wahl zwischen ihnen entscheiden wird. Für spezifische Messungen verweisen wir auf dieses [von einer dritten Partei erstelltes Benchmark](http://www.stefankrause.net/js-frameworks-benchmark7/table.html), das sich auf die rohe Render- und Update-Performance mit sehr einfachen Komponentenbäumen konzentriert.
 
-#### Optimization Efforts
+#### Optimierungsbemühungen
 
-In React, when a component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. To avoid unnecessary re-renders of child components, you need to either use `PureComponent` or implement `shouldComponentUpdate` whenever you can. You may also need to use immutable data structures to make your state changes more optimization-friendly. However, in certain cases you may not be able to rely on such optimizations because `PureComponent/shouldComponentUpdate` assumes the entire sub tree's render output is determined by the props of the current component. If that is not the case, then such optimizations may lead to inconsistent DOM state.
+In React löst eine Zustandsänderung einer Komponente das Neurendern des gesamten Komponenten-Unterbaums, angefangen bei dieser Komponente als Wurzel. Um unnötiges Rendern der Kindkomponenten zu vermeiden, musst Du entweder `PureComponent` verwenden oder `shouldComponentUpdate` umsetzen, wann immer Du kannst. Du könntest auch unveränderliche Datenstrukturen verwenden, um Deine Zustandsänderungen optimierungsfreundlicher zu machen. Jedoch, kannst Du Dich in bestimmten Fällen nicht auf solche Optimierungen verlassen, weil  `PureComponent/shouldComponentUpdate` annimmt, dass die Render-Ausgabe des gesamten Unterbaums durch die Eigenschaften der aktuellen Komponente bestimmt wird. Ist das nicht der Fall, können solche Optimiereungen zum inkonsistenten DOM-Zustand führen.
 
 In Vue, a component's dependencies are automatically tracked during its render, so the system knows precisely which components actually need to re-render when state changes. Each component can be considered to have `shouldComponentUpdate` automatically implemented for you, without the nested component caveats.
 
