@@ -1,66 +1,66 @@
 ---
-title: Comparison with Other Frameworks
+title: Vergleich mit anderen Frameworks
 type: guide
 order: 801
 ---
 
-This is definitely the most difficult page in the guide to write, but we do feel it's important. Odds are, you've had problems you tried to solve and you've used another library to solve them. You're here because you want to know if Vue can solve your specific problems better. That's what we hope to answer for you.
+Diese Seite war am Schwierigsten zu schreiben in der gesamten Anleitung. Jedoch glauben wir, dass sie wichtig ist. Wahrscheinlich hast Du bereits Aufgaben gehabt, die Du versucht hast, zu lösen und Du hast dafür eine andere Bibliothek verwendet. Du bist hier, weil Du wissen willst, ob Vue Deine spezifischen Probleme besser lösen kann. Diese Frage hoffen wir hier zu beantworten.
 
-We also try very hard to avoid bias. As the core team, we obviously like Vue a lot. There are some problems we think it solves better than anything else out there. If we didn't believe that, we wouldn't be working on it. We do want to be fair and accurate though. Where other libraries offer significant advantages, such as React's vast ecosystem of alternative renderers or Knockout's browser support back to IE6, we try to list these as well.
+Wir bemühen uns, möglichst unvoreingenommen zu sein. Als Kernteam mögen wir Vue sehr. Es gibt bestimmte Aufgaben, die es besser löst als alles Andere auf dem Markt. Hätten wir das nicht geglaubt, dann würden wir nicht daran arbeiten. Wir wollen jedoch fair und genau sein. Dort wo andere Bibliotheken signifikante Vorteile bieten, versuchen wir, diese auch aufzulisten. Dies gilt z. B. für das umfangreiche Ökosystem von alternativen Renderern bei React oder die unterstützung von Browsern bis IE6 bei Knockout.
 
-We'd also like **your** help keeping this document up-to-date because the JavaScript world moves fast! If you notice an inaccuracy or something that doesn't seem quite right, please let us know by [opening an issue](https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
+Wir wollen auch, dass **Du** uns hilfst, dieses Dokument aktuell zu halten, weil sich die JavaScript-Welt rasch bewegt! Wenn Du eine Ungenauigkeit oder etwas Falsches bemerkst, lass uns bitte wissen, indem Du [ein Issue öffnest](https://github.com/vuejs/vuejs.org/issues/new?title=Inaccuracy+in+comparisons+guide).
 
 ## React
 
-React and Vue share many similarities. They both:
+React und Vue haben viel gemeinsam. Beide
 
-- utilize a virtual DOM
-- provide reactive and composable view components
-- maintain focus in the core library, with concerns such as routing and global state management handled by companion libraries
+- verwenden ein virtuelles DOM
+- stellen reaktive und zusammensetzbare Ansichtskomponenten zur Verfügung
+- konzentrieren sich auf die Kernbibliothek und behandeln Sachen wie Routing und globale Zustandsverwaltung in Begleitbibliotheken
 
-Being so similar in scope, we've put more time into fine-tuning this comparison than any other. We want to ensure not only technical accuracy, but also balance. We point out where React outshines Vue, for example in the richness of their ecosystem and abundance of their custom renderers.
+Weil sie so ähnlich sind, haben wir am mehr Zeit in Feinabstimmung des Vergleichs mit React investiert, als in Vergleiche mit allen anderen Bibliotheken. Wir wollen nicht nur technische Genauigkeit, sondern auch das Gleichgewicht sicherstellen. Wir zeigen, wo React Vue überstrahlt, z. B. in der Reichhaltigkeit deren Ökosystems und im Überfluss ihrer benutzerdefinierten Renderer.
 
-With that said, it's inevitable that the comparison would appear biased towards Vue to some React users, as many of the subjects explored are to some extent subjective. We acknowledge the existence of varying technical taste, and this comparison primarily aims to outline the reasons why Vue could potentially be a better fit if your preferences happen to coincide with ours.
+Dennoch ist es unvermeidlich, dass dieser Vergleich einigen Benutzern voreingenommen zugunsten Vue erscheinen wird, weil viele der besprochenen Themen zu einem gewissen Grad subjektiv sind. Wir erkennen die Existend unterschiedlicher technischer Geschmäcker an. Dieser Vergleich zielt primär darauf ab, die Gründe zu umreissen, warum Vue potentiell eine bessere Wahl sein kann, wenn Deine Präferenzen mit unseren übereinstimmen.
 
-Some of the sections below may also be slightly outdated due to recent updates in React 16+, and we are planning to work with the React community to revamp this section in the near future.
+Außerdem könnten einige Teile aufgrund rezenter Veränderungen in React 16+ unten ein wenig veraltet sein. Wir planen, in naher Zukunft mit der React-Community zusammenzuarbeiten, um diesen Abschnitt zu modernisieren.
 
-### Runtime Performance
+### Performance zur Laufzeit
 
-Both React and Vue are exceptionally and similarly fast, so speed is unlikely to be a deciding factor in choosing between them. For specific metrics though, check out this [3rd party benchmark](http://www.stefankrause.net/js-frameworks-benchmark7/table.html), which focuses on raw render/update performance with very simple component trees.
+Sowohl React, als auch Vue sind außerordentlich und ähnlich schnell. Daher ist es unwahrscheinlich, dass die Geschwindigkeit über die Wahl zwischen ihnen entscheiden wird. Für spezifische Messungen verweisen wir auf dieses [von einer dritten Partei erstelltes Benchmark](http://www.stefankrause.net/js-frameworks-benchmark7/table.html), das sich auf die rohe Render- und Update-Performance mit sehr einfachen Komponentenbäumen konzentriert.
 
-#### Optimization Efforts
+#### Optimierungsbemühungen
 
-In React, when a component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. To avoid unnecessary re-renders of child components, you need to either use `PureComponent` or implement `shouldComponentUpdate` whenever you can. You may also need to use immutable data structures to make your state changes more optimization-friendly. However, in certain cases you may not be able to rely on such optimizations because `PureComponent/shouldComponentUpdate` assumes the entire sub tree's render output is determined by the props of the current component. If that is not the case, then such optimizations may lead to inconsistent DOM state.
+In React löst eine Zustandsänderung einer Komponente das Neurendern des gesamten Komponenten-Unterbaums, angefangen bei dieser Komponente als Wurzel. Um unnötiges Rendern der Kindkomponenten zu vermeiden, musst Du entweder `PureComponent` verwenden oder `shouldComponentUpdate` umsetzen, wann immer Du kannst. Du könntest auch unveränderliche Datenstrukturen verwenden, um Deine Zustandsänderungen optimierungsfreundlicher zu machen. Jedoch, kannst Du Dich in bestimmten Fällen nicht auf solche Optimierungen verlassen, weil  `PureComponent/shouldComponentUpdate` annimmt, dass die Render-Ausgabe des gesamten Unterbaums durch die Eigenschaften der aktuellen Komponente bestimmt wird. Ist das nicht der Fall, können solche Optimiereungen zum inkonsistenten DOM-Zustand führen.
 
-In Vue, a component's dependencies are automatically tracked during its render, so the system knows precisely which components actually need to re-render when state changes. Each component can be considered to have `shouldComponentUpdate` automatically implemented for you, without the nested component caveats.
+In Vue werden die Abhängigkeiten einer Komponente beim Rendern automatisch verfolgt. Dadurch weiss das System exakt, welche Komponenten wirklich neugerendert werden müssen, wenn sich der Zustand verändert. Du kannst es Dir so vorstellen: Bei jeder Komponente ist `shouldComponentUpdate` automatisch implementiert, ohne die Vorbehalte bezüglich verschachtelter Komponenten.
 
-Overall this removes the need for a whole class of performance optimizations from the developer's plate, and allows them to focus more on building the app itself as it scales.
+Deswegen ist eine ganze Klasse von Performance-Optimierungen unnötig. Die Entwickler können sich mehr auf das Bauen der eigentlichen, wachsenden Anwendung konzentrieren.
 
 ### HTML & CSS
 
-In React, everything is just JavaScript. Not only are HTML structures expressed via JSX, the recent trends also tend to put CSS management inside JavaScript as well. This approach has its own benefits, but also comes with various trade-offs that may not seem worthwhile for every developer.
+In React ist alles JavaScript. Nicht nur werden HTML-Strukturen als JSX ausgedrückt, der neue Trend geht dazu, auch CSS innerhalb von JavaScript zu verwalten. Dieser Ansatz hat seine Vorteile, ist aber mit Kompromissen verbunden, die nicht für alle Entwickler gut sind.
 
-Vue embraces classic web technologies and builds on top of them. To show you what that means, we'll dive into some examples.
+Vue verwendet klassische Web-Technologien und baut auf ihnen auf. Um zu zeigen, was das bedeutet, werden wir in einige Beispiele eintauchen.
 
-#### JSX vs Templates
+#### JSX gegen Vorlagen
 
-In React, all components express their UI within render functions using JSX, a declarative XML-like syntax that works within JavaScript.
+In React drücken alle Komponenten ihre Benutzeroberfläche in Render-Fuktionen mit JSX aus, einer deklarativen XML-ähnlichen Syntax, die innerhalb von JavaScript funktioniert.
 
-Render functions with JSX have a few advantages:
+Render-Funktionen mit JSX haben mehrere Vorteile:
 
-- You can leverage the power of a full programming language (JavaScript) to build your view. This includes temporary variables, flow controls, and directly referencing JavaScript values in scope.
+- Du kannst die Kraft einer richtigen Programmiersprache (JavaScript) zu Deinem grössten Vorteil nutzen, wenn Du Ansichten definierst. Das beinhaltet temporäre Variablen, Flusskontrolle, und das direkte Referenzieren der JavaScript-Werte.
 
-- The tooling support (e.g. linting, type checking, editor autocompletion) for JSX is in some ways more advanced than what's currently available for Vue templates.
+- Die Unterstützung durch Werkzeugen (z. B. Linting, Typüberprüfung, Autovervollständigen im Editor) für JSX ist in bestimmten Bereichen fortgeschrittener als das, was derzeit für Vue-Vorlagen verfügbar ist.
 
-In Vue, we also have [render functions](render-function.html) and even [support JSX](render-function.html#JSX), because sometimes you do need that power. However, as the default experience we offer templates as a simpler alternative. Any valid HTML is also a valid Vue template, and this leads to a few advantages of its own:
+In Vue haben wir ebenfalls [Render-Funktionen](render-function.html) sogar die [JSX-Unterstützung](render-function.html#JSX), weil wir manchmal diese Leistungsfähigkeit brauchen. Meistens verwenden wir jedoch Vorlagen als eine einfachere Alternative. Jedes gültige HTML-Code ist eine gültige HTML-Vorlage, und dies führt zu mehreren Vorteilen:
 
-- For many developers who have been working with HTML, templates feel more natural to read and write. The preference itself can be somewhat subjective, but if it makes the developer more productive then the benefit is objective.
+- Für viele Entwickler, die mit HTML gearbeitet haben, fühlen sich Vorlagen natürlicher zum Lesen und Schreiben an. Die Vorliebe selber ist zwar subjektiv, aber wenn der Entwickler dadurch produktiver wird, ist der Vorteil objektiv.
 
--  HTML-based templates make it much easier to progressively migrate existing applications to take advantage of Vue's reactivity features.
+- HTML-basierte Vorlagen machen es einfacher, existierende Anwendungen schrittweise zu migrieren, um die Vorteile der Reaktivität von Vue zu nutzen.
 
-- It also makes it much easier for designers and less experienced developers to parse and contribute to the codebase.
+- Für Designer und weniger erfahrene Entwickler wird das Lesen und Beitragen zum Code viel leichter.
 
-- You can even use pre-processors such as Pug (formerly known as Jade) to author your Vue templates.
+- Du kannst sogar Präprozessoren wie Pug (vormals Jade) verwenden, um Deine Vue-Vorlagen zu erstellen.
 
 Some argue that you'd need to learn an extra DSL (Domain-Specific Language) to be able to write templates - we believe this difference is superficial at best. First, JSX doesn't mean the user doesn't need to learn anything - it's additional syntax on top of plain JavaScript, so it can be easy for someone familiar with JavaScript to learn, but saying it's essentially free is misleading. Similarly, a template is just additional syntax on top of plain HTML and thus has very low learning cost for those who are already familiar with HTML. With the DSL we are also able to help the user get more done with less code (e.g. `v-on` modifiers). The same task can involve a lot more code when using plain JSX or render functions.
 
