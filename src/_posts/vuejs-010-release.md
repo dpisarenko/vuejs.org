@@ -1,28 +1,28 @@
 ---
-title: Vue.js 0.10 is here!
+title: Vue.js 0.10 ist hier!
 date: 2014-03-22 19:00:13
 type: '{{type}}'
 yield: '{{>yield}}'
 ---
 
-Vue.js 0.10.0 (Blade Runner) has been released! This release comes with many useful additions based on the suggestions from the users, notably interpolation in literal directives, dynamic components with the new `v-view` directive, array filters, and the option to configure interpolation delimiters. Internally, the codebase has received many refactoring and improvements which makes Vue.js [even faster](http://vuejs.org/perf/).
+Vue.js 0.10.0 (Blade Runner) wurde veröffentlicht! Diese Version kommt mit vielen zusätzlichen Erweiterungen basierend auf den Vorschlägen von Usern, insbesondere Interpolation in literalen Direktiven, dynamischen Komponenten mit der neuen `v-view` Directive, Array-Filtern und der konfigurierbaren Delimeter für Interpolation. Intern wurde die Codebase überarbeitet und verbessert sodass Vue.js nun [noch schneller](http://vuejs.org/perf/) ist.
 
 <!-- more -->
 
-See the [Installation](/guide/installation.html) page for the latest builds.
+Siehe die [Installation](/guide/installation.html) Seite für die aktuellen Builds.
 
-### New
+### Neu
 
-- Literal directives can now contain interpolation tags. These tags will be evaluated only once at compile time. An example usage is conditionally decide which component to instantiate with `v-component="{{type}}"`. [Doc](/guide/directives.html#Literal_Directives).
-- Attributes listed in the `paramAttributes` option now accept mustache interpolations too. They will also only be evaluated once.
-- `v-repeat` now accepts an argument which will be used as the identifier for the wrapped object. This allows more explicit property access in repeaters. [Doc](/guide/list.html#Using_an_Identifier).
-- Added `v-view` directive which binds to a string value and dynamically instantiate different components using that string as the component ID. [Doc](/api/directives.html#v-view).
-- Added `filterBy` and `orderBy` filters for `v-repeat`. [Doc](/api/filters.html#filterBy).
-- Custom filters that access properties on its `this` context will be considered **computed filters**. [Doc](/guide/custom-filter.html#Filter_Context).
-- You can now access the event in `v-on` handler expressions as `$event`. Example: `<a v-on="click:handle('hello', $event)">Hello</a>`
-- Interpolation delimiters can now be customized via the `delimiters` global config option. Example: `Vue.config({ delimiters: ["[", "]"] })` will change the matched interpolation tags to `[[ ]]` for text bindings and `[[[ ]]]` for html bindings.
+- Literale Directive können nun Interpolationstags beinhalten. Diese Tags werden nur einmal während des Kompilierens ausgewertet. So kann man mit z.B. `v-component="{{type}}"`bedingungsweise entscheiden welche Komponenten instanziiert werden sollen. [Doku](/guide/directives.html#Literal_Directives).
+- Attribute, welche in `paramAttributes` gelistet sind akzeptieren nun auch Mustache-Interpolation und werden ebenfalls nur einmal ausgewertet.
+- `v-repeat` akzeptiert nun ein Argument, dass als Identifier für das umschlossene Objekt benuzt wird. Dies erlaubt einen expliziten Zugriff auf Eigenschaften in Repeatern. [Doku](/guide/list.html#Using_an_Identifier).
+- Es wurde die `v-view` Direktive hinzugefügt, welche mit einem String verbunden wird und dynamisch verschiedene Komponenten instanziieren kann. Der String wird dabei als Komponenten-ID  benuzt. [Doku](/api/directives.html#v-view).
+- Es wurden die `filterBy` und `orderBy` Filter für `v-repeat` hizugefügt. [Doku](/api/filters.html#filterBy).
+- Benutzerdefinierte Filter, welche auf Eigenschaften im `this` Kontext zugreifen können werden als **Berechnete Filter** bezeichnet. [Doku](/guide/custom-filter.html#Filter_Context).
+- Du kannst nun auf das Event im `v-on` Handler-Ausdruck mit `$event` zugreifen. Beispiel: `<a v-on="click:handle('hello', $event)">Hello</a>`
+- Interpolationsdelimeter können nun via der globalen Konfigurationsption `delimeters` angepasst werden. Beispiel: `Vue.config({ delimiters: ["[", "]"] })` wird die übereinstimmenden Interpolationstags zu `[[ ]]` ändern für String-Verknüpfungen und `[[[ ]]]` für HTML-Verknüpfungen.
 
-### Changed
+### Änderungen
 
 - `{{yield}}` syntax has been deprecated. A Web Components spec compatible content insertion mechanism using `<content>` elements has been introduced. [Doc](/guide/components.html#Content_Insertion).
 - To use a component as a custom element, the component ID must now contain a hyphen (`-`). This is consistent with the current custom element spec draft.
@@ -32,15 +32,15 @@ See the [Installation](/guide/installation.html) page for the latest builds.
 - `v-with` can no longer be used alone. It now must be used with either `v-component` or `v-view`. `v-component` can also be used as an empty directive just to create a child VM using the default `Vue` constructor.
 - Production build now strips all warnings and debug logs. To leverage `debug: true`, use the development version. The development version now has more detailed warning messages.
 
-### Fixed
+### Korrekturen
 
-- `event.stopPropagation()` and `event.preventDefault()` inside `v-on` handlers now work as expected.
-- `parent` option now works properly when used in `Vue.extend`
-- Mustache bindings inside `<textarea>` are now properly interpolated before being set as value.
+- `event.stopPropagation()` und `event.preventDefault()` in `v-on` Handlern funktionieren nun wir erwartet.
+- `parent` Option funtioniert nun auch in `Vue.extend`
+- Mustache-Verknüpfungen in `<textarea>` werden nun korrekt interpoliert bevor diese als Wert gesetzt werden.
 
-### Internal
+### Interna
 
-- `v-component`, `v-with` and `v-if` have been re-written for a cleaner compile flow.
-- `v-repeat` has been re-written to use refined diff algorithm which triggers minimum DOM manipulations when the array is set to a different instance containing overlapping elements. This makes it efficient to pipe an Array through filters.
-- `template` option now directly clones native `<template>`'s content when available.
-- Overall performance improvements for both initialization and rendering.
+- `v-component`, `v-with` und `v-if` wurden neu geschrieben für einen saubereren Kompilierungsfluss.
+- `v-repeat` wurde neu geschrieben und benutzt jetzt einen überarbeiteten Diff Algorithmus, welcher minimale DOM-Änderungen auslöst wenn das Array auf einer anderen Instanz gesetzt ist, welche überlappende Elemente beinhaltet. Damit kann ein Array effizient gefiltert werden.
+- `template` klont jetzt direkt den Inhalt des nativen `<template>` wenn verfügbar.
+- Allgemeine Performance-Verbesserungen für Initialisierung und Rendering.

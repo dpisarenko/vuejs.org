@@ -1,12 +1,12 @@
 ---
-title: Vue.js 0.11 released!
+title: Vue.js 0.11 wurde veröffentlicht!
 date: 2014-11-09 09:23:40
 ---
 
-After the long wait, [Vue.js 0.11 **Cowboy Bebop**](https://github.com/yyx990803/vue/releases/tag/0.11.0) is finally here! Thanks to everyone who tried out the release candidate versions and provided feedback / bug reports along the way.
+Nach langem Warten, ist [Vue.js 0.11 **Cowboy Bebop**](https://github.com/yyx990803/vue/releases/tag/0.11.0) endlich hier! Danke an alle die Vorversionen getesten und Feedback gegeben haben.
 
 <!-- more -->
 
-The 0.11 release introduced many new features and also a fair number of breaking changes, so please carefully read through the [0.11 Change List](https://github.com/yyx990803/vue/blob/master/changes.md) before upgrading. Aside from the API changes, 0.11 also ships with better [code quality](https://codeclimate.com/github/yyx990803/vue) and [test coverage](https://coveralls.io/r/yyx990803/vue), and is considerably more robust in almost every aspect.
+In der 0.11 Version werden viele neue Features und auch brechende Änderungen eingeführt, darum sollte man die [0.11 Change List](https://github.com/yyx990803/vue/blob/master/changes.md) gründlich lesen vor einem Upgrade. Abgesehen von den Änderungen der API, 0.11 kommt mit besserer [Code-Quality](https://codeclimate.com/github/yyx990803/vue) und [Test-Coverage](https://coveralls.io/r/yyx990803/vue) und ist wesentlich robuster in jeder Hinsicht.
 
-This documentation site has been fully upgraded to match the new 0.11 API. For the now legacy 0.10.6 version, you can still find documentations for it at [legacy.vuejs.org](http://legacy.vuejs.org).
+Diese Dokumentation wurde vollständig aktualisiert und reflektiert die neue 0.11 API. Die ältere 0.10.6 Version findest du unter [legacy.vuejs.org](http://legacy.vuejs.org).
