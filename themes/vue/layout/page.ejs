@@ -19,7 +19,7 @@
     <% } %>
   <% } %>
   <% if (page.title.trim()) { %>
-    <h1><%- page.title %><%- page.type === 'examples' ? ' Example' : '' %></h1>
+    <h1><%- page.title %><%- page.type === 'examples' ? ' Beispiel' : '' %></h1>
   <% } %>
   <% if (page.sponsors) { %>
     <%- partial('sponsors-page') %>
@@ -44,9 +44,9 @@
     <%_ if (!page.sponsors) { _%>
       <%- partial('partials/ad-text') %>
     <%_ } _%>
-    Caught a mistake or want to contribute to the documentation?
+    Ist dir ein Fehler aufgefallen oder willst du zur Dokumentation beitragen?
     <a href="https://github.com/vuejs/vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
-      Edit this page on GitHub!
+      Editier diese Seite auf GitHub!
     </a>
   </div>
 </div>

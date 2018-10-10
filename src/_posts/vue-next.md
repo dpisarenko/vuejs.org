@@ -1,27 +1,27 @@
 ---
-title: Vue.js 0.10.6, and what's next
+title: Vue.js 0.10.6, und was als nächstes kommt
 date: 2014-07-29 00:04:55
 ---
 
 ## 0.10.6
 
-Vue.js 0.10.6 has been released! This is another small bug-fix release and will be the last maintenance version before the next major release.
+Vue.js 0.10.6 wurde veröffentlicht! Dies ist ein weiteres kleines Bugfix und wird die letzte Wartungsversion bleiben bis zur nächsten großen Hauptversion.
 
 <!-- more -->
 
-- fix `v-style` error when value is falsy or a number. ( thanks to [@dmfilipenko](https://github.com/dmfilipenko) )
-- fix the built-in `currency` filter error when value is a string ( thanks to [@dmfilipenko](https://github.com/dmfilipenko) )
-- fix `Vue.require` for building with Component v1.0+ ( thanks to [@kewah](https://github.com/kewah) )
-- Allow template nodes to be passed as a template option ( thanks to [@jordangarcia](https://github.com/jordangarcia) )
-- `vm.$destroy()` now accepts an optional argument `noRemove`. When passed in as `true` it will leave the vm's DOM node intact after the vm is destroyed.
+- `v-style` Fehler wenn Wert ist fehlerhaft oder eine Zahl behoben. ( Danke an [@dmfilipenko](https://github.com/dmfilipenko) )
+- Fehler mit `currency` Filter wenn Wert ist ein String behoben ( Danke an [@dmfilipenko](https://github.com/dmfilipenko) )
+- `Vue.require` zum Bauen von Komponenten v1.0+ gefixt ( Danke an [@kewah](https://github.com/kewah) )
+- Template-Knoten erlauben als Template-Optionen übergeben zu werden ( Danke an [@jordangarcia](https://github.com/jordangarcia) )
+- `vm.$destroy()` akzeotiert nun ein optionales Argument `noRemove`. Wenn als `true` übergeben, wird es vm's DOM Knoten, nachdem das vm gelöscht wurde, intakt lassen.
 
 ## Vue-next
 
-Some of you might have noticed there is a [next](https://github.com/yyx990803/vue/tree/next) branch in the repo. And yes, I am re-writing Vue.js from scratch. There are two main reasons:
+Mache von euch werden die [next](https://github.com/yyx990803/vue/tree/next) Branch in der Repo bemerkt haben. Es stimmt, ich schreibe Vue.js von Grund auf neu. Es gibt zwei Gründe für diese Enscheidung:
 
-- Fix some issues that are caused by design flaws in the current version. Because these changes affect the design of some core modules, it is actually easier to rewrite than to apply on the current codebase.
-- Improve general code quality (in particular, `compiler.js` as of now is a big pile of mess, and comments are not consistent across the codebase.)
+- Probleme lösen die auf Designfehlern der aktuellen Version beruhen. Diese Änderungen betreffen das Design einiger Kernmodule und sind damit einfacher neu zu schreiben als auf die aktuelle Codebase anzuwenden.
+- Code-Qualty insgesamt verbessern ( insbesondere `compiler.js` ist derzeit ein großer Haufen Mist und Kommentare sind nicht konsistent )
 
-Take note that the `next` branch is still in **very** early stage. The internals will change a lot, and when it comes out it **will** break current applications. Despite that I will try to keep the API changes to a minimum. Major differences with current 0.10 branch are documented in [`changes.md`](https://github.com/yyx990803/vue/blob/next/changes.md). The list is obviously incomplete and subject to change, some of them are simply ideas, but it at least gives you a taste of what to expect, and I'd appreciate your feedback on any of the topics.
+Die `next` Branch steht noch **ganz am Angang**. Die Interna werden sich stark ändern und wenn es rauskommt wird das aktuelle Apps **brechen**. Trotzdem werde ich versuchen API-Änderungen zu vermeiden. Wesentliche Unterschiede zu der 0.10 Branch werden in `changes.md` festgehalten. Diese Liste ist natürlich nicht vollständig und wird sich ändern. Manches davon sind nur Ideen, aber es soll euch zeigen was zu erwarten ist und eurer Feedback zu jedem dieser Punkte ist willkommen.
 
-Share your thoughts at [vuejs/Discussion](https://github.com/vuejs/Discussion/issues).
+Teile deine Meinung unter [vuejs/Discussion](https://github.com/vuejs/Discussion/issues).

@@ -58,3 +58,18 @@ Die endgültigen Übersetzungen werden nach der Fertigstellung der ersten Fassun
 * Style guide: Styleguide
 * loader: Lader
 * native: nativ
+* development experience: Entwicklungsprozess
+* literal directives: Literale Direktive
+* interpolation tag: Interpolationstag
+* mustache interpolations: Mustache-Interpolation
+* identifier: Identifier
+* wrapped object: Umschlossene Objekt
+* Custom filters: Benutzerdefinierte Filter
+* handler expression: Handler-Ausdruck
+* text bindings: String-Verknüpfungen
+* html bindings: HTML-Verknüpfungen
+* Mustache bindings: Mustache-Verknüpfungen
+* best practice: best practice
+* Reactivity in Depth: Reaktivität im Detail
+* Array Change Detection: Array-Änderung Erkennung
+* deprecation: Abschreibung

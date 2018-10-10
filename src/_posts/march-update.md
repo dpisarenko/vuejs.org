@@ -1,42 +1,42 @@
 ---
-title: March 2016 Update
+title: März 2016 Update
 date: 2016-03-14 18:45:00
 ---
 
-## Growing Community
+## Wachsende Community
 
-Vue's growth in the past year has been nothing short of amazing. As of today we are at over 15,000 stars on GitHub, over 500k downloads from npm, and over 2,000 users in the Gitter channel. What's more exciting though, is that the community successfully organized the first [London Vue.js Meetup](http://www.meetup.com/London-Vue-js-Meetup/) and the first [Paris Vue.js Meetup](http://www.meetup.com/Vuejs-Paris/?scroll=true)! A big shoutout to the awesome organizers: [Jack](https://twitter.com/JackBarham), [James](https://twitter.com/onejamesbrowne/) and [Eduardo](https://twitter.com/posva/).
+Vue's Wachstum der vergangenen Jahre ist unglaublich. Heute haben wir 15000 Stars auf GitHub, über 500 Tausend Downloads via NPM und über 2000 User in Gitter. Noch besser, die Community hat es geschafft das erste [Vue.js Meetup in London](http://www.meetup.com/London-Vue-js-Meetup/) und das erste [Vue.js Meetup in Paris](http://www.meetup.com/Vuejs-Paris/?scroll=true) zu organisieren! Ein großes Shoutout an die Organisatoren: [Jack](https://twitter.com/JackBarham), [James](https://twitter.com/onejamesbrowne/) und [Eduardo](https://twitter.com/posva/).
 
 <!-- more -->
 
-If you are interested in connecting with Vue.js users near you and share your experiences in using Vue.js, joining a local Meetup is a great idea - even better, maybe you can organize one :)
+Solltest du daran interessiert sein andere Vue.js User zu treffen und sich auszutauschen, eine gute Idee ist es ein lokales Meetup zu besuchen - noch besser, vielleicht kannst eins organisieren :)
 
-## Cool Things Being Built
+## Coole Dinge werden gebaut
 
-More and more amazing things are being built with Vue. There are products like [PageKit](https://pagekit.com/), Laravel Spark (coming soon) and [Statamic](https://v2.statamic.com/), sleek apps like [Koel](http://koel.phanan.net/) and [Gokotta](https://github.com/Zhangdroid/Gokotta), UI components like [VueStrap](http://yuche.github.io/vue-strap/) and [Vue-MDL](http://posva.net/vue-mdl/), and smooth, interactive experiences like [YouTube Adblitz](https://adblitz.withyoutube.com) and even the [Facebook NewsFeed Marketing Site](https://newsfeed.fb.com/)!
+Es werden mehr und mehr tolle Dinge mit Vue gebaut. Produkte wie [PageKit](https://pagekit.com/), Laravel Spark (coming soon) und [Statamic](https://v2.statamic.com/), geschmeidige Apps wie [Koel](http://koel.phanan.net/) und [Gokotta](https://github.com/Zhangdroid/Gokotta), UI-Komponenten wie [VueStrap](http://yuche.github.io/vue-strap/) und [Vue-MDL](http://posva.net/vue-mdl/), und sanfte, interaktive Erlebnisse wie [YouTube Adblitz](https://adblitz.withyoutube.com) und sogar die [Facebook NewsFeed Marketing Site](https://newsfeed.fb.com/)!
 
-There are many other great projects - too many to be listed here - but you can check them all out in [awesome-vue](https://github.com/vuejs/awesome-vue). If you've built great things with Vue, you should also add them to the list!
+Es gibt noch viele andere tolle Projekte - zu viele um alle hier aufzulisten - aber du kannst sie dir auf [awesome-vue](https://github.com/vuejs/awesome-vue) anschauen. Wenn du etwas cooles mit Vue gebaut hast, solltest du es zu der Liste hinzufügen!
 
-## A New Vision For the Project
+## Eine neue Version für das Projekt
 
-Some of you may have noticed that the development on the Vue.js core repo has slowed down lately - in the meanwhile, a lot of efforts went into other sub projects, namely [Vuex](https://github.com/vuejs/vuex), [vue-devtools](https://github.com/vuejs/vue-devtools) and the official [Webpack project boilerplate](https://github.com/vuejs-templates/webpack). The next step is a new release for [vue-router](https://github.com/vuejs/vue-router), and better documentation/examples demonstrating how Vue.js core, Vuex and vue-router work together in a large single page application.
+Einigen von euch wird aufgefallen sein, dass die Entwicklung der eigentlichen Vue.js Repo abgenommen hat. Stattdessen wurde mehr in die Entwicklung von Unterprojekten investiert, namentlich [Vuex](https://github.com/vuejs/vuex), [vue-devtools](https://github.com/vuejs/vue-devtools) und das offizielle [Webpack Projekt Boilerplate](https://github.com/vuejs-templates/webpack). Der nächste Schritt ist eine neue Version von [vue-router](https://github.com/vuejs/vue-router) und bessere Dokumentation/Beispiele, die zeigen wie Vue.js, Vuex und vue-router in einer großen SPA zusammenarbeiten können. 
 
-All this adds together towards a new vision for the Vue.js project: a progressive framework that can adapt to different complexity levels. Vue.js core will remain "just the view layer" - you can still drop it on whatever existing page to replace jQuery, but the Vue.js project also includes other pieces like vue-router, Vuex, vue-loader/vueify and vue-cli that works together as a more complete, opinionated framework for single page applications. More on this in a later post.
+All das führt zu einer neues Vision für das Vue.js Projekt: Ein progressives Framework, dass auf verschiede Komplexitätslevel skaliert werden kann.Vue.js wird "nur die View-Schicht" bleiben - du kannst es zu jeder Seite hinzufügen um jQuery zu ersetzen, aber das Vue.js Projekt beinhaltet andere Teile wie vue-router, Vuex, vue-loader/vueify und vue-cli, welche als ein mehr vollständiges, meinungsstarkes Framework für SPAs  zusammenarbeiten. Mehr dazu später.
 
-## Vue.js needs your help!
+## Vue.js braucht deine Hilfe!
 
-Open source is awesome, and I'm proud that Vue.js is helping people build real products all over the world. However, as the scope of the project grows, pushing new features while maintaining everything becomes a very demanding job. The good news is you can help!
+Open-Source ist klasse und es freut mich, dass Vue.js Menschen rund um die Welt dabei hilft echte Produkte zu bauen. Jedoch mit wachsendem Umfang des Projekts, wächst der Aufwand alles aufrecht zu erhalten und neue Features zu implementieren. Die gute Nachricht ist, dass du helfen kannst!
 
-### Looking for collaborators
+### Suche Mitarbeiter
 
-There are already users who frequently helps out in various ways, but this is an invitation to make things official. I'm looking for contributors to join the "team", which is currently mostly just me. If that sounds interesting to you, take a look at the application [here](https://docs.google.com/forms/d/1SgDgKZqyivEf5xl0EOWNfs68Xy3f4oBzLXIlwlS0BIs/viewform).
+Es gibt bereits User, die oft auf verschidenen Wegen helfen, aber hiermit möchte ich es offiziel machen. Ich suche Mitarbeiter um das "Team" zu stärken, welches derzeit hauptsächlich aus mir besteht. Solltest du dich angesprochen fühlen, bewirb dich [hier](https://docs.google.com/forms/d/1SgDgKZqyivEf5xl0EOWNfs68Xy3f4oBzLXIlwlS0BIs/viewform).
 
-### Looking for sponsors
+### Suche Sponsoren
 
-Another way to help making Vue development sustainable is providing direct financial support. The more financial support I receive, the more time I get to spend on making Vue even better.
+Andernfalls kann man mit direkter finanzieller Unterstützung helfen Vue-Entwicklung tragfähig zu machen. Je mehr finanzieller Unterstützung ich bekomme umso mehr Zeit kann ich investieren um Vue noch besser zu machen.
 
-If you run a business and is using Vue in a revenue-generating product, it would make business sense to sponsor Vue development: it ensures the project that your product relies on stays healthy and actively maintained. It can also help your exposure in the Vue community and makes it easier to attract Vue developers.
+Wenn du ein Geschäft hast, dass Vue in einem gewinnbringenden Produkt einsezt, ist es unternehmerisch sinnvoll Vue-Entwicklung zu sponsern: Es gewährleistet, dass das Projekt, auf welches dein Produkt angewiesen ist gesund bleibt und aktiv gewartet wird. Es kann ebenfalls deinen Bekanntheitsgrad in der Vue-Community erhöhen und dir dabei helfen Vue-Entwickler anzuziehen.
 
-If you are an individual user and have enjoyed the productivity of using Vue, consider donating as a sign of appreciation - like buying me coffee once in a while :)
+Wenn du Vue als Individuum benuzt und gesteigerte Produktivität erfahren hast, überlege bitte, ob du dich mit einer Spende bedanken kannst - beispw. könntest du mir hin und wieder einen Kaffee ausgeben :)
 
-In either case, you can provide recurring funding through Vue's [Patreon campaign](https://www.patreon.com/evanyou), or provide one-time donations via [PayPal](https://www.paypal.me/evanyou). There are many ideas for Vue that I have lined up but haven't had the time to embark on, and I would love to be able to work on them full time - I hope you can help me make that happen!
+In beiden Fällen kannst du wiederkehrende Zahlungen durch Vue's [Patreon-Campaign](https://www.patreon.com/evanyou), oder einmalige Spenden via [PayPal](https://www.paypal.me/evanyou) machen. Ich habe eine Menge Ideen für Vue für ich bisher noch keine Zeit gehabt habe und ich würde es lieben in Vollzeit daran arbeiten zu können - ich hoffe du kannst mir dabei helfen es umzusetzen!
