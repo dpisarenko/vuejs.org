@@ -79,7 +79,6 @@ _optional_
 Dieser Abschnitt ist nicht erforderlich, aber stark empfohlen. Es macht keinen Sinn, einen solchen Abschnitt über derart simple Sachen wie das Umschalten von Klassen bei der Veränderung des Zustands zu schreiben. Für fortgeschrittene Muster wie Mixins ist er jedoch unerlässlich. Die Antwort auf die meisten Fragen über Software-Entwicklung lautet ["Hängt davon ab!"](https://codepen.io/rachsmith/pen/YweZbG). Dieser Abschnitt huldigt diesem Prinzip. Darin sehen wir uns ehrlich an, wann das Muster hilfreich ist, wann es vermieden werden woll, und wo etwas Anderes besser geeignet ist.
 
 ### Alternative Muster
-### Alternative Patterns
 
 _required_
 
