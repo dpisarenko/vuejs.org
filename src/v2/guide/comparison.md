@@ -70,9 +70,9 @@ Auf einer höheren Ebene können wir die Komponenten in zwei Kategorien untertei
 
 In React wird der Gültigkeitsbereich von CSS über CSS-in-JS-Lösungen gemacht (z. B. [styled-components](https://github.com/styled-components/styled-components), [glamorous](https://github.com/paypal/glamorous), und [emotion](https://github.com/emotion-js/emotion)), es sei denn Du verteilst die Komponenten auf mehrere Dateien (z. B. mit [CSS Modules](https://github.com/gajus/react-css-modules)). Das führt ein neues, komponenten-orientiertes Stil-Paradigma, welches sich vom normalen CSS-Entwicklungsprozess unterscheidet. Ausserdem, obwohl das Extrahieren von CSS in eine einzige Datei zur Build-Zeit unterstützt wird, ist es immer noch üblich, eine Runtime in das Paket zu inkludieren, damit die Stile richtig funktionieren. Du kannst zwar von der Dynamik von JavaScript profitieren, wenn Du Deine Stile aufbaust. Der Preis dafür ist jedoch eine höhere Paketgröße und Laufzeitkosten.
 
-If you are a fan of CSS-in-JS, many of the popular CSS-in-JS libraries support Vue (e.g. [styled-components-vue](https://github.com/styled-components/vue-styled-components) and [vue-emotion](https://github.com/egoist/vue-emotion)). The main difference between React and Vue here is that the default method of styling in Vue is through more familiar `style` tags in [single-file components](single-file-components.html).
+Wenn Du ein Fan von CSS-in-JS bist: Viele der beliebten CSS-in-JS-Bibliotheken unterstützen Vue (z. B. [styled-components-vue](https://github.com/styled-components/vue-styled-components) und [vue-emotion](https://github.com/egoist/vue-emotion)). Der Hauptunterschied zwischen React und Vue ist das die Default-Methode für das Stilisieren in Vue die Verwendung von vertrauten `style`-Tags in [1-Datei-Komponenten](single-file-components.html) ist.
 
-[Single-file components](single-file-components.html) give you full access to CSS in the same file as the rest of your component code.
+[1-Datei-Komponenten](single-file-components.html) geben Dir vollen Zugriff auf CSS in der gleichen Datei wie im Rest des Komponentencodes.
 
 ``` html
 <style scoped>
@@ -84,7 +84,7 @@ If you are a fan of CSS-in-JS, many of the popular CSS-in-JS libraries support V
 </style>
 ```
 
-The optional `scoped` attribute automatically scopes this CSS to your component by adding a unique attribute (such as `data-v-21e5b78`) to elements and compiling `.list-container:hover` to something like `.list-container[data-v-21e5b78]:hover`.
+Das optionale `scoped`-Attribut begrenzt den Gültigkeitsbereich dieses CSS-Codes automatisch auf Deine Komponente. Dies geschieht durch das Hinzufügen eines einzigartigen Attributs (wie `data-v-21e5b78`) zu den Elementen. Danach wird `.list-container:hover` zu etwas wie `.list-container[data-v-21e5b78]:hover` kompiliert.
 
 Lastly, the styling in Vue's single-file component's is very flexible. Through [vue-loader](https://github.com/vuejs/vue-loader), you can use any preprocessor, post-processor, and even deep integration with [CSS Modules](https://vue-loader.vuejs.org/en/features/css-modules.html) -- all within the `<style>` element.
 
