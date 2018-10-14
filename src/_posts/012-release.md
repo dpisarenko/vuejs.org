@@ -1,56 +1,56 @@
 ---
-title: Vue.js 0.12 released!
+title: Vue.js 0.12 veröffentlicht!
 date: 2015-06-11 17:37:30
 ---
 
-I'm really excited to announce that [Vue.js 0.12: Dragon Ball](https://github.com/yyx990803/vue/releases/tag/0.12.0) is finally here! Thanks to everyone who tried out the beta/rc versions and provided feedback / bug reports along the way.
+Es freut mich euch mitteilen zu können, dass [Vue.js 0.12: Dragon Ball](https://github.com/yyx990803/vue/releases/tag/0.12.0) endlich hier ist! Vielen Dank an all diejenigen, die Feedback zur beta/rc Version gegeben haben.
 
-There's a lot to cover in this release, and we will talk about a few highlights below. However, it is still recommended to carefully go through the [Full Release Note](https://github.com/yyx990803/vue/releases/tag/0.12.0) and updated docs if you are upgrading from 0.11. You can report bugs on GitHub, send questions to [vuejs/Discussion](https://github.com/vuejs/Discussion/issues), or join us in the [Gitter chat channel](https://gitter.im/yyx990803/vue).
+Es hat sich Vieles geändert und wir werden das Wichtigste unten hervorheben. Wir empfehlen trotzdem die [Full Release Note](https://github.com/yyx990803/vue/releases/tag/0.12.0) und die aktualisierte Dokumentation zu lesen, wenn du ein Upgrade von 0.11 machen willst. Du kannst Bugs auf GitHub melden, Fragen in [vuejs/Discussion](https://github.com/vuejs/Discussion/issues) stellen oder unserem [Gitter chat channel](https://gitter.im/yyx990803/vue) beitreten.
 
 <!-- more -->
 
-### More Consistent Component Syntax
+### Konsistente Komponentensyntax
 
-Previously in 0.11 you have two ways to use a Vue.js component: using the `v-component` directive, or using custom elements. There are also two ways to pass data down to child components: using the `v-with` directive, or using the `paramAttributes` option. Although both custom elements and param attributes get compiled down to directives eventually, it is confusing and redundant to have two sets of syntax for the same functionality.
+In 0.11 hast du zwei Möglichkeiten gehabt Komponenten zu benutzen: Mit der Direktive `v-component` oder mit einem benutzerdefinierten Element. Ebenso hattest du zwei Möglichkeiten Daten an Kinden zu übergeben: Mit der Direktive `v-with` oder der Option `paramAttributes`. Sowohl benutzerdefinierte Elemente als auch `paramAttributes` werden zu Direktiven kompiliert und sind damit verwirrend und überflüssig.
 
-In addition, it should be noted that the component system is a first-class concept in Vue.js, even more important than directives. It defines how we encapsulate our higher-level view logic and compose our application. In the meanwhile, having a clear and declarative way to pass data into child components is also very important. Components and param attributes really deserve their own dedicated syntax to differentiate from other directives.
+Zusätzlich, Komponentensyntax ist ein First-Class Konzept in Vue.js und damit wichtiger als Direktive. Es definiert wie View-Logik gekapselt wird. Ein klarer und deklarativer Weg zum Übergeben von Daten an Kind-Komponenten ist ebenfalls wichtig. Komponenten und Parameter verdienen ihre eigene Syntax damit sie von anderen Direktiven unterschieden werden können.
 
-As a result, `v-component` and `v-with` have been deprecated in 0.12. `paramAttributes` has also been renamed to `props`, which is shorter and cleaner. From now on, most Vue.js components will look like this:
+Deshalb sind `v-component` und `v-with` in 0.12 abgeschrieben und `paramAttributes` zu `props` umbenannt worden. Ab jetzt werden die meissten Komponenten wie folgt in Vue.js aussehen.
 
 ``` html
 <my-component prop="{{parentData}}"></my-component>
 ```
 
-There are also additional props-related improvements such as explicit one-time or one-way props, expression as props, methods as prop callbacks and more. You can find out more details in the 0.12 release notes linked above and the updated [Component System](/guide/components.html) section of the guide.
+Es git weitere Verbesserungen bezüglich Props wie bspw. explizite Einweg-Props, Ausdrücke als Props, Methoden als Props, Callbacks und mehr. Die Details findest du in den 0.12 Release Notes, auf die oben verlinkt wurde oder in der Dokumentation [hier](/guide/components.html).
 
-### Filter Arguments Improvements
+### Verbesserte Filterargumente
 
-In 0.11, filters always receive their arguments as plain strings. An argument can be enclosed in quotes to include whitespace, but the quotes are not automatically stripped when passed into the filter function. Some users were also confused about how to retrieve a dynamic value on the vm instead of a plain string.
+In 0.11 Filterargumente wurden immer als Strings übertragen. Ein Argument in Anführungszeichen kann Whitespace beinhalten, welcher nicht automatisch entfernt wurde wenn das Argument an einen Filter übergeben wurde. Wie man einen dynamischen Wert statt einem String bekommt war auch nicht klar.
 
-In 0.12, the filter argument syntax now follows a simple rule: if an argument is enclosed in quotes, it will be passed in as a plain string; otherwise, it will be evaluated against the current vm as a dynamic value.
+In 0.12 gibt es nun eine einfache Regel zu Filtersyntax: Wenn das Argument in Anführungszeichen eingeschlossen ist, dann wird es als String übergeben. Andernfalls wird es als dynamischer Wert behandelt.
 
-This means the usage of some existing filters will have to change:
+Das bedeutet, dass der Umgang mit vorhandenen Filtern sich ändern wird:
 
 ``` html
 <a v-on="keyup: onKeyUp | key 'enter'"></a>
 {{ items.length | pluralize 'item' }}
 ```
 
-But it would make custom filters that rely on dynamic values much easier to write:
+Dafür wird der Umgang mit benutzerdefinierten Filtern viel einfacher:
 
 ``` html
 {{ msg | concat otherMsg }}
 ```
 
-Here the first argument to the `concat` filter will be the value of `this.otherMsg`.
+Hier ist das erste Argument für `concat` der Wert von `this.otherMsg`.
 
-### Asynchronous Components
+### Asynchrone Komponenten
 
-It is common practice to bundle all the JavaScript into one file when building large single page applications. But when the file becomes too large, we may want to defer loading parts of our application for a faster initial load. However, this does pose some constraints on how the application architecture should be designed. It could be very tricky to figure out how to properly split up your JavaScript bundles.
+Für SPA ist es üblich alles in einer Datei zu bündeln. Wenn aber diese Datei zu groß wird, möchten wir vielleicht einige Teile der Anwendung später laden um das initiale Laden zu beschleunigen. Dies stellt bestimmte Bedingungen an die Architektur der Anwendung. Es ist nicht einfach festzustellen an welcher Stelle deine Bundles aufgeteilt werden können.
 
-Well, with Vue.js we can already build our applications as decoupled components. If we can lazily load a dynamic component only when it is needed, wouldn't it be awesome? As a matter of fact, in 0.12 this would be trivially easy with the new Asynchronous Component feature.
+Mit Vue.js können wir bereits unsere Anwendung aus losgelöste Komponente bauen. Wäre es nicht klasse, wenn wir eine dynamische Komponente nur dann laden könnten wenn wir sie auch brauchen? In der Tat, mit 0.12 ist genau das möglich um trivial umzusetzen mit Asynchronen Komponenten.
 
-In 0.12, you can define a component as a factory function that asynchronously resolves a component definition (can be just a plain options object). Vue.js will only trigger the factory function when the component actually needs to be rendered, and will cache the result for future re-renders:
+In 0.12 kannst du Komponenten als Factory-Funktion definieren, welche asynchron aufgelöst werden. Vue.js wird sie nur dann anstoßen wenn die Komponente tatsächlich gebraucht wird. Die Komponente wird dann im Cache abgelegt für zukünftige Aufrufe.
 
 ``` js
 Vue.component('async-example', function (resolve, reject) {
@@ -62,7 +62,7 @@ Vue.component('async-example', function (resolve, reject) {
 })
 ```
 
-It is up to you to decide how to load the component from the server, e.g. `$.getScript()` or require.js; but the recommended usage is to pair it up with Webpack's [Code Splitting feature](http://webpack.github.io/docs/code-splitting.html):
+Es liegt an dir zu entscheiden, wie du Komponenten vom Server laden willst, `$.getScript()` oder require.js. Wir empfehlen es mit Webpack's [Code Splitting feature](http://webpack.github.io/docs/code-splitting.html) zu verbinden:
 
 ``` js
 Vue.component('async-webpack-example', function (resolve, reject) {
@@ -71,20 +71,20 @@ Vue.component('async-webpack-example', function (resolve, reject) {
 })
 ```
 
-That's all you need to do. You can use the component just like before, without even thinking about it being async. Webpack will automatically split your final JavaScript into separate bundles with correct dependencies, and automatically load a bundle via Ajax when it is required. You can check out a fully functional example [here](https://github.com/vuejs/vue-webpack-example).
+Das ist alles was du machen musst. Du kannst due Komponente so wie vorher nutzen ohne darüber nachzudenken, dass sie asynchron ist. Webpack wird dein Bundle automatisch mit den richtigen Abhängigkeiten aufteilen und es via Ajax dann laden, wenn es benuzt wird. Du kannst dir ein vollständiges Beispiel [hier](https://github.com/vuejs/vue-webpack-example) ansehen.
 
-### Improved Transition System
+### Verbessertes Überganssystem
 
-Vue.js' transition system is really easy to use, but in the past it has the limitation that you cannot mix CSS and JavaScript-based transitions together. In 0.12 that is no longer the case! The improved transition system now allows you to add JavaScript hooks to a CSS-based transition for additional control. The amount of hooks exposed have also been expanded to give you finer-grained control at every stage of the transition.
+Das Übergangssystem von Vue.js ist wirklich einfach zu benutzen. Es hatte allerdings den Nachteil, dass man nicht CSS zusammen mit auf JavaScript basierten Übergängen nutzen konnte. In 0.12 ändert sich das! Das verbesserte Übergangssystem erlaubt es dir JavaSScript-Hooks zu CSS basierten Übergängen hinzuzufügen. Die Anzahl der Hooks wurde zusätzlich erweitert, sodass du maximale Kontrolle bei jedem Schritt behälst.
 
-`v-repeat` now also ships with built-in support for staggering transitions. It is as simple as adding `stagger="100"` to your repeated element. It is also possible to define separate staggering for enter and leaving, or even dynamically calculate the staggering delay in a JavaScript hook.
+`v-repeat` kommt jetzt mit eingebautem Support für gestaffelte Übergänge. Du brauchst nur `stagger="100"` hinzuzufügen. Es ist auch möglich seperate Staffelungen für das Betreten und Verlassen hinzuzufügen und die Verzögerung der Staffelung dynamisch in einer JavaScript-Hook zu berechnen.
 
-For full details on the new transition system, check out the [updated guide](/guide/transitions.html).
+Für weitere Details, kannst du das [aktualisierte Handbuch](/guide/transitions.html) benutzen.
 
 ### Performance Tuning
 
-Vue.js' precise dependency tracking makes it the one of the most efficient view layer for small hot updates, but there's always room for improvement. In 0.12, internal instance creation and compilation refactors have improved first-render performance for large lists by up to 40%. With proper `track-by` usage, [re-rendering with large, brand new dataset](http://vuejs.github.io/js-repaint-perfs/vue/) is also comparable to, or even faster than other Virtual-DOM based frameworks.
+Vue.js' präzises Tracking von Abhängigkeiten macht es zu einem der effizientesten View-Schichten für kleine Updates. Man kann sich aber immer verbessern und mit 0.12 ist das Rendern von langen Listen, mithilfe von internen Instanzen und Verbesserungen des Kompilierens um bis zu 40% schneller. Mit dem korrekten EInsatz von `track-by` ist das [Re-Rendering mit großen, neuen Datasets](http://vuejs.github.io/js-repaint-perfs/vue/) vergleichbar schnell oder schneller als andere Virtual-DOM basierte Frameworks.
 
-### One More Thing...
+### Noch eine Sache...
 
-With 0.12 out of the door, more efforts will now be spent on the official vue-router, a dedicated routing library for Vue.js with nested view matching, full transition support, and asynchronous data hooks. I have expressed that Vue.js core intends to stay as a no-frills, drop-in view layer library, and that will not change. The vue-router will be shipped separately and is totally optional, however you can expect it to work seamlessly with Vue.js core when you need it.
+Da 0.12 jetzt abgeschlossen ist, wird wieder mehr Wert auf die Weiterentwicklung von vue-router gelegt, die dedizierte Routing-Library für Vue.js mit Verschachtelung von Views, Support für Übergänge und asynchronen Data-Hooks. Wie bereits vorher erwähnt wird Vue.js selbst eine einfache View-Schicht bleiben. Der vue-router ist seperat erhältlich und optional. Du kannst allerdings erwarten, dass alles zusammen funktioniert wenn du es brauchst.

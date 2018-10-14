@@ -1,20 +1,20 @@
 ---
-title: 0.11 Component Tips
+title: 0.11 Komponenten-Tips
 date: 2014-12-08 15:02:14
 tags:
 ---
 
-<p class="tip">Note: this post contains information for the outdated 0.11 version. Please refer to the [0.12 release notes](https://github.com/yyx990803/vue/releases) for the changes in the API.</p>
+<p class="tip">Notiz: Dieser Post enthält Informationen für die veraltete 0.11 Version. Die Änderungen der API sind in den [0.12 release notes](https://github.com/yyx990803/vue/releases) aufgeführt.</p>
 
-The release of 0.11 introduced [many changes](https://github.com/yyx990803/vue/blob/master/changes.md), but the most important one is how the new component scope works. Previously in 0.10.x, components have inherited scope by default. That means in a child component template you can reference parent scope properties. This often leads to tightly-coupled components, where a child component assumes knowledge of what properties are present in the parent scope. It is also possible to accidentally refer to a parent scope property in a child component.
+Die Veröffentlichung von 0.11 hat [viele Änderungen](https://github.com/yyx990803/vue/blob/master/changes.md) eingeführt und die wichtigste ist wie der Scope von Komponenten funktioniert. In 0.10.x, Komponenten haben ihren Scope geerbt, d.h. in der Kind-Komponente konnte man auf die Eigenschaften im Scope der Eltern zugreifen. Das führt häufig zu eng gekoppelten Komponenten, in denen die Kind-Komponente annimmt zu wissen welche Eigenschaften die Eltern haben. Zusätzlich war es möglich ausversehen den Scope der Eltern zu referenzieren.
 
 <!-- more -->
 
-### Isolated Scope and Data Passing
+### Isolierter Scope und die Übergabe von Daten
 
-Starting in 0.11, all child components have isolated scope by default, and the recommended way to control component data access is via [Explicit Data Passing](/guide/components.html#Explicit_Data_Passing) using [`v-with`](/api/directives.html#v-with) or [`paramAttributes`](/api/options.html#paramAttributes).
+Mit 0.11 alle Kind-Komponenten haben ihren eigenen isolierten Scope. Es wird emfohlen auf die Daten via [Explicit Data Passing](/guide/components.html#Explicit_Data_Passing) zuzugreifen [`v-with`](/api/directives.html#v-with) oder [`paramAttributes`](/api/options.html#paramAttributes).
 
-`paramAttributes` enables us to write Web Component style templates:
+`paramAttributes` erlaubt uns Templates im Style von Web Components zu schreiben:
 
 ``` js
 Vue.component('my-component', {
@@ -29,9 +29,9 @@ Vue.component('my-component', {
 <my-component params="{{params}}"></my-component>
 ```
 
-### Where Does It Belong?
+### Wo gehört das hin?
 
-Previously in 0.10, all directives on a component's container element are compiled in the child component's scope. Because it inherited parent scope, this worked in most situations. Starting in 0.11.1, we want to provide a cleaner separation between component scopes. The rule of thumbs is: if something appears in the parent template, it will be compiled in parent scope; if it appears in child template, it will be compiled in child scope. For example:
+In 0.10 alle Direktive einer Komponente wurden im Scope der Kind-Komponenten kompiliert. Das hat funktioniert weil der Scope geerbt wurde. Mit 0.11.1 wollen wir den Scope der Komponenten sauberer aufteilen. Die Dauemenregel ist: Wenn etwas im Eltern-Termplate auftaucht wird es im Eltern-Scope kompoiliert; Wenn es im Kind-Template auftaucht, wird es im Kind-Scope kompiliert. Zum Beispiel:
 
 ``` html
 <!-- parent template -->
@@ -48,14 +48,14 @@ Previously in 0.10, all directives on a component's container element are compil
 </div>
 ```
 
-Everything in the parent template will be compiled in the parent's scope, including the content that's going to be inserted into the child component.
+Alles im Eltern-Template wird im Eltern-Scope kompiliert, inklusive dem Inhalt der an die Kind-Komponente übergeben wird.
 
-The only exception to the rule is `v-with` (and `paramAttributes` which compiles down to `v-with`), which works in both places - so you don't need to worry about it too much.
+Die einzige Ausnahme ist `v-with` (und `paramAttributes`, dass zu `v-with` kompiliert wird), dass in beiden Fällen funktioniert - Du braucht dir also nicht allzu viele Gedanken darüber machen.
 
-### Cleaner Event Communication
+### Saubere Event-Kommunikation
 
-Previously the standard way for a child component to communicate to its parent is via dispatching events. However, with this approach, the event listeners on the parent component are not guaranteed to be listening on the desired child component only. It's also possible to trigger undesired listeners further up the chain if we do not cancel the event.
+In vorhergehenden Versionen war es üblich für Kind-Komponenten via Events mit Eltern zu kommunizieren. Mit dieser Methode ist allerdings nicht garantiert das die Listener auf der Eltern-Komponente ausschließlich auf die gewünschte Kind-Komponente hören. Es war auch möglich Listener höher in der Hierarchie auszulösen.
 
-The most common use case is for a parent to react to the events from a specific, direct child component. So in 0.11.4, [a new directive `v-events`](/api/directives.html#v-events) has been introduced to enable exactly this behavior.
+Der am meist gebräuchliste Fall ist , dass eine Eltern-Komponente auf eine bestimmte Kind-Komponente reagieren muss. Desshalb wurde in 0.11.4, [eine neue Direktive `v-events`](/api/directives.html#v-events) eingeführt.
 
-0.11.4 has already been released, go try it out!
+0.11.4 wurde bereits veröffentlicht, probiers aus!
