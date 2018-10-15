@@ -86,13 +86,13 @@ Wenn Du ein Fan von CSS-in-JS bist: Viele der beliebten CSS-in-JS-Bibliotheken u
 
 Das optionale `scoped`-Attribut begrenzt den Gültigkeitsbereich dieses CSS-Codes automatisch auf Deine Komponente. Dies geschieht durch das Hinzufügen eines einzigartigen Attributs (wie `data-v-21e5b78`) zu den Elementen. Danach wird `.list-container:hover` zu etwas wie `.list-container[data-v-21e5b78]:hover` kompiliert.
 
-Lastly, the styling in Vue's single-file component's is very flexible. Through [vue-loader](https://github.com/vuejs/vue-loader), you can use any preprocessor, post-processor, and even deep integration with [CSS Modules](https://vue-loader.vuejs.org/en/features/css-modules.html) -- all within the `<style>` element.
+Schliesslich ist das Stilisieren in 1-Dateien-Komponenten sehr flexibel. Mittels [vue-loader](https://github.com/vuejs/vue-loader) kannst Du jeden Präprozessor, Post-Prozessor verwenden und sogar [CSS-Module](https://vue-loader.vuejs.org/en/features/css-modules.html) tief integrieren -- alles innerhalb des `<style>`-Elements.
 
-### Scale
+### Skalierung
 
-#### Scaling Up
+#### Nach oben skalieren
 
-For large applications, both Vue and React offer robust routing solutions. The React community has also been very innovative in terms of state management solutions (e.g. Flux/Redux). These state management patterns and [even Redux itself](https://yarnpkg.com/en/packages?q=redux%20vue&p=1) can be easily integrated into Vue applications. In fact, Vue has even taken this model a step further with [Vuex](https://github.com/vuejs/vuex), an Elm-inspired state management solution that integrates deeply into Vue that we think offers a superior development experience.
+Sowohl Vue, als auch React bieten robuste Routing-Lösungen für grosse Anwendungen an. Die React-Community ist auch sehr innovativ in puncto Lösungen für die Zustandsverwaltung (z. B. Flux/Redux). Diese Lösungen und [selbst Redux selbst](https://yarnpkg.com/en/packages?q=redux%20vue&p=1) können leicht in Vue-Anwendungen integriert werden. Vue hat diesen Ansatz mit [Vuex](https://github.com/vuejs/vuex), einer von Elm inspirierten Zustandverwaltungslösung, die stark mit Vue integriert ist, weiterentwickelt. Wir glauben, dass diese Lösung eine bessere Entwicklungserfahrung liefert.
 
 Another important difference between these offerings is that Vue's companion libraries for state management and routing (among [other concerns](https://github.com/vuejs)) are all officially supported and kept up-to-date with the core library. React instead chooses to leave these concerns to the community, creating a more fragmented ecosystem. Being more popular though, React's ecosystem is considerably richer than Vue's.
 
