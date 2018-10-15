@@ -104,8 +104,7 @@ Schliesslich bietet Vue ein [Kommandozeilen-Projektgenerator](https://github.com
 
 Es ist wichtig zu betonen, dass viele dieser Begrenzungen absichtliche Entwurfsentscheidungen des create-react-app-Teams sind und ihre Vorteile haben. Zum Beispiel, solange die Bedürfnisse Deines Projekts sehr simpel sind, und niemals Deinen Build-Prozess anpassen musst, wirst Du es wie eine Abhängigkeit aktualisieren können. Du kannst [hier](https://github.com/facebookincubator/create-react-app#philosophy) mehr über die unterschiedlichen Philosophien lesen.
 
-
-#### Scaling Down
+#### Nach unten skalieren
 
 React is renowned for its steep learning curve. Before you can really get started, you need to know about JSX and probably ES2015+, since many examples use React's class syntax. You also have to learn about build systems, because although you could technically use Babel Standalone to live-compile your code in the browser, it's absolutely not suitable for production.
 
