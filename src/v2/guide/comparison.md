@@ -94,15 +94,16 @@ Schliesslich ist das Stilisieren in 1-Dateien-Komponenten sehr flexibel. Mittels
 
 Sowohl Vue, als auch React bieten robuste Routing-Lösungen für grosse Anwendungen an. Die React-Community ist auch sehr innovativ in puncto Lösungen für die Zustandsverwaltung (z. B. Flux/Redux). Diese Lösungen und [selbst Redux selbst](https://yarnpkg.com/en/packages?q=redux%20vue&p=1) können leicht in Vue-Anwendungen integriert werden. Vue hat diesen Ansatz mit [Vuex](https://github.com/vuejs/vuex), einer von Elm inspirierten Zustandverwaltungslösung, die stark mit Vue integriert ist, weiterentwickelt. Wir glauben, dass diese Lösung eine bessere Entwicklungserfahrung liefert.
 
-Another important difference between these offerings is that Vue's companion libraries for state management and routing (among [other concerns](https://github.com/vuejs)) are all officially supported and kept up-to-date with the core library. React instead chooses to leave these concerns to the community, creating a more fragmented ecosystem. Being more popular though, React's ecosystem is considerably richer than Vue's.
+Ein weiterer wesentlicher Unterschied ist dass alle Vues Zustandsverwaltungs- und Routing-Bibliotheken (und auch [andere Anliegen](https://github.com/vuejs)) offiziell unterstützt und mit der Kernbibliothek kompatibel gehalten werden. React dagegen überlässt diese Sorgen der Community, was zu einem fragmentieren Ökosystem führt. Dank grösserer Beliebtheit ist React's Ökosystem reichhaltiger als das von Vue.
 
-Finally, Vue offers a [CLI project generator](https://github.com/vuejs/vue-cli) that makes it trivially easy to start a new project using your choice of build system, including [webpack](https://github.com/vuejs-templates/webpack), [Browserify](https://github.com/vuejs-templates/browserify), or even [no build system](https://github.com/vuejs-templates/simple). React is also making strides in this area with [create-react-app](https://github.com/facebookincubator/create-react-app), but it currently has a few limitations:
+Schliesslich bietet Vue ein [Kommandozeilen-Projektgenerator](https://github.com/vuejs/vue-cli) an, der es trivial macht, ein Projekt mit dem Build-System Deiner Wahl zu starten: Du kannst zwischen [Webpack](https://github.com/vuejs-templates/webpack), [Browserify](https://github.com/vuejs-templates/browserify) und [keinem Build-System](https://github.com/vuejs-templates/simple) wählen. React macht ebenfalls Bemühungen in diese Richtung (siehe [create-react-app](https://github.com/facebookincubator/create-react-app)), aber momentan gibt es einige Beschränkungen:
 
-- It does not allow any configuration during project generation, while Vue's project templates allow [Yeoman](http://yeoman.io/)-like customization.
-- It only offers a single template that assumes you're building a single-page application, while Vue offers a wide variety of templates for various purposes and build systems.
-- It cannot generate projects from user-built templates, which can be especially useful for enterprise environments with pre-established conventions.
+- React erlaubt keine Konfigurierung während der Projektgenerierung, während Vues Vorlagen eine Anpassung im [Yeoman](http://yeoman.io/)-Stil ermöglichen.
+- Es enthält nur eine einzige Vorlage und nimmt an, dass Du eine Single-Page-Application baust. Dagegen bietet Vue eine Auswahl an Vorlage für unterschiedliche Zwecke und Build-Systeme an.
+- Es kann keine Projekte auf Basis von benutzerdefinierten Vorlagen generieren, was besonders für größere Firmen mit etablierten Konventionen wichtig ist.
 
-It's important to note that many of these limitations are intentional design decisions made by the create-react-app team and they do have their advantages. For example, as long as your project's needs are very simple and you never need to "eject" to customize your build process, you'll be able to update it as a dependency. You can read more about the [differing philosophy here](https://github.com/facebookincubator/create-react-app#philosophy).
+Es ist wichtig zu betonen, dass viele dieser Begrenzungen absichtliche Entwurfsentscheidungen des create-react-app-Teams sind und ihre Vorteile haben. Zum Beispiel, solange die Bedürfnisse Deines Projekts sehr simpel sind, und niemals Deinen Build-Prozess anpassen musst, wirst Du es wie eine Abhängigkeit aktualisieren können. Du kannst [hier](https://github.com/facebookincubator/create-react-app#philosophy) mehr über die unterschiedlichen Philosophien lesen.
+
 
 #### Scaling Down
 
