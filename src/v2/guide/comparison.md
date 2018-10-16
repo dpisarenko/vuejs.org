@@ -130,9 +130,9 @@ Eine Alternative, die es bald für Vue-Entwickler geben wird, ist die Verwendung
 
 MobX ist in der React-Community recht beliebt und verwendet ein Reaktivitätssystem, das nahezu identisch zu dem von Vue ist. Bis zu einem gewissen Grad kann man sagen, dass Du Dir den Workflow von React + MobX wie eine langatmigere Version von Vue vorstellen kannst. Wenn Du diese Kombination verwendest und sie die gefällt, dann ist der Übergang zu Vue wahrscheinlich der nächste logische Schritt.
 
-### Preact and Other React-Like Libraries
+### Preact und andere React-ähnliche Bibliotheken
 
-React-like libraries usually try to share as much of their API and ecosystem with React as is feasible. For that reason, the vast majority of comparisons above will also apply to them. The main difference will typically be a reduced ecosystem, often significantly, compared to React. Since these libraries cannot be 100% compatible with everything in the React ecosystem, some tooling and companion libraries may not be usable. Or, even if they appear to work, they could break at any time unless your specific React-like library is officially supported on par with React.
+React-ähnliche Bibliotheken versuchen meistens, ihre APIs und Ökosysteme so React-ähnlich wie möglich zu machen. Daher wird die Mehrheit der obigen Vergleiche auch auf sie zutreffen. Der Hauptunterschied wird meistens ein im Vergleich zu React reduziertes, oft stark reduziertes, Ökosystem sein. Weil diese Bibliotheken nicht 100% kompatibel mit allen Teilen des React-Ökosystems sein können, werden einige Werkzeuge und Begleitbibliotheken nicht verwendbar sein. Selbst wenn diese zu funktionieren scheinen, können sie jederzeit fehlschlagen, es sei denn, Deine spezifische React-ähnliche Bibliothek wird offiziell unterstützt und mit der aktuellen Version von React kompatibel gehalten.
 
 ## AngularJS (Angular 1)
 
