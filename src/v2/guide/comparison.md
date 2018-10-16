@@ -106,25 +106,25 @@ Es ist wichtig zu betonen, dass viele dieser Begrenzungen absichtliche Entwurfse
 
 #### Nach unten skalieren
 
-React is renowned for its steep learning curve. Before you can really get started, you need to know about JSX and probably ES2015+, since many examples use React's class syntax. You also have to learn about build systems, because although you could technically use Babel Standalone to live-compile your code in the browser, it's absolutely not suitable for production.
+React is bekannt für seine flache Lernkurve. Bevor Du starten kannst, musst JSX und wahrscheinlich ES2015+ lernen, da viele Beispiele Reacts Klassensyntax verwenden. Du musst auch Buildsysteme lernen. Obwohl Du theoretisch mit Babel Standalone Deinen Code live im Browser kompilieren könntest, ist es für Produktionsumgebung absolut ungeeignet.
 
-While Vue scales up just as well as React, it also scales down just as well as jQuery. That's right - to get started, all you have to do is drop a single script tag into the page:
+Vue skaliert nach oben genau so gut wie React, und nach unten genau so gut wie jQuery. Das ist richtig - das Einzige, was Du brauchst, um anzufangen, ist ein einziges Script-Tag in Deine Seite einzufügen:
 
 ``` html
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 ```
 
-Then you can start writing Vue code and even ship the minified version to production without feeling guilty or having to worry about performance problems.
+Dann kannst Du anfangen, Vue-Code zu schreiben und sogar die minifizierte Version in die Produktionsumgebung abzuliefern, ohne sich schuldig zu fühlen und ohne sich Sorgen über mögliche Performance-Probleme zu machen.
 
-Since you don't need to know about JSX, ES2015, or build systems to get started with Vue, it also typically takes developers less than a day reading [the guide](./) to learn enough to build non-trivial applications.
+Weil Du nichts über JSX, ES2015 oder Build-Systeme wissen musst, um mit Vue anzufangen, brauchen die meisten Entwickler weniger als einen Tag (den Sie mit dem lesen [dieser Anleitung](./) verbringen), um sich genug Wissen anzueignen, um nicht-triviale Anwendungen zu erstellen.
 
-### Native Rendering
+### Natives Rendering
 
-React Native enables you to write native-rendered apps for iOS and Android using the same React component model. This is great in that as a developer, you can apply your knowledge of a framework across multiple platforms. On this front, Vue has an official collaboration with [Weex](https://weex.apache.org/), a cross-platform UI framework created by Alibaba Group and being incubated by the Apache Software Foundation (ASF). Weex allows you to use the same Vue component syntax to author components that can not only be rendered in the browser, but also natively on iOS and Android!
+React Native erlaubt Dir, nativ gerenderte Anwendungen für iOS und Android mit dem gleichen Komponentenmodell wie React zu schreiben. Das ist insofern grossartig, als Du als Entwickler Deine Kenntnisse des Frameworks auf mehrere Plattformen übertragen kannst. An dieser Front betreibt Vue eine offizielle Kollaboration mit [Weex](https://weex.apache.org/), einem plattformübergreifenden UI-Framework von Alibaba Group. Es wird von der Apache Software Foundation (ASF) betreut. Weex erlaubt Dir, die gleiche Vue-Komponentensyntax zu verwenden, um Komponenten zu schreiben, die nicht nur im Browser gerendert werden können, sondern auch nativ auf iOS und Android laufen!
 
-At this moment, Weex is still in active development and is not as mature and battle-tested as React Native, but its development is driven by the production needs of the largest e-commerce business in the world, and the Vue team will also actively collaborate with the Weex team to ensure a smooth experience for Vue developers.
+Momentan befindet sich Weex immer noch in aktiver Entwicklung und ist nicht so reif und kampferprobt wie React native. Jedoch wird seine Entwicklung durch die Bedürfnisse der weltweit grössten E-Commerce-Firma angetrieben. Das Vue-Team wird auch aktiv mit dem Weex-Team zusammenarbeiten, um eine reibungslose Erfahrung für Vue-Entwickler zu gewährleisten.
 
-Another option Vue developers will soon have is [NativeScript](https://www.nativescript.org/), via a [community-driven plugin](https://github.com/rigor789/nativescript-vue).
+Eine Alternative, die es bald für Vue-Entwickler geben wird, ist die Verwendung von [NativeScript](https://www.nativescript.org/) mit einem [von der Community entwickelten Plugin](https://github.com/rigor789/nativescript-vue).
 
 ### With MobX
 
