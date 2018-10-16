@@ -126,9 +126,9 @@ Momentan befindet sich Weex immer noch in aktiver Entwicklung und ist nicht so r
 
 Eine Alternative, die es bald für Vue-Entwickler geben wird, ist die Verwendung von [NativeScript](https://www.nativescript.org/) mit einem [von der Community entwickelten Plugin](https://github.com/rigor789/nativescript-vue).
 
-### With MobX
+### Mit MobX
 
-MobX has become quite popular in the React community and it actually uses a nearly identical reactivity system to Vue. To a limited extent, the React + MobX workflow can be thought of as a more verbose Vue, so if you're using that combination and are enjoying it, jumping into Vue is probably the next logical step.
+MobX ist in der React-Community recht beliebt und verwendet ein Reaktivitätssystem, das nahezu identisch zu dem von Vue ist. Bis zu einem gewissen Grad kann man sagen, dass Du Dir den Workflow von React + MobX wie eine langatmigere Version von Vue vorstellen kannst. Wenn Du diese Kombination verwendest und sie die gefällt, dann ist der Übergang zu Vue wahrscheinlich der nächste logische Schritt.
 
 ### Preact and Other React-Like Libraries
 
