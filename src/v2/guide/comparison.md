@@ -136,21 +136,21 @@ React-ähnliche Bibliotheken versuchen meistens, ihre APIs und Ökosysteme so Re
 
 ## AngularJS (Angular 1)
 
-Some of Vue's syntax will look very similar to AngularJS (e.g. `v-if` vs `ng-if`). This is because there were a lot of things that AngularJS got right and these were an inspiration for Vue very early in its development. There are also many pains that come with AngularJS however, where Vue has attempted to offer a significant improvement.
+Ein Teil der Vue-Syntax wird jener von AngularJS sehr ähnlich sehen (z. B. `v-if` und `ng-if`). Der Grund dafür ist die Tatsache, dass viele Dinge in Angular richtig gemacht wurden und Vue als Inspiration dienten. Es gibt aber auch viele Nachteile in AngularJS und Vue versucht, in diesen Bereichen eine signifikante Verbesserung zu erreichen.
 
-### Complexity
+### Komplexität
 
-Vue is much simpler than AngularJS, both in terms of API and design. Learning enough to build non-trivial applications typically takes less than a day, which is not true for AngularJS.
+Vue ist viel einfacher als AngularJS, sowohl API-, als auch entwurfsmässig. Man braucht häufig weniger als einen Tag, um zu lernen, nicht-triviale Anwendungen zu schreiben. Dies trifft auf AngularJS nicht zu.
 
-### Flexibility and Modularity
+### Flexibilität und Modularität
 
-AngularJS has strong opinions about how your applications should be structured, while Vue is a more flexible, modular solution. While this makes Vue more adaptable to a wide variety of projects, we also recognize that sometimes it's useful to have some decisions made for you, so that you can just start coding.
+AngularJS hat starke Meinungen darüber, wie Deine Anwendungen strukturiert sein müssen. Vue ist eine flexiblere, modulare Lösung. Es macht Vue anpassbar an eine breite Vielfalt von Projekten. Gleichzeitig erkennen wir an, dass es manchmal nützlich ist, wenn bestimmte Entscheidungen für Dich gemacht wurden und Du sofort zum Kodieren anfangen kannst.
 
-That's why we offer a [webpack template](https://github.com/vuejs-templates/webpack) that can set you up within minutes, while also granting you access to advanced features such as hot module reloading, linting, CSS extraction, and much more.
+Daher bieten wir eine [Webpack-Vorlage](https://github.com/vuejs-templates/webpack), mit deren Hilfe Du innerhalb weniger Minuten ein Projekt aufsetzen kannst. Gleichzeitig bekommst Zugang zu fortgeschrittenen Funktionalitäten wie heisses Neuladen on Modulen, Linting, CSS-Extraktion und vieles mehr.
 
-### Data binding
+### Datenbindung
 
-AngularJS uses two-way binding between scopes, while Vue enforces a one-way data flow between components. This makes the flow of data easier to reason about in non-trivial applications.
+AngularJS verwendet eine zweiseitige Bindung zwischen den Gültigkeitsbereichen, während Vue einen einseitigen Datenfluss zwischen den Komponenten erzwingt. Das macht es einfacher, Überlegungen über den Datenfluss in nicht-trivialen Anwendungen anzustellen.
 
 ### Directives vs Components
 
