@@ -152,13 +152,13 @@ Daher bieten wir eine [Webpack-Vorlage](https://github.com/vuejs-templates/webpa
 
 AngularJS verwendet eine zweiseitige Bindung zwischen den Gültigkeitsbereichen, während Vue einen einseitigen Datenfluss zwischen den Komponenten erzwingt. Das macht es einfacher, Überlegungen über den Datenfluss in nicht-trivialen Anwendungen anzustellen.
 
-### Directives vs Components
+### Direktiven und Komponenten
 
-Vue has a clearer separation between directives and components. Directives are meant to encapsulate DOM manipulations only, while components are self-contained units that have their own view and data logic. In AngularJS, directives do everything and components are just a specific kind of directive.
+Vue hat eine klarere Abgrenzung zwischen Direktiven und Komponenten. Direktiven kapseln lediglich DOM-Manipulationen ein, während Komponenten selbstgenügsame Einheiten sind, die ihre eigene Präsentations- und Datenlogik haben. In AngularJS tun Direktiven alles und Komponenten sind nur eine spezifische Art von Direktive.
 
-### Runtime Performance
+### Performance zur Laufzeit
 
-Vue has better performance and is much, much easier to optimize because it doesn't use dirty checking. AngularJS becomes slow when there are a lot of watchers, because every time anything in the scope changes, all these watchers need to be re-evaluated again. Also, the digest cycle may have to run multiple times to "stabilize" if some watcher triggers another update. AngularJS users often have to resort to esoteric techniques to get around the digest cycle, and in some situations, there's no way to optimize a scope with many watchers.
+Vue hat eine bessere Performance und ist viel, viel einfacher zum Optimieren weil es kein "dirty checking" verwendet. AngularJS wird langsam, wenn es viele Watcher gibt, weil sie neu ausgewertet werden müssen, wann immer sich etwas im Gültigkeitsbereich verändert. Außerdem kann der Digest-Cycle mehrere Durchläufe brauchen, um sich zu "stabilisieren", wenn irgendein Watcher ein weiteres Update auslöst. Benutzer von AngularJS müssen of esoterische Techniken verwenden, um um den Digest-Cycle herumzukommen. In bestimmten Fällen ist es überhaupt unmöglich, einen Gültigkeitsbereich mit vielen Watchers zu optimieren.
 
 Vue doesn't suffer from this at all because it uses a transparent dependency-tracking observation system with async queueing - all changes trigger independently unless they have explicit dependency relationships.
 
