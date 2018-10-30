@@ -35,7 +35,7 @@ Es gibt bereits User, die oft auf verschidenen Wegen helfen, aber hiermit möcht
 
 Andernfalls kann man mit direkter finanzieller Unterstützung helfen Vue-Entwicklung tragfähig zu machen. Je mehr finanzieller Unterstützung ich bekomme umso mehr Zeit kann ich investieren um Vue noch besser zu machen.
 
-Wenn du ein Geschäft hast, dass Vue in einem gewinnbringenden Produkt einsezt, ist es unternehmerisch sinnvoll Vue-Entwicklung zu sponsern: Es gewährleistet, dass das Projekt, auf welches dein Produkt angewiesen ist gesund bleibt und aktiv gewartet wird. Es kann ebenfalls deinen Bekanntheitsgrad in der Vue-Community erhöhen und dir dabei helfen Vue-Entwickler anzuziehen.
+Wenn du ein Geschäft hast, dass Vue in einem gewinnbringenden Produkt einsetzt, ist es unternehmerisch sinnvoll Vue-Entwicklung zu sponsern: Es gewährleistet, dass das Projekt, auf welches dein Produkt angewiesen ist gesund bleibt und aktiv gewartet wird. Es kann ebenfalls deinen Bekanntheitsgrad in der Vue-Community erhöhen und dir dabei helfen Vue-Entwickler anzuziehen.
 
 Wenn du Vue als Individuum benuzt und gesteigerte Produktivität erfahren hast, überlege bitte, ob du dich mit einer Spende bedanken kannst - beispw. könntest du mir hin und wieder einen Kaffee ausgeben :)
 
